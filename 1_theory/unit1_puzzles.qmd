@@ -53,3 +53,88 @@ few leads that I have not yet verified:
   [the Sleeping Beauty Problem](https://en.wikipedia.org/wiki/Sleeping_Beauty_problem) and 
   [the Boy or Girl Paradox](https://en.wikipedia.org/wiki/Boy_or_girl_paradox).
 
+## Monty Hall Problem 
+
+The Monty Hall problem can be stated so simply: 
+
+> Suppose you're on a game show, and you're given the choice of three doors:
+Behind one door is a car; behind the others, goats. You pick a door, say No. 1,
+and the host [Monty], who knows what's behind the doors, opens another door, say No. 3,
+which has a goat. He then says to you, "Do you want to pick door No. 2?" Is it
+to your advantage to switch your choice?
+
+::: {.column-margin}
+![Depiction of Monty Hall Problem: 3 doors, 3rd is open showing a goat](https://upload.wikimedia.org/wikipedia/commons/3/3f/Monty_open_door.svg)
+:::
+
+How should you 'model' your choices?
+
+Do we have all the information necessary? 
+
+We need to know: is there an equal 
+initial probability of the car being behind each door? We'll assume yes. 
+Let's additionally assume that Monty never reveals the car, and if he has a 
+choice between two doors with goats behind them, he picks randomly either with 
+probability $1/2$.
+
+Let $M_i$ denote the event where Monty opens the $i$th door. Also, let $D_i$
+denote the event where the car is behind door $i$. We will assume as in the
+puzzle given that we have chosen door 1 and Monty has shown us there is a goat
+behind door 3. 
+
+Notice that $P(D_1) = P(D_2) = P(D_3) = 1/3$ by our first assumption. (These are 
+unconditioned probabilities, before we learn anything). Our second assumption 
+then implies the following table of probabilities for the joint 
+events $P(M_i \text{ and } D_j \mid \text{we chose door 1})$
+for $i, j \in \{ 1, 2, 3 \}$. 
+
+![Joint probabilities for where the car is and what door Monty shows](figures/unit1_monty_hall_table/monty_hall_table.svg){width='85%'}
+
+Bayes' Rule Approach:
+
+Now we want to compare $P(D_1 | M_3)$ vs. $P(D_2 | M_3)$. We can use Bayes' rule 
+to calculate this using quantities we either already have or can get. 
+
+$$P(D_1 | M_3) = \frac{P(M_3 | D_1)P(D_1)}{P(M_3)} = \frac{(1/2) \times (1/3)}{(1/2)} = \frac{1}{3}.$$
+$$P(D_2 | M_3) = \frac{P(M_3 | D_2)P(D_2)}{P(M_3)} = \frac{1 \times (1/3)}{(1/2)} = \frac{2}{3}.$$
+
+Justifications: We take by assumption that we chose door 1, so Monty will never 
+choose door 1, and hence $P(M_3) = 1/2$. In the first case, Monty's hand 
+is not forced. In the second case, Monty's hand is 
+forced, and hence $P(M_3 | D_2) = 1$. 
+
+Thus we conclude that it is superior to switch to door 2. 
+
+:::{.callout-tip}
+Derivation of Bayes' Formula 
+
+Recall the definition of conditional probability.
+$$P(A | B) = P(A \cap B) / P(B), \quad \quad P(B | A) = P(A \cap B) / P(A)$$
+$$\implies \; P(A | B) P(B) = P(B | A) P(A)$$
+$$\therefore P(B | A) = \frac{P(A | B) P(B)}{P(A)}.$$
+:::
+
+Direct Approach: 
+
+You could say, can't we just use the definition of conditional probability
+straight away?  Yes, you can. Essentially it's constructing the above table that's
+the important part in seeing the solution clearly. 
+
+$$P(D_1 | M_3 ) = \frac{P(D_1 \cap M_3)}{P(M_3)} = \frac{1/6}{1/2} = \frac{1}{3}.$$
+$$P(D_2 | M_3 ) = \frac{P(D_2 \cap M_3)}{P(M_3)} = \frac{1/3}{1/2} = \frac{2}{3}.$$
+
+Problematic Approach: 
+
+What's wrong with saying $M_3$ implies that either $D_1$ or $D_2$ must hold, so 
+$$P(D_1 | M_3) = \frac{P(D_1 \cap M_3)}{P(M_3)} = \frac{P(D_1 \cap \{ D_1, D_2 \})}{P(\{D_1, D_2\})} = \frac{1/3}{2/3} = \frac{1}{2},$$
+and by the fact that $P(D_2 | M_3) = 1-P(D_1|M_3)$, we have that $P(D_2 | M_3) = 1/2$ as well, where 
+$P(\{D_1, D_2\})$ refers to the probability of *either* the car being behind door 1 or door 2. 
+
+Well, $M_3$ and $\{D_1, D_2\}$ are not the same events. It is true that $M_3$
+implies the car is behind either door one or door two, but it's not the case
+that the door being behind either door one or door two implies that Monty will
+open door 3. If they're not the same events, then we cannot assume that their 
+probabilities are equal. Hence, the above steps incorrectly replace $P(M_3)$ with 
+2/3, and $P(D_1 \cap M_3)$, and in the numerator, the joint probability of 
+$P(D_1 \cap M_3)$ need not equal $P(D_1 \cap \{ D_1, D_2 \}) = P(D_1)$. 
+

@@ -89,6 +89,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -166,7 +195,10 @@ div.csl-indent {
    
   <ul>
   <li><a href="#history" id="toc-history" class="nav-link active" data-scroll-target="#history">History</a></li>
-  <li><a href="#puzzles" id="toc-puzzles" class="nav-link" data-scroll-target="#puzzles">Puzzles</a></li>
+  <li><a href="#puzzles" id="toc-puzzles" class="nav-link" data-scroll-target="#puzzles">Puzzles</a>
+  <ul class="collapse">
+  <li><a href="#monty-hall-problem" id="toc-monty-hall-problem" class="nav-link" data-scroll-target="#monty-hall-problem">Monty Hall Problem</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -228,13 +260,64 @@ Langou, Julien. 2009. <span>“Translation and Modern Interpretation of Laplace�
 <li>I have also found that the Institute of Mathematical Statistics has a <em>Student Puzzle Corner</em> here: <a href="https://imstat.org/2023/12/15/student-puzzle-corner-48/" class="uri">https://imstat.org/2023/12/15/student-puzzle-corner-48/</a></li>
 <li>Following the <em>See Also</em> section from the Monty Hall Problem Wikipedia page yields <a href="https://en.wikipedia.org/wiki/Sleeping_Beauty_problem">the Sleeping Beauty Problem</a> and <a href="https://en.wikipedia.org/wiki/Boy_or_girl_paradox">the Boy or Girl Paradox</a>.</li>
 </ul>
-
-
 <div class="no-row-height column-margin column-container"><div id="ref-gardner1956mathematics" class="csl-entry" role="listitem">
 Gardner, Martin. 1956. <em>Mathematics, Magic and Mystery</em>. Dover Puzzle Books: Math Puzzles Ser. Dover Publications. <a href="https://www.ebay.com/itm/264709866263">https://www.ebay.com/itm/264709866263</a>.
 </div><div id="ref-gardner2005colossal" class="csl-entry" role="listitem">
 ———. 2005. <em>The Colossal Book of Short Puzzles and Problems</em>. Edited by Dana Richards. W. W. Norton &amp; Company. <a href="https://www.barnesandnoble.com/w/the-colossal-book-of-short-puzzles-and-problems-martin-gardner/1100872012">https://www.barnesandnoble.com/w/the-colossal-book-of-short-puzzles-and-problems-martin-gardner/1100872012</a>.
-</div></div>
+</div></div><section id="monty-hall-problem" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="monty-hall-problem">Monty Hall Problem</h2>
+<p>The Monty Hall problem can be stated so simply:</p>
+<blockquote class="blockquote">
+<p>Suppose you’re on a game show, and you’re given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No.&nbsp;1, and the host [Monty], who knows what’s behind the doors, opens another door, say No.&nbsp;3, which has a goat. He then says to you, “Do you want to pick door No.&nbsp;2?” Is it to your advantage to switch your choice?</p>
+</blockquote>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Monty_open_door.svg" class="img-fluid figure-img"></p>
+<figcaption>Depiction of Monty Hall Problem: 3 doors, 3rd is open showing a goat</figcaption>
+</figure>
+</div>
+</div></div><p>How should you ‘model’ your choices?</p>
+<p>Do we have all the information necessary?</p>
+<p>We need to know: is there an equal initial probability of the car being behind each door? We’ll assume yes. Let’s additionally assume that Monty never reveals the car, and if he has a choice between two doors with goats behind them, he picks randomly either with probability <span class="math inline">\(1/2\)</span>.</p>
+<p>Let <span class="math inline">\(M_i\)</span> denote the event where Monty opens the <span class="math inline">\(i\)</span>th door. Also, let <span class="math inline">\(D_i\)</span> denote the event where the car is behind door <span class="math inline">\(i\)</span>. We will assume as in the puzzle given that we have chosen door 1 and Monty has shown us there is a goat behind door 3.</p>
+<p>Notice that <span class="math inline">\(P(D_1) = P(D_2) = P(D_3) = 1/3\)</span> by our first assumption. (These are unconditioned probabilities, before we learn anything). Our second assumption then implies the following table of probabilities for the joint events <span class="math inline">\(P(M_i \text{ and } D_j \mid \text{we chose door 1})\)</span> for <span class="math inline">\(i, j \in \{ 1, 2, 3 \}\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/unit1_monty_hall_table/monty_hall_table.svg" class="img-fluid figure-img" style="width:85.0%"></p>
+<figcaption>Joint probabilities for where the car is and what door Monty shows</figcaption>
+</figure>
+</div>
+<p>Bayes’ Rule Approach:</p>
+<p>Now we want to compare <span class="math inline">\(P(D_1 | M_3)\)</span> vs.&nbsp;<span class="math inline">\(P(D_2 | M_3)\)</span>. We can use Bayes’ rule to calculate this using quantities we either already have or can get.</p>
+<p><span class="math display">\[P(D_1 | M_3) = \frac{P(M_3 | D_1)P(D_1)}{P(M_3)} = \frac{(1/2) \times (1/3)}{(1/2)} = \frac{1}{3}.\]</span> <span class="math display">\[P(D_2 | M_3) = \frac{P(M_3 | D_2)P(D_2)}{P(M_3)} = \frac{1 \times (1/3)}{(1/2)} = \frac{2}{3}.\]</span></p>
+<p>Justifications: We take by assumption that we chose door 1, so Monty will never choose door 1, and hence <span class="math inline">\(P(M_3) = 1/2\)</span>. In the first case, Monty’s hand is not forced. In the second case, Monty’s hand is forced, and hence <span class="math inline">\(P(M_3 | D_2) = 1\)</span>.</p>
+<p>Thus we conclude that it is superior to switch to door 2.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Derivation of Bayes’ Formula</p>
+<p>Recall the definition of conditional probability. <span class="math display">\[P(A | B) = P(A \cap B) / P(B), \quad \quad P(B | A) = P(A \cap B) / P(A)\]</span> <span class="math display">\[\implies \; P(A | B) P(B) = P(B | A) P(A)\]</span> <span class="math display">\[\therefore P(B | A) = \frac{P(A | B) P(B)}{P(A)}.\]</span></p>
+</div>
+</div>
+<p>Direct Approach:</p>
+<p>You could say, can’t we just use the definition of conditional probability straight away? Yes, you can. Essentially it’s constructing the above table that’s the important part in seeing the solution clearly.</p>
+<p><span class="math display">\[P(D_1 | M_3 ) = \frac{P(D_1 \cap M_3)}{P(M_3)} = \frac{1/6}{1/2} = \frac{1}{3}.\]</span> <span class="math display">\[P(D_2 | M_3 ) = \frac{P(D_2 \cap M_3)}{P(M_3)} = \frac{1/3}{1/2} = \frac{2}{3}.\]</span></p>
+<p>Problematic Approach:</p>
+<p>What’s wrong with saying <span class="math inline">\(M_3\)</span> implies that either <span class="math inline">\(D_1\)</span> or <span class="math inline">\(D_2\)</span> must hold, so <span class="math display">\[P(D_1 | M_3) = \frac{P(D_1 \cap M_3)}{P(M_3)} = \frac{P(D_1 \cap \{ D_1, D_2 \})}{P(\{D_1, D_2\})} = \frac{1/3}{2/3} = \frac{1}{2},\]</span> and by the fact that <span class="math inline">\(P(D_2 | M_3) = 1-P(D_1|M_3)\)</span>, we have that <span class="math inline">\(P(D_2 | M_3) = 1/2\)</span> as well, where <span class="math inline">\(P(\{D_1, D_2\})\)</span> refers to the probability of <em>either</em> the car being behind door 1 or door 2.</p>
+<p>Well, <span class="math inline">\(M_3\)</span> and <span class="math inline">\(\{D_1, D_2\}\)</span> are not the same events. It is true that <span class="math inline">\(M_3\)</span> implies the car is behind either door one or door two, but it’s not the case that the door being behind either door one or door two implies that Monty will open door 3. If they’re not the same events, then we cannot assume that their probabilities are equal. Hence, the above steps incorrectly replace <span class="math inline">\(P(M_3)\)</span> with 2/3, and <span class="math inline">\(P(D_1 \cap M_3)\)</span>, and in the numerator, the joint probability of <span class="math inline">\(P(D_1 \cap M_3)\)</span> need not equal <span class="math inline">\(P(D_1 \cap \{ D_1, D_2 \}) = P(D_1)\)</span>.</p>
+
+
+
+</section>
 </section>
 
 </main> <!-- /main -->

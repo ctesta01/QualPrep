@@ -4,8 +4,8 @@ title: "Probability and Inference"
 
 Largely the probability and inference material that we will be examined on 
 comes from [@casella2002statistical], though some of the later theory around 
-point-estimation and hypothesis testing comes from [@lehmann2022testing; @lehmann1998theory]. Unfortunately, for some of the material towards the end on 
-the asymptotic properties of maximum likelihood estimates and the Wald, Score, and Likelihood Ratio Tests, the course materials refer heavily to notes from [Robert Gray](https://www.hsph.harvard.edu/profile/robert-gray/) ([google scholar](https://scholar.google.com/citations?user=QyY7JGIAAAAJ&hl=en&oi=sra)), and I don't believe his 
+point-estimation and hypothesis testing comes from [@lehmann2022testing; @lehmann1998theory]. Unfortunately, for much of the material towards the end (on 
+the asymptotic properties of maximum likelihood estimates and the Wald, Score, and Likelihood Ratio Tests) the course materials refer heavily to notes from [Robert Gray](https://www.hsph.harvard.edu/profile/robert-gray/) ([google scholar](https://scholar.google.com/citations?user=QyY7JGIAAAAJ&hl=en&oi=sra)), and I don't believe his 
 notes are publicly available, nor do I have permission to share them. As such, I'll 
 try to find corroborating references for the same material when I get to that point. 
 
