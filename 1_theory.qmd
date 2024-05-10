@@ -1,0 +1,28 @@
+---
+title: "Probability and Inference"
+---
+
+Largely the probability and inference material that we will be examined on 
+comes from [@casella2002statistical], though some of the later theory around 
+point-estimation and hypothesis testing comes from [@lehmann2022testing; @lehmann1998theory]. Unfortunately, for some of the material towards the end on 
+the asymptotic properties of maximum likelihood estimates and the Wald, Score, and Likelihood Ratio Tests, the course materials refer heavily to notes from [Robert Gray](https://www.hsph.harvard.edu/profile/robert-gray/) ([google scholar](https://scholar.google.com/citations?user=QyY7JGIAAAAJ&hl=en&oi=sra)), and I don't believe his 
+notes are publicly available, nor do I have permission to share them. As such, I'll 
+try to find corroborating references for the same material when I get to that point. 
+
+For the probability-focused material, we may also refer to a handful of other references
+including [@blitzstein2019introduction; @bishop2006pattern; @gut2009intermediate; @stoyanov2013counterexamples]. 
+
+--- 
+
+At a high-level, how do we distinguish Probability and Statistics? 
+
+In general, these are answers to dual problems:  Probability theory gives 
+us the tools to carry out deductive reasoning, where based on _perfect, complete knowledge_ of 
+random processes, we can derive true statements about the result (e.g., statements
+about expectation, variance, etc.). On the other hand, statistical inference
+allows us to go from _observed data_ and combine it with assumptions to 
+draw conclusions inductively, which may or may not be correct. For example, a
+statistical statement might be that a particular way of constructing a confidence interval 
+(under assumptions) has a 95% probability of containing the true population parameter when 
+repeatedly performing the same experiment (e.g., in the Frequentist paradigm). 
+

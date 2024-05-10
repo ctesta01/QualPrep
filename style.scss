@@ -1,0 +1,85 @@
+/*-- scss:defaults --*/
+
+$font-family-sans-serif: "Lora";
+$bs-body-font-family: "Lora";
+$web-font-path: "No";
+
+/*-- scss:rules --*/
+
+/* lora-regular - latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lora Regular'), local('Lora-Regular'),
+       url('fonts/lora-v15-latin-regular.woff2') format('woff2'),
+       url('fonts/lora-v15-latin-regular.woff') format('woff');
+}
+
+/* lora-italic - latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Lora Italic'), local('Lora-Italic'),
+       url('fonts/lora-v15-latin-italic.woff2') format('woff2'),
+       url('fonts/lora-v15-latin-italic.woff') format('woff');
+}
+
+/* lora-700 - latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lora Bold'), local('Lora-Bold'),
+       url('fonts/lora-v15-latin-700.woff2') format('woff2'),
+       url('fonts/lora-v15-latin-700.woff') format('woff');
+}
+
+/* lora-700italic - latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Lora Bold Italic'), local('Lora-BoldItalic'),
+       url('fonts/lora-v15-latin-700italic.woff2') format('woff2'),
+       url('fonts/lora-v15-latin-700italic.woff') format('woff');
+}
+/* marcellus-sc-regular - latin */
+@font-face {
+  font-family: 'Marcellus SC';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Marcellus SC'), local('MarcellusSC-Regular'),
+       url('fonts/marcellus-sc-v7-latin-regular.woff2') format('woff2'),
+       url('fonts/marcellus-sc-v7-latin-regular.woff') format('woff');
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+    font-family: "Marcellus SC", sans-serif;
+    margin-bottom: 0.2em;
+    margin-top: 0.8em;
+    color: #a81010;
+}
+
+strong {
+  color: #a81010;
+}
+
+a {
+  color: #3498db;
+}
+
+.vocab {
+  color: #008B72;
+}
+
+.quarto-title-meta {
+  font-size: 22px;
+}
+
+.sidebar nav[role="doc-toc"] ul {
+  display: block;
+}
+

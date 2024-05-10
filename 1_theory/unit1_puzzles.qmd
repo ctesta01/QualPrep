@@ -1,0 +1,55 @@
+---
+title: "Unit 1: History: Puzzles, Paradoxes, and Motivation"
+---
+
+> *I believe that we do not know anything for certain, but everything probably.*
+Christiaan Huygens, Oeuvres Completes
+
+# History 
+
+It would be rather bland if I only spent all summer cramming, so I'll try to 
+capture the big picture as well.
+
+One of the things I loved about the presentation in our Probability class (BST 230)
+was that we had a brief unit on the history of probability at the beginning. 
+
+I trust that the reader can peruse the following references on their own: 
+
+  * [Wikipedia: History of Probability](https://en.wikipedia.org/wiki/Probability_theory#History_of_probability)
+  * [Blogpost on History of Probability](https://bcss.org.my/tut/bayes-with-jags-a-tutorial-for-wildlife-researchers/probability/a-brief-history-of-probability/)
+  * [Kady Schneiter and Todd Partridge's Post on History of Probability](https://www.usu.edu/math/schneit/StatsStuff/Probability/probability2.html)
+  * [Britannica, Probability](https://www.britannica.com/science/probability)
+  * [@todhunter2014history]
+  * [@langou2009translation]
+
+# Puzzles
+
+Our course made a great deal about motivating examples like: 
+
+  * [The Monty Hall Problem](https://en.wikipedia.org/wiki/Monty_Hall_problem)
+  * [The Exchange Paradox / Two Envelopes Problem](https://en.wikipedia.org/wiki/Two_envelopes_problem)
+  * [The St. Petersburg Problem](https://en.wikipedia.org/wiki/St._Petersburg_paradox)
+
+What I learned from these examples is that almost no matter how good your naïve
+intuition is, formalizing your assumptions and using line-by-line justified
+proofs seems much more likely to land you at a valid conclusion than heuristic
+reasoning. And while I don't expect the Gambler's Fallacy to appear on a
+qualifying exam, I certainly wouldn't want to be caught off-guard by a
+puzzle-style problem that stresses exactly this skill of translating a
+word-problem into a formal, mathematical setup and asking us to follow through
+on its logical consequences. 
+
+To some extent, I wish to find a compendium of probability-themed puzzles, and I have a
+few leads that I have not yet verified: 
+
+  * I strongly suspect that Martin Gardner's writing [@gardner1956mathematics; @gardner2005colossal] strongly emphasizes probability puzzles, so I'll try to select
+  a few to do from his work. In a similar vein, I'm not sure if I can find old copies of 
+  the American Statistician, but I know the Monty Hall puzzle was originally 
+  proposed as a puzzle in the American Statistician, so that may be a fruitful 
+  place to look. 
+  * I have also found that the Institute of Mathematical Statistics has a 
+  *Student Puzzle Corner* here: <https://imstat.org/2023/12/15/student-puzzle-corner-48/>
+  * Following the *See Also* section from the Monty Hall Problem Wikipedia page yields 
+  [the Sleeping Beauty Problem](https://en.wikipedia.org/wiki/Sleeping_Beauty_problem) and 
+  [the Boy or Girl Paradox](https://en.wikipedia.org/wiki/Boy_or_girl_paradox).
+

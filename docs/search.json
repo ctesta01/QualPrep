@@ -1,0 +1,63 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Qualifying Exam Preparation",
+    "section": "",
+    "text": "Welcome to my notes from Summer 2024! These notes are principally for me to organize my thinking as I prepare for my PhD qualifying exams in Probability and Statistical Inference, (Statistical) Methods, and Data Structures & Algorithms. If they’re helpful to you, I’d love to hear about it! If you spot errors, please let me know. There should be a commenting system enabled soon so that you can leave comments (with support for LaTeX too!).\nEnjoy!",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome!</span>"
+    ]
+  },
+  {
+    "objectID": "1_theory/unit1_puzzles.html",
+    "href": "1_theory/unit1_puzzles.html",
+    "title": "Unit 1: History: Puzzles, Paradoxes, and Motivation",
+    "section": "",
+    "text": "I believe that we do not know anything for certain, but everything probably. Christiaan Huygens, Oeuvres Completes\n\n\nHistory\nIt would be rather bland if I only spent all summer cramming, so I’ll try to capture the big picture as well.\nOne of the things I loved about the presentation in our Probability class (BST 230) was that we had a brief unit on the history of probability at the beginning.\nI trust that the reader can peruse the following references on their own:\n\nWikipedia: History of Probability\nBlogpost on History of Probability\nKady Schneiter and Todd Partridge’s Post on History of Probability\nBritannica, Probability\n(Todhunter 2014)\n(Langou 2009)\n\n\nTodhunter, Isaac. 2014. A History of the Mathematical Theory of Probability: From the Time of Pascal to That of Laplace. Cambridge University Press.\n\nLangou, Julien. 2009. “Translation and Modern Interpretation of Laplace’s Théorie Analytique Des Probabilités, Pages 505-512, 516-520.” https://arxiv.org/abs/0907.4695.\n\n\nPuzzles\nOur course made a great deal about motivating examples like:\n\nThe Monty Hall Problem\nThe Exchange Paradox / Two Envelopes Problem\nThe St. Petersburg Problem\n\nWhat I learned from these examples is that almost no matter how good your naïve intuition is, formalizing your assumptions and using line-by-line justified proofs seems much more likely to land you at a valid conclusion than heuristic reasoning. And while I don’t expect the Gambler’s Fallacy to appear on a qualifying exam, I certainly wouldn’t want to be caught off-guard by a puzzle-style problem that stresses exactly this skill of translating a word-problem into a formal, mathematical setup and asking us to follow through on its logical consequences.\nTo some extent, I wish to find a compendium of probability-themed puzzles, and I have a few leads that I have not yet verified:\n\nI strongly suspect that Martin Gardner’s writing (Gardner 1956, 2005) strongly emphasizes probability puzzles, so I’ll try to select a few to do from his work. In a similar vein, I’m not sure if I can find old copies of the American Statistician, but I know the Monty Hall puzzle was originally proposed as a puzzle in the American Statistician, so that may be a fruitful place to look.\nI have also found that the Institute of Mathematical Statistics has a Student Puzzle Corner here: https://imstat.org/2023/12/15/student-puzzle-corner-48/\nFollowing the See Also section from the Monty Hall Problem Wikipedia page yields the Sleeping Beauty Problem and the Boy or Girl Paradox.\n\n\n\n\nGardner, Martin. 1956. Mathematics, Magic and Mystery. Dover Puzzle Books: Math Puzzles Ser. Dover Publications. https://www.ebay.com/itm/264709866263.\n\n———. 2005. The Colossal Book of Short Puzzles and Problems. Edited by Dana Richards. W. W. Norton & Company. https://www.barnesandnoble.com/w/the-colossal-book-of-short-puzzles-and-problems-martin-gardner/1100872012.",
+    "crumbs": [
+      "Probability and Inference",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Unit 1: History: Puzzles, Paradoxes, and Motivation</span>"
+    ]
+  },
+  {
+    "objectID": "theory.html",
+    "href": "theory.html",
+    "title": "Probability and Inference",
+    "section": "",
+    "text": "Largely the probability and inference material that we will be examined on comes from (Casella and Berger 2002), though some of the later theory around point-estimation and hypothesis testing comes from (E. L. Lehmann and Romano 2022; Erich L. Lehmann and Casella 1998). Unfortunately, for some of the material towards the end on the asymptotic properties of maximum likelihood estimates and the Wald, Score, and Likelihood Ratio Tests, the course materials refer heavily to notes from Robert Gray (google scholar), and I don’t believe his notes are publicly available, nor do I have permission to share them. As such, I’ll try to find corroborating references for the same material when I get to that point.\nFor the probability-focused material, we may also refer to a handful of other references including (Blitzstein and Hwang 2019; Bishop 2006; Gut 2009; Stoyanov 2013).\n\n\n\n\nBishop, Christopher M. 2006. Pattern Recognition and Machine Learning. Springer.\n\n\nBlitzstein, Joseph K., and Jessica Hwang. 2019. Introduction to Probability. 2nd ed. Chapman; Hall/CRC.\n\n\nCasella, George, and Roger L Berger. 2002. Statistical Inference. Vol. 2. Duxbury Pacific Grove, CA.\n\n\nGut, Alan. 2009. An Intermediate Course in Probability. 2nd ed. Springer.\n\n\nLehmann, E. L., and Joseph P. Romano. 2022. Testing Statistical Hypotheses. Cham: Springer. https://doi.org/10.1007/978-3-030-70578-7.\n\n\nLehmann, Erich L., and George Casella. 1998. Theory of Point Estimation. 2nd ed. New York: Springer.\n\n\nStoyanov, Jordan M. 2013. Counterexamples in Probability. 3rd ed. Dover Publications.",
+    "crumbs": [
+      "Probability and Inference"
+    ]
+  },
+  {
+    "objectID": "2_methods.html",
+    "href": "2_methods.html",
+    "title": "Methods",
+    "section": "",
+    "text": "Lorem ipsum ad absurdum",
+    "crumbs": [
+      "Methods"
+    ]
+  },
+  {
+    "objectID": "1_theory.html",
+    "href": "1_theory.html",
+    "title": "Probability and Inference",
+    "section": "",
+    "text": "Largely the probability and inference material that we will be examined on comes from (Casella and Berger 2002), though some of the later theory around point-estimation and hypothesis testing comes from (E. L. Lehmann and Romano 2022; Erich L. Lehmann and Casella 1998). Unfortunately, for some of the material towards the end on the asymptotic properties of maximum likelihood estimates and the Wald, Score, and Likelihood Ratio Tests, the course materials refer heavily to notes from Robert Gray (google scholar), and I don’t believe his notes are publicly available, nor do I have permission to share them. As such, I’ll try to find corroborating references for the same material when I get to that point.\n\nCasella, George, and Roger L Berger. 2002. Statistical Inference. Vol. 2. Duxbury Pacific Grove, CA.\n\nLehmann, E. L., and Joseph P. Romano. 2022. Testing Statistical Hypotheses. Cham: Springer. https://doi.org/10.1007/978-3-030-70578-7.\n\nLehmann, Erich L., and George Casella. 1998. Theory of Point Estimation. 2nd ed. New York: Springer.\n\nBlitzstein, Joseph K., and Jessica Hwang. 2019. Introduction to Probability. 2nd ed. Chapman; Hall/CRC.\n\nBishop, Christopher M. 2006. Pattern Recognition and Machine Learning. Springer.\n\nGut, Alan. 2009. An Intermediate Course in Probability. 2nd ed. Springer.\n\nStoyanov, Jordan M. 2013. Counterexamples in Probability. 3rd ed. Dover Publications.\nFor the probability-focused material, we may also refer to a handful of other references including (Blitzstein and Hwang 2019; Bishop 2006; Gut 2009; Stoyanov 2013).\n\nAt a high-level, how do we distinguish Probability and Statistics?\nIn general, these are answers to dual problems: Probability theory gives us the tools to carry out deductive reasoning, where based on perfect, complete knowledge of random processes, we can derive true statements about the result (e.g., statements about expectation, variance, etc.). On the other hand, statistical inference allows us to go from observed data and combine it with assumptions to draw conclusions inductively, which may or may not be correct. For example, a statistical statement might be that a particular way of constructing a confidence interval (under assumptions) has a 95% probability of containing the true population parameter when repeatedly performing the same experiment (e.g., in the Frequentist paradigm).",
+    "crumbs": [
+      "Probability and Inference"
+    ]
+  },
+  {
+    "objectID": "3_datastructures.html",
+    "href": "3_datastructures.html",
+    "title": "Part 3: Data Structures & Algorithms",
+    "section": "",
+    "text": "Lorem ipsum ad absurdum",
+    "crumbs": [
+      "Part 3: Data Structures & Algorithms"
+    ]
+  }
+]

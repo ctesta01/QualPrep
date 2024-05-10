@@ -1,0 +1,28 @@
+project:
+  type: book
+  output-dir: docs
+
+book: 
+  title: "Qualifying Exam Preparation"
+  author: "Christian Testa"
+  chapters:
+    - index.qmd
+    - part: 1_theory.qmd
+      chapters:
+      - 1_theory/unit1_puzzles.qmd
+    - part: 2_methods.qmd
+    - part: 3_datastructures.qmd
+
+toc: true
+number-sections: true
+bibliography: references.bib  
+reference-location: margin
+citation-location: margin
+comments:
+  giscus:
+    repo: ctesta01/QualPrep
+
+format: 
+  html: 
+    theme: style.scss
+    number-sections: false

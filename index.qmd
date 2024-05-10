@@ -1,0 +1,12 @@
+---
+title: "Welcome!"
+---
+
+Welcome to my notes from Summer 2024!  These notes are principally for me to
+organize my thinking as I prepare for my PhD qualifying exams in Probability and
+Statistical Inference, (Statistical) Methods, and Data Structures & Algorithms.
+If they're helpful to you, I'd love to hear about it!  If you spot errors,
+please let me know. There should be a commenting system enabled soon 
+so that you can leave comments (with support for LaTeX too!). 
+
+Enjoy!
