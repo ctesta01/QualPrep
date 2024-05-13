@@ -4,200 +4,127 @@ subtitle: |
   > *I believe that we do not know anything for certain, but everything probably.*
   Christiaan Huygens, Oeuvres Completes
 ---
-{{< include ../preamble.qmd >}}
-:::{.column-margin}
-![<small>[Christiaan Huygens](https://en.wikipedia.org/wiki/Christiaan_Huygens), Lord of Zeelhem (1629-1695) was a Dutch mathematician, physicist, engineer, astronomer, and inventor who is regarded as a key figure in the Scientific Revolution, to quote Wikipedia.</small>](https://upload.wikimedia.org/wikipedia/commons/a/a4/Christiaan_Huygens-painting.jpeg)
-:::
-# History 
+{{< include ../preamble.qmd >}} 
+:::{.column-margin} 
+![Christiaan Huygens, Lord of Zeelhem (1629-1695) was a Dutch mathematician, physicist, engineer, astronomer, and inventor who is regarded as a key figure in the Scientific Revolution, to quote Wikipedia.](https://upload.wikimedia.org/wikipedia/commons/a/a4/Christiaan_Huygens-painting.jpeg){width='1in'}
+::: 
+# History
 
-One of the things I loved about the presentation in our Probability class (BST 230)
-was that we had a brief unit on the history of probability at the beginning. 
+One of the things I loved about the presentation in our Probability class (BST 230) was that we had a brief unit on the history of probability at the beginning.
 
-I trust that the reader can peruse the following references on their own: 
+I trust that the reader can peruse the following references on their own:
 
-  * [Wikipedia: History of Probability](https://en.wikipedia.org/wiki/Probability_theory#History_of_probability)
-  * [Blogpost on History of Probability](https://bcss.org.my/tut/bayes-with-jags-a-tutorial-for-wildlife-researchers/probability/a-brief-history-of-probability/)
-  * [Kady Schneiter and Todd Partridge's Post on History of Probability](https://www.usu.edu/math/schneit/StatsStuff/Probability/probability2.html)
-  * [Britannica, Probability](https://www.britannica.com/science/probability)
-  * [@todhunter2014history]
-  * [@langou2009translation]
+-   [Wikipedia: History of Probability](https://en.wikipedia.org/wiki/Probability_theory#History_of_probability)
+-   [Blogpost on History of Probability](https://bcss.org.my/tut/bayes-with-jags-a-tutorial-for-wildlife-researchers/probability/a-brief-history-of-probability/)
+-   [Kady Schneiter and Todd Partridge's Post on History of Probability](https://www.usu.edu/math/schneit/StatsStuff/Probability/probability2.html)
+-   [Britannica, Probability](https://www.britannica.com/science/probability)
+-   [@todhunter2014history]
+-   [@langou2009translation]
 
 # Puzzles
 
-Our course made a great deal about motivating examples like: 
+Our course made a great deal about motivating examples like:
 
-  * [The Monty Hall Problem](https://en.wikipedia.org/wiki/Monty_Hall_problem)
-  * [The Exchange Paradox / Two Envelopes Problem](https://en.wikipedia.org/wiki/Two_envelopes_problem)
-  * [The St. Petersburg Problem](https://en.wikipedia.org/wiki/St._Petersburg_paradox)
+-   [The Monty Hall Problem](https://en.wikipedia.org/wiki/Monty_Hall_problem)
+-   [The Exchange Paradox / Two Envelopes Problem](https://en.wikipedia.org/wiki/Two_envelopes_problem)
+-   [The St. Petersburg Problem](https://en.wikipedia.org/wiki/St._Petersburg_paradox)
 
-What I learned from these examples is that almost no matter how good your naïve
-intuition is, formalizing your assumptions and using line-by-line justified
-proofs seems much more likely to land you at a valid conclusion than heuristic
-reasoning. And while I don't expect the Gambler's Fallacy to appear on a
-qualifying exam, I certainly wouldn't want to be caught off-guard by a
-puzzle-style problem that stresses exactly this skill of translating a
-word-problem into a formal, mathematical setup and asking us to follow through
-on its logical consequences. 
+What I learned from these examples is that almost no matter how good your naïve intuition is, formalizing your assumptions and using line-by-line justified proofs seems much more likely to land you at a valid conclusion than heuristic reasoning. And while I don't expect the Gambler's Fallacy to appear on a qualifying exam, I certainly wouldn't want to be caught off-guard by a puzzle-style problem that stresses exactly this skill of translating a word-problem into a formal, mathematical setup and asking us to follow through on its logical consequences.
 
-To some extent, I wish to find a compendium of probability-themed puzzles, and I have a
-few leads that I have not yet verified: 
+To some extent, I wish to find a compendium of probability-themed puzzles, and I have a few leads that I have not yet verified:
 
-  * I strongly suspect that Martin Gardner's writing [@gardner1956mathematics; @gardner2005colossal] emphasizes probability puzzles, so I'll try to select
-  a few to do from his work. In a similar vein, I'm not sure if I can find old copies of 
-  the American Statistician, but I know the Monty Hall puzzle was originally 
-  proposed as a puzzle in the American Statistician, so that may be a fruitful 
-  place to look. 
-  * I have also found that the Institute of Mathematical Statistics has a 
-  *Student Puzzle Corner* here: <https://imstat.org/2023/12/15/student-puzzle-corner-48/>
-  * Following the *See Also* section from the Monty Hall Problem Wikipedia page yields 
-  [the Sleeping Beauty Problem](https://en.wikipedia.org/wiki/Sleeping_Beauty_problem) and 
-  [the Boy or Girl Paradox](https://en.wikipedia.org/wiki/Boy_or_girl_paradox).
+-   I strongly suspect that Martin Gardner's writing [@gardner1956mathematics; @gardner2005colossal] emphasizes probability puzzles, so I'll try to select a few to do from his work. In a similar vein, I'm not sure if I can find old copies of the American Statistician, but I know the Monty Hall puzzle was originally proposed as a puzzle in the American Statistician, so that may be a fruitful place to look.
+-   I have also found that the Institute of Mathematical Statistics has a *Student Puzzle Corner* here: <https://imstat.org/2023/12/15/student-puzzle-corner-48/>
+-   Following the *See Also* section from the Monty Hall Problem Wikipedia page yields [the Sleeping Beauty Problem](https://en.wikipedia.org/wiki/Sleeping_Beauty_problem) and [the Boy or Girl Paradox](https://en.wikipedia.org/wiki/Boy_or_girl_paradox).
 
-## Monty Hall Problem 
+## Monty Hall Problem
 
-The Monty Hall problem can be stated so simply: 
+The Monty Hall problem can be stated so simply:
 
-> Suppose you're on a game show, and you're given the choice of three doors:
-Behind one door is a car; behind the others, goats. You pick a door, say No. 1,
-and the host [Monty], who knows what's behind the doors, opens another door, say No. 3,
-which has a goat. He then says to you, "Do you want to pick door No. 2?" Is it
-to your advantage to switch your choice?
+> Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host \[Monty\], who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, "Do you want to pick door No. 2?" Is it to your advantage to switch your choice?
 
-::: {.column-margin}
+::: column-margin
 ![Depiction of Monty Hall Problem: 3 doors, 3rd is open showing a goat](https://upload.wikimedia.org/wikipedia/commons/3/3f/Monty_open_door.svg)
 :::
 
 How should you 'model' your choices?
 
-Do we have all the information necessary? 
+Do we have all the information necessary?
 
-We need to know: is there an equal 
-initial probability of the car being behind each door? We'll assume yes. 
-Let's additionally assume that Monty never reveals the car, and if he has a 
-choice between two doors with goats behind them, he picks randomly either with 
-probability $1/2$.
+We need to know: is there an equal initial probability of the car being behind each door? We'll assume yes. Let's additionally assume that Monty never reveals the car, and if he has a choice between two doors with goats behind them, he picks randomly either with probability $1/2$.
 
-Let $M_i$ denote the event where Monty opens the $i$th door. Also, let $D_i$
-denote the event where the car is behind door $i$. We will assume as in the
-puzzle given that we have chosen door 1 and Monty has shown us there is a goat
-behind door 3. 
+Let $M_i$ denote the event where Monty opens the $i$th door. Also, let $D_i$ denote the event where the car is behind door $i$. We will assume as in the puzzle given that we have chosen door 1 and Monty has shown us there is a goat behind door 3.
 
-Notice that $P(D_1) = P(D_2) = P(D_3) = 1/3$ by our first assumption. (These are 
-unconditioned probabilities, before we learn anything). Our second assumption 
-then implies the following table of probabilities for the joint 
-events $P(M_i \text{ and } D_j \mid \text{we chose door 1})$
-for $i, j \in \{ 1, 2, 3 \}$. 
+Notice that $P(D_1) = P(D_2) = P(D_3) = 1/3$ by our first assumption. (These are unconditioned probabilities, before we learn anything). Our second assumption then implies the following table of probabilities for the joint events $P(M_i \text{ and } D_j \mid \text{we chose door 1})$ for $i, j \in \{ 1, 2, 3 \}$.
 
-![Joint probabilities for where the car is and what door Monty shows](figures/unit1_monty_hall_table/monty_hall_table.svg){width='85%'}
+![Joint probabilities for where the car is and what door Monty shows](figures/unit1_monty_hall_table/monty_hall_table.svg){width="85%"}
 
 Bayes' Rule Approach:
 
-Now we want to compare $P(D_1 | M_3)$ vs. $P(D_2 | M_3)$. We can use Bayes' rule 
-to calculate this using quantities we either already have or can get. 
+Now we want to compare $P(D_1 | M_3)$ vs. $P(D_2 | M_3)$. We can use Bayes' rule to calculate this using quantities we either already have or can get.
 
-$$P(D_1 | M_3) = \frac{P(M_3 | D_1)P(D_1)}{P(M_3)} = \frac{(1/2) \times (1/3)}{(1/2)} = \frac{1}{3}.$$
-$$P(D_2 | M_3) = \frac{P(M_3 | D_2)P(D_2)}{P(M_3)} = \frac{1 \times (1/3)}{(1/2)} = \frac{2}{3}.$$
+$$P(D_1 | M_3) = \frac{P(M_3 | D_1)P(D_1)}{P(M_3)} = \frac{(1/2) \times (1/3)}{(1/2)} = \frac{1}{3}.$$ $$P(D_2 | M_3) = \frac{P(M_3 | D_2)P(D_2)}{P(M_3)} = \frac{1 \times (1/3)}{(1/2)} = \frac{2}{3}.$$
 
-Justifications: We take by assumption that we chose door 1, so Monty will never 
-choose door 1, and hence $P(M_3) = 1/2$. In the first case, Monty's hand 
-is not forced. In the second case, Monty's hand is 
-forced, and hence $P(M_3 | D_2) = 1$. 
+Justifications: We take by assumption that we chose door 1, so Monty will never choose door 1, and hence $P(M_3) = 1/2$. In the first case, Monty's hand is not forced. In the second case, Monty's hand is forced, and hence $P(M_3 | D_2) = 1$.
 
-Thus we conclude that it is superior to switch to door 2. 
+Thus we conclude that it is superior to switch to door 2.
 
-:::{.callout-tip}
+::: callout-tip
 Derivation of Bayes' Formula
 
-Recall the definition of conditional probability.
-$$P(A | B) = P(A \cap B) / P(B), \quad \quad P(B | A) = P(A \cap B) / P(A)$$
-$$\implies \; P(A | B) P(B) = P(B | A) P(A)$$
-$$\therefore P(B | A) = \frac{P(A | B) P(B)}{P(A)}.$$
+Recall the definition of conditional probability. $$P(A | B) = P(A \cap B) / P(B), \quad \quad P(B | A) = P(A \cap B) / P(A)$$ $$\implies \; P(A | B) P(B) = P(B | A) P(A)$$ $$\therefore P(B | A) = \frac{P(A | B) P(B)}{P(A)}.$$
 :::
 
 Direct Approach:
 
-You could say, can't we just use the definition of conditional probability
-straight away?  Yes, you can. Essentially it's constructing the above table that's
-the important part in seeing the solution clearly. 
+You could say, can't we just use the definition of conditional probability straight away? Yes, you can. Essentially it's constructing the above table that's the important part in seeing the solution clearly.
 
-$$P(D_1 | M_3 ) = \frac{P(D_1 \cap M_3)}{P(M_3)} = \frac{1/6}{1/2} = \frac{1}{3}.$$
-$$P(D_2 | M_3 ) = \frac{P(D_2 \cap M_3)}{P(M_3)} = \frac{1/3}{1/2} = \frac{2}{3}.$$
+$$P(D_1 | M_3 ) = \frac{P(D_1 \cap M_3)}{P(M_3)} = \frac{1/6}{1/2} = \frac{1}{3}.$$ $$P(D_2 | M_3 ) = \frac{P(D_2 \cap M_3)}{P(M_3)} = \frac{1/3}{1/2} = \frac{2}{3}.$$
 
 Problematic Approach:
 
-What's wrong with saying $M_3$ implies that either $D_1$ or $D_2$ must hold, so 
-$$P(D_1 | M_3) = \frac{P(D_1 \cap M_3)}{P(M_3)} = \frac{P(D_1 \cap \{ D_1, D_2 \})}{P(\{D_1, D_2\})} = \frac{1/3}{2/3} = \frac{1}{2},$$
-and by the fact that $P(D_2 | M_3) = 1-P(D_1|M_3)$, we have that $P(D_2 | M_3) = 1/2$ as well, where 
-$P(\{D_1, D_2\})$ refers to the probability of *either* the car being behind door 1 or door 2. 
+What's wrong with saying $M_3$ implies that either $D_1$ or $D_2$ must hold, so $$P(D_1 | M_3) = \frac{P(D_1 \cap M_3)}{P(M_3)} = \frac{P(D_1 \cap \{ D_1, D_2 \})}{P(\{D_1, D_2\})} = \frac{1/3}{2/3} = \frac{1}{2},$$ and by the fact that $P(D_2 | M_3) = 1-P(D_1|M_3)$, we have that $P(D_2 | M_3) = 1/2$ as well, where $P(\{D_1, D_2\})$ refers to the probability of *either* the car being behind door 1 or door 2.
 
-Well, $M_3$ and $\{D_1, D_2\}$ are not the same events. It is true that $M_3$
-implies the car is behind either door one or door two, but it's not the case
-that the door being behind either door one or door two implies that Monty will
-open door 3. If they're not the same events, then we cannot assume that their 
-probabilities are equal. Hence, the above steps incorrectly replace $P(M_3)$ with 
-2/3, and $P(D_1 \cap M_3)$, and in the numerator, the joint probability of 
-$P(D_1 \cap M_3)$ need not equal $P(D_1 \cap \{ D_1, D_2 \}) = P(D_1)$. 
+Well, $M_3$ and $\{D_1, D_2\}$ are not the same events. It is true that $M_3$ implies the car is behind either door one or door two, but it's not the case that the door being behind either door one or door two implies that Monty will open door 3. If they're not the same events, then we cannot assume that their probabilities are equal. Hence, the above steps incorrectly replace $P(M_3)$ with 2/3, and $P(D_1 \cap M_3)$, and in the numerator, the joint probability of $P(D_1 \cap M_3)$ need not equal $P(D_1 \cap \{ D_1, D_2 \}) = P(D_1)$.
 
-## Puzzle \#1 
+## Puzzle #1
 
-> There are 43 cookies to be given out at random to 10 children.  What is the 
-probability that each child gets at least 10 cookies? 
+> There are 43 cookies to be given out at random to 10 children. What is the probability that each child gets at least 2 cookies?
 
-:::{.callout-warning}
+::: callout-warning
 <details>
-<summary>
-Exercise in flawed thinking.
-</summary>
+
+<summary>Exercise in flawed thinking.</summary>
+
 Find the flaw in the following logic:
 
-Consider the outcomes where each child has 2+ cookies.  Then, for 20 cookies,
-we already know how those are distributed (each of the 10 children gets two cookies). 
-The remaining 23 cookies can be 
-assigned arbitrarily, so across the 10 kids there are a remaining $10^{23}$ 
-ways to distribute the cookies for each of the ${43 \choose 20}$ ways that 
-the 20-cookies already spoken-for can be distributed. 
+Consider the outcomes where each child has 2+ cookies. Then, for 20 cookies, we already know how those are distributed (each of the 10 children gets two cookies). The remaining 23 cookies can be assigned arbitrarily, so across the 10 kids there are a remaining $10^{23}$ ways to distribute the cookies for each of the ${43 \choose 20}$ ways that the 20-cookies already spoken-for can be distributed.
 
-That gives us 
-$$\frac{P(\text{ways to get to every child having 2+ cookies})}{P(\text{total number of ways to distribute 43 cookies})} = 
+That gives us $$\frac{P(\text{ways to get to every child having 2+ cookies})}{P(\text{total number of ways to distribute 43 cookies})} = 
 \frac{{43 \choose 20} \cdot 10^{23}}{10^{43}} = \frac{{43 \choose 20}}{10^{20}}.$$
 
 <details>
-<summary>
-Click to reveal the problem in the above logic.
-</summary>
-I think we're double-counting solutions when we say that 
-for each of the ${43 \choose 20}$ ways that we can say that the 20
-cookies are already spoken for, there are another $10^{23}$ ways to assign
-the other cookies. 
 
-Let's take a smaller example: assigning 4 cookies to 2 students, and I 
-want to know how often to expect each student gets 1+ cookie. 
-If I consider outcomes where cookies 1, 2, 3, 4 get assigned to children 
-$1, 2, *, *$, I would count $1,2,1,2$ towards this tally. 
-But if I later also consider outcomes of the form $*, *, 1, 2$, I would 
-again count the outcome $1,2,1,2$ twice. This is wrong, and a crucial mistake.
+<summary>Click to reveal the problem in the above logic.</summary>
 
-In general, the real flaw was in not adequately formalizing our work and using 
-heuristics like "if cookies are spoken for," which is not a rigorously defined
-probability concept. 
+I think we're double-counting solutions when we say that for each of the ${43 \choose 20}$ ways that we can say that the 20 cookies are already spoken for, there are another $10^{23}$ ways to assign the other cookies.
+
+Let's take a smaller example: assigning 4 cookies to 2 students, and I want to know how often to expect each student gets 1+ cookie. If I consider outcomes where cookies 1, 2, 3, 4 get assigned to children $1, 2, *, *$, I would count $1,2,1,2$ towards this tally. But if I later also consider outcomes of the form $*, *, 1, 2$, I would again count the outcome $1,2,1,2$ twice. This is wrong, and a crucial mistake.
+
+In general, the real flaw was in not adequately formalizing our work and using heuristics like "if cookies are spoken for," which is not a rigorously defined probability concept.
+
 </details>
+
 </details>
 :::
 
-First, notice that this is a classic
-multinomial setup.  The multinomial distribution can be thought of as giving the probability
-of observing the outcome $i \in \{ 1, ..., k \}$ coming up $x_i$ times when rolling a $k$-sided die $n$ times,
-and is a generalization of the Binomial distribution. We have that the 
-probability of each outcome $i$ coming up on a single roll is given by $\pi_i$.
+First, notice that this is a classic multinomial setup. The multinomial distribution can be thought of as giving the probability of observing the outcome $i \in \{ 1, ..., k \}$ coming up $x_i$ times when rolling a $k$-sided die $n$ times, and is a generalization of the Binomial distribution. We have that the probability of each outcome $i$ coming up on a single roll is given by $\pi_i$.
 
-If the so-called die is fair, $\pi_i = \pi_{i'}\; \forall i, i' \in \{ 1, ..., k\}$ or
-the die is unfair and $\pi_i$ is not necessarily equal to $\pi_i'$. In all cases, 
-we assume $\sum \pi_i = 1$. 
+If the so-called die is fair, $\pi_i = \pi_{i'}\; \forall i, i' \in \{ 1, ..., k\}$ or the die is unfair and $\pi_i$ is not necessarily equal to $\pi_i'$. In all cases, we assume $\sum \pi_i = 1$.
 
-Let $X = (X_1, ..., X_k)$ be a $\text{Multinomial}(n, k, \pi)$
-distributed where $\pi = (\pi_1, ..., \pi_k)$. 
+Let $X = (X_1, ..., X_k)$ be a $\text{Multinomial}(n, k, \pi)$ distributed where $\pi = (\pi_1, ..., \pi_k)$.
 
-The density of the Multinomial distribution is  
+The density of the Multinomial distribution is\
 $$
 \begin{aligned}
 P(X = x) & = {n \choose x_1,...,x_k!} \prod_{i=1}^k \pi_i^{x_i} \\
@@ -205,58 +132,43 @@ P(X = x) & = {n \choose x_1,...,x_k!} \prod_{i=1}^k \pi_i^{x_i} \\
 \end{aligned}
 $$
 
-:::{.callout-info}
+::: callout-info
 <details>
-<summary>
-Intuition
-</summary>
-I think of it this way: in the traditional Binomial outcome, there's two 
-outcomes that are being tallied, 1 or 0, and either 1 happens with 
-probability $\pi_1$, or 0 happens with probability $1-\pi_1$ in each trial. Here, 
-the $\sum \pi_i = 1$ assumption is making it so that either outcome $i$ 
-happens with probability $\pi_i$, or one of the other $i' \in \{ 1, ..., k\} \backslash i$ 
-outcomes happens with probability $1 - \pi_i$. 
+
+<summary>Intuition</summary>
+
+I think of it this way: in the traditional Binomial outcome, there's two outcomes that are being tallied, 1 or 0, and either 1 happens with probability $\pi_1$, or 0 happens with probability $1-\pi_1$ in each trial. Here, the $\sum \pi_i = 1$ assumption is making it so that either outcome $i$ happens with probability $\pi_i$, or one of the other $i' \in \{ 1, ..., k\} \backslash i$ outcomes happens with probability $1 - \pi_i$.
+
 </details>
 :::
 
-:::{.callout-tip}
+::: callout-tip
 <details>
-<summary>
-The Multinomial Theorem 
-</summary>
 
-For any positive integer $m$ and non-negative integer $n$,
-$$(x_1 + ... + x_m)^n = \sum_{k_1+...+ k_m = n} {n \choose k_1, ..., k_m} \prod_{i=1}^m x_i^{k_i},$$
-where $k_1, ..., k_m \in \mathbb N$ and ${n \choose k_1, ..., k_m} = \frac{n!}{k_1!\cdots k_m!}$.
+<summary>The Multinomial Theorem</summary>
+
+For any positive integer $m$ and non-negative integer $n$, $$(x_1 + ... + x_m)^n = \sum_{k_1+...+ k_m = n} {n \choose k_1, ..., k_m} \prod_{i=1}^m x_i^{k_i},$$ where $k_1, ..., k_m \in \mathbb N$ and ${n \choose k_1, ..., k_m} = \frac{n!}{k_1!\cdots k_m!}$.
+
 </details>
 :::
 
-Returning to the problem, let $p_n$ denote the probability that all 10 children
-receive at least 2 cookies each given that $n$ are given out uniformly at
-random.
+Returning to the problem, let $p_n$ denote the probability that all 10 children receive at least 2 cookies each given that $n$ are given out uniformly at random.
 
-Let $X_1, ..., X_{10}$ denote the random variables representing 
-how many cookies each of the 10 children gets. Notice that 
-$$
+Let $X_1, ..., X_{10}$ denote the random variables representing how many cookies each of the 10 children gets. Notice that $$
 {\small
 X_1, ..., X_{10} \Bigg\vert \sum_{i=1}^{10} X_i = 43 \sim 
 \text{Multinomial}(n = 43, k = 10, \pi_i = 1/10),}
-$$
-where $\pi_i = 1/10$ indicates that the distribution of cookies 
-is uniformly random (e.g., equal probability) across the 10 children. 
+$$ where $\pi_i = 1/10$ indicates that the distribution of cookies is uniformly random (e.g., equal probability) across the 10 children.
 
-:::{.callout}
+::: callout
 Poisson-Multinomial Relationship
 
-The Poisson and Multinomial distributions have an interesting relationship.
-When the outcomes $X_1, ..., X_k$ are such that $X_i \sim \text{Poisson}(\lambda_i)$, 
-then $\sum_{i=1}^k X_i \sim \text{Poisson}(\sum_{i=1}^k \lambda_i).$
+The Poisson and Multinomial distributions have an interesting relationship. When the outcomes $X_1, ..., X_k$ are such that $X_i \sim \text{Poisson}(\lambda_i)$, then $\sum_{i=1}^k X_i \sim \text{Poisson}(\sum_{i=1}^k \lambda_i).$
 
-One can easily derive via the definition of conditional probability that
-$$(X_1, ..., X_k) {\Bigg\vert} \sum_{i=1}^k X_i = N = n \sim \text{Multinomial}(n, k, \pi),$$
-where $\pi = \left(\frac{\lambda_1}{\sum \lambda_i}, ..., \frac{\lambda_k}{\sum \lambda_i}\right)$.
+One can easily derive via the definition of conditional probability that $$(X_1, ..., X_k) {\Bigg\vert} \sum_{i=1}^k X_i = N = n \sim \text{Multinomial}(n, k, \pi),$$ where $\pi = \left(\frac{\lambda_1}{\sum \lambda_i}, ..., \frac{\lambda_k}{\sum \lambda_i}\right)$.
 
 See [here](https://online.stat.psu.edu/stat504/lesson/2/2.3/2.3.6) for example.
+
 <details open>
 
 $$
@@ -269,28 +181,21 @@ P(X = x \Big \vert N = n) & = \frac{P(X = x, N = n)}{P(N = n)}  \\
 & \sim \text{Multinomial}(n, k, \pi).
 \end{aligned}
 $$
+
 </details>
 :::
 
-Since no information was given to us about how it came about that $n = 43$ cookies
-were given out, let's assume that it was the result of a $\text{Poisson}(\lambda)$ process. 
-This implies that the $X_i$ are independently and identically distributed 
-as $\text{Poisson}(\lambda/10)$ by a similar argument in the reverse direction. 
+Since no information was given to us about how it came about that $n = 43$ cookies were given out, let's assume that it was the result of a $\text{Poisson}(\lambda)$ process. This implies that the $X_i$ are independently and identically distributed as $\text{Poisson}(\lambda/10)$ by a similar argument in the reverse direction.
 
 <details open>
-$$P(X = x \Bigg| \sum X_i = n) = \frac{P(X = x, \sum X_i = n)}{\underbrace{P(\sum X_i = n)}_{\text{Poisson}(\lambda)}},$$
-and $X = x \implies \sum X_i = \sum x_i = n$, so $P(X = x, \sum X_i = n) = P(X = x)$ as
-long as $n = \sum x_i$.
-$$
+
+$$P(X = x \Bigg| \sum X_i = n) = \frac{P(X = x, \sum X_i = n)}{\underbrace{P(\sum X_i = n)}_{\text{Poisson}(\lambda)}},$$ and $X = x \implies \sum X_i = \sum x_i = n$, so $P(X = x, \sum X_i = n) = P(X = x)$ as long as $n = \sum x_i$. $$
 \begin{aligned}
 \therefore \;\; P(X = x) & = P(X = x \Bigg| \sum X_i = n) \cdot P(\sum X_i = n) \\ 
 & = \left[ {n \choose \pi_1, ..., \pi_k} \prod \pi_i^{x_i} \right] \cdot \left( \frac{e^{-\lambda} \lambda^{\sum x_i}}{\sum x_i! } \right) \\ 
 & = \frac{\cancel{n!}}{x_1!\cdots x_k!} \pi_1^{x_1}\cdots \pi_k^{x_k} \left( \frac{e^{-\lambda} \lambda^{n}}{\cancel{n!}} \right).
 \end{aligned}
-$$
-Assume as given in the problem that the 
-cookies are uniformly randomly given out, and $\pi_i = \pi_{i'}\;  \forall i, i' \in \{ 1, ..., k \}$; this 
-single probability must be $1/k$ (or in our case, $k = 10$ children).
+$$ Assume as given in the problem that the cookies are uniformly randomly given out, and $\pi_i = \pi_{i'}\;  \forall i, i' \in \{ 1, ..., k \}$; this single probability must be $1/k$ (or in our case, $k = 10$ children).
 
 $$
 \begin{aligned}
@@ -299,63 +204,46 @@ P(X = x) & = \frac{e^{-\lambda}}{x_1! \cdots x_k!} \left( \frac{\lambda}{k} \rig
 \text{a product of the }&\text{density for $k$ iid Poisson}\left(\frac{\lambda}{k}\right) \text{ variables}.
 \end{aligned}
 $$
+
 </details>
 
-We said that if $n$ cookies are given out, then there's a $p_n$ probability
-that the 10 children all receive 2+ cookies. Then 
-_without conditioning on the number of cookies given out,_ the probability that all kids receive 2+ cookies is given by 
-$$\E\left[\E[p_n | N = n]\right] = \sum_{n=0}^\infty \frac{e^{-\lambda} \lambda^n}{n!} p_n.$$
+We said that if $n$ cookies are given out, then there's a $p_n$ probability that the 10 children all receive 2+ cookies. Then *without conditioning on the number of cookies given out,* the probability that all kids receive 2+ cookies is given by $$\E\left[\E[p_n | N = n]\right] = \sum_{n=0}^\infty \frac{e^{-\lambda} \lambda^n}{n!} p_n.$$
 
-On the other hand, since the $X_1, ..., X_k$ are iid Poisson, the probability 
-that all 10 kids 
-receive 2+ cookies is $P(X_1 \geq 2)^{10} = (1-P(X_1 \leq 1))^{10} = 
-(1-e^{-\frac{\lambda}{10}} - \frac{\lambda}{10}e^{-\frac{\lambda}{10}})^{10}$. 
+On the other hand, since the $X_1, ..., X_k$ are iid Poisson, the probability that all 10 kids receive 2+ cookies is $P(X_1 \geq 2)^{10} = (1-P(X_1 \leq 1))^{10} =
+(1-e^{-\frac{\lambda}{10}} - \frac{\lambda}{10}e^{-\frac{\lambda}{10}})^{10}$.
 
-Now we have that 
-$$
+Now we have that $$
 \sum_{n=0}^\infty \frac{e^{-\lambda} \lambda^n}{n!} p_n 
 = 
 \left[1-e^{-\frac{\lambda}{10}} - \frac{\lambda}{10}e^{-\frac{\lambda}{10}}\right]^{10}.
 $$
 
-
 <details>
-<summary>
-Reference materials on Poissonization and related ideas.
-</summary>
 
-So, I didn't know the first thing about "Poissonization," but I've been trying
-to learn. 
+<summary>Reference materials on Poissonization and related ideas.</summary>
 
-It appears that [Mary Wootters](https://www.youtube.com/@marywootters7651) [[site](https://sites.google.com/site/marywootters/)] and [C. Seshadhri](https://www.youtube.com/@c.seshadhri6776/playlists) [[site](https://users.soe.ucsc.edu/~sesh/)] have nice online YouTube playlists of their randomized algorithms lectures in which they talked about Poissonization. 
+So, I didn't know the first thing about "Poissonization," but I've been trying to learn.
 
-See the specific videos: 
+It appears that [Mary Wootters](https://www.youtube.com/@marywootters7651) \[[site](https://sites.google.com/site/marywootters/)\] and [C. Seshadhri](https://www.youtube.com/@c.seshadhri6776/playlists) \[[site](https://users.soe.ucsc.edu/~sesh/)\] have nice online YouTube playlists of their randomized algorithms lectures in which they talked about Poissonization.
 
-  * <https://www.youtube.com/watch?v=P71s05H2T5E>
-  * <https://www.youtube.com/watch?v=4lvfTKiLyXw>
+See the specific videos:
 
-I get the sense that the Chernoff bound for the Poisson-tail is something I
-should learn about further. The application of Stirling's approximation to the
-distribution of deviations from the expected value of a Poisson process that
-Seshadhri presents is quite beautiful, and something I'd like to learn more
-about.
+-   <https://www.youtube.com/watch?v=P71s05H2T5E>
+-   <https://www.youtube.com/watch?v=4lvfTKiLyXw>
 
-There's also this interesting approximation of the Multinomial cell-specific
-count outcomes as Poisson that I saw popping up here and there [@Ahmad1985Poisson].
+I get the sense that the Chernoff bound for the Poisson-tail is something I should learn about further. The application of Stirling's approximation to the distribution of deviations from the expected value of a Poisson process that Seshadhri presents is quite beautiful, and something I'd like to learn more about.
+
+There's also this interesting approximation of the Multinomial cell-specific count outcomes as Poisson that I saw popping up here and there [@Ahmad1985Poisson].
+
 </details>
 
-Now, recall that $e^{x}$ has a series expansion. If we 
-multiply both sides by $e^{\lambda}$ and by $43!$, we should find that the coefficient on the left-hand-side series for $\lambda^{43}$ is just $p_n$, and the right-hand-side series coefficient for $\lambda^{43}$ gives an expression we can evaluate for $p_{43}$. 
-They must be equal, because in order for two convergent power series
-to coincide on a non-empty interval, their coefficients must be equal. 
+Now, recall that $e^{x}$ has a series expansion. If we multiply both sides by $e^{\lambda}$ and by $43!$, we should find that the coefficient on the left-hand-side series for $\lambda^{43}$ is just $p_n$, and the right-hand-side series coefficient for $\lambda^{43}$ gives an expression we can evaluate for $p_{43}$. They must be equal, because in order for two convergent power series to coincide on a non-empty interval, their coefficients must be equal.
 
-So what we're going to do is expand the function $e^{x} = \sum_{t=0}^\infty \frac{x^t}{t!}$ wherever we see it 
-on the modified right-hand-side and use that to identify the coefficient of $\lambda^{43}$, 
-which is $p_{43}$. 
+So what we're going to do is expand the function $e^{x} = \sum_{t=0}^\infty \frac{x^t}{t!}$ wherever we see it on the modified right-hand-side and use that to identify the coefficient of $\lambda^{43}$, which is $p_{43}$.
 
-However, this is a bit hard to do by hand, so we'll use the symbolic algebra library `sympy` in Python to do it for us. 
+However, this is a bit hard to do by hand, so we'll use the symbolic algebra library `sympy` in Python to do it for us.
 
-```python
+``` python
 from sympy import symbols, exp, factorial, series, Pow
 
 lambda_ = symbols('lambda')
@@ -378,12 +266,11 @@ $$
 \frac{38360235213946776318553037176114920309}{78125000000000000000000000000000000000} \approx 0.491
 $$
 
-Thus we conclude that if 43 cookies are given out to 10 children uniformly at random, then 
-the probability that each child receives at least 2 cookies is $\approx .491.$ 
+Thus we conclude that if 43 cookies are given out to 10 children uniformly at random, then the probability that each child receives at least 2 cookies is $\approx .491.$
 
-Let's see if we can confirm that via a simple simulation in R: 
+Let's see if we can confirm that via a simple simulation in R:
 
-```r
+``` r
 set.seed(1234)
 
 num_trials <- 100000  # Number of simulations
@@ -403,11 +290,9 @@ prob_estimate
 var_estimate
 ```
 
-```
+```         
 > prob_estimate
 [1] 0.49178
 > var_estimate
 [1] 2.499349e-06
 ```
-
-Alright, I think I'm happy with that.

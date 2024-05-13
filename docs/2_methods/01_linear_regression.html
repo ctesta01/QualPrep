@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Exercises and notes in preparation for PhD Qualifying Exams in Biostatistics">
 
-<title>Qualifying Exam Preparation</title>
+<title>Qualifying Exam Preparation - Linear Regression</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -81,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../2_methods.html">Methods</a></li><li class="breadcrumb-item"><a href="../2_methods/01_linear_regression.html"><span class="chapter-title">01_linear_regression.html</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../2_methods.html">Methods</a></li><li class="breadcrumb-item"><a href="../2_methods/01_linear_regression.html"><span class="chapter-title">Linear Regression</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -122,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../1_theory/unit1_puzzles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unit 1: History: Puzzles, Paradoxes, and Motivation</span></a>
+  <a href="../1_theory/01_background_puzzles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">History: Puzzles, Paradoxes, and Motivation</span></a>
   </div>
 </li>
       </ul>
@@ -138,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2_methods/01_linear_regression.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">01_linear_regression.html</span></a>
+  <a href="../2_methods/01_linear_regression.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Linear Regression</span></a>
   </div>
 </li>
       </ul>
@@ -154,7 +184,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/01_random_numbers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">01_random_numbers.html</span></a>
+  <a href="../3_datastructures/01_random_numbers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Random Numbers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -244,9 +274,50 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../2_methods.html">Methods</a></li><li class="breadcrumb-item"><a href="../2_methods/01_linear_regression.html"><span class="chapter-title">Linear Regression</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Linear Regression</span></h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><span class="math display">\[
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\text{Var}}
+\newcommand{\Cov}{\text{Cov}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\MLE}{\text{MLE}}
+\renewcommand{\bar}{\overline}
+\newcommand{\supp}[1]{\text{supp}(#1)}
+\newcommand\independent{\perp\!\!\!\perp}
+\renewcommand{\d}[0]{\mathrm{d}}
+\newcommand{\pp}[2][]{\frac{\partial#1}{\partial#2}}
+\newcommand{\dd}[2][]{\frac{\mathrm d#1}{\mathrm d#2}}
+\]</span></p>
+<p>Our typical problem is to estimate the linear relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(p\)</span> covariates/predictors <span class="math inline">\((x_1, ..., x_p)\)</span>.</p>
+<p>In modeling, we can distinguish between the <em>systematic</em> and <em>random</em> parts of a model.</p>
+<p>Consider the model:</p>
+<p><span class="math display">\[Y_i = \beta_0 + \beta_1 x_1 + ... + \beta_p x_{ip}, \quad i = 1, ..., n,\]</span></p>
+<p>with the assumptions:</p>
+<ol type="1">
+<li>(Size of Data) <span class="math inline">\(p &lt; n\)</span>,</li>
+<li>(Mean-Zero Error) <span class="math inline">\(\E(\varepsilon_i) = 0\)</span></li>
+<li>(Homoscedasticity) <span class="math inline">\(\Var(\varepsilon_i) = \sigma^2\)</span>,</li>
+<li>(Uncorrelated Error) <span class="math inline">\(\Cov(\varepsilon_i, \varepsilon_j) = 0.\)</span></li>
+</ol>
 
 
 

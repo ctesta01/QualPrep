@@ -222,7 +222,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2_methods/01_linear_regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">01_linear_regression.html</span></a>
+  <a href="../2_methods/01_linear_regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Linear Regression</span></a>
   </div>
 </li>
       </ul>
@@ -238,7 +238,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/01_random_numbers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">01_random_numbers.html</span></a>
+  <a href="../3_datastructures/01_random_numbers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Random Numbers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -351,12 +351,29 @@ window.Quarto = {
 </header>
 
 
+<p><span class="math display">\[
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\text{Var}}
+\newcommand{\Cov}{\text{Cov}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\MLE}{\text{MLE}}
+\renewcommand{\bar}{\overline}
+\newcommand{\supp}[1]{\text{supp}(#1)}
+\newcommand\independent{\perp\!\!\!\perp}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+\newcommand*{\vertbar}{\rule[-1ex]{0.5pt}{2.5ex}} % for use in matrix equations
+\newcommand*{\horzbar}{\rule[.5ex]{2.5ex}{0.5pt}}
+\renewcommand{\d}[0]{\mathrm{d}}
+\newcommand{\pp}[2][]{\frac{\partial#1}{\partial#2}}
+\newcommand{\dd}[2][]{\frac{\mathrm d#1}{\mathrm d#2}}
+\]</span></p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Christiaan_Huygens-painting.jpeg" class="img-fluid figure-img"></p>
-<figcaption><small><a href="https://en.wikipedia.org/wiki/Christiaan_Huygens">Christiaan Huygens</a>, Lord of Zeelhem (1629-1695) was a Dutch mathematician, physicist, engineer, astronomer, and inventor who is regarded as a key figure in the Scientific Revolution, to quote Wikipedia.</small></figcaption>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Christiaan_Huygens-painting.jpeg" class="img-fluid figure-img" style="width:1in"></p>
+<figcaption>Christiaan Huygens, Lord of Zeelhem (1629-1695) was a Dutch mathematician, physicist, engineer, astronomer, and inventor who is regarded as a key figure in the Scientific Revolution, to quote Wikipedia.</figcaption>
 </figure>
 </div>
 </div></div><section id="history" class="level1 page-columns page-full">
@@ -449,7 +466,7 @@ Tip
 <section id="puzzle-1" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="puzzle-1">Puzzle #1</h2>
 <blockquote class="blockquote">
-<p>There are 43 cookies to be given out at random to 10 children. What is the probability that each child gets at least 10 cookies?</p>
+<p>There are 43 cookies to be given out at random to 10 children. What is the probability that each child gets at least 2 cookies?</p>
 </blockquote>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -475,7 +492,7 @@ Click to reveal the problem in the above logic.
 </summary>
 <p>I think we’re double-counting solutions when we say that for each of the <span class="math inline">\({43 \choose 20}\)</span> ways that we can say that the 20 cookies are already spoken for, there are another <span class="math inline">\(10^{23}\)</span> ways to assign the other cookies.</p>
 <p>Let’s take a smaller example: assigning 4 cookies to 2 students, and I want to know how often to expect each student gets 1+ cookie. If I consider outcomes where cookies 1, 2, 3, 4 get assigned to children <span class="math inline">\(1, 2, *, *\)</span>, I would count <span class="math inline">\(1,2,1,2\)</span> towards this tally. But if I later also consider outcomes of the form <span class="math inline">\(*, *, 1, 2\)</span>, I would again count the outcome <span class="math inline">\(1,2,1,2\)</span> twice. This is wrong, and a crucial mistake.</p>
-In general, the real flaw was in not adequately formalizing our work and using heuristics like “if cookies are spoken for,” which is not a rigorously defined probability concept.
+<p>In general, the real flaw was in not adequately formalizing our work and using heuristics like “if cookies are spoken for,” which is not a rigorously defined probability concept.</p>
 </details>
 </details>
 </div>
@@ -495,7 +512,7 @@ P(X = x) &amp; = {n \choose x_1,...,x_k!} \prod_{i=1}^k \pi_i^{x_i} \\
 <summary>
 Intuition
 </summary>
-I think of it this way: in the traditional Binomial outcome, there’s two outcomes that are being tallied, 1 or 0, and either 1 happens with probability <span class="math inline">\(\pi_1\)</span>, or 0 happens with probability <span class="math inline">\(1-\pi_1\)</span> in each trial. Here, the <span class="math inline">\(\sum \pi_i = 1\)</span> assumption is making it so that either outcome <span class="math inline">\(i\)</span> happens with probability <span class="math inline">\(\pi_i\)</span>, or one of the other <span class="math inline">\(i' \in \{ 1, ..., k\} \backslash i\)</span> outcomes happens with probability <span class="math inline">\(1 - \pi_i\)</span>.
+<p>I think of it this way: in the traditional Binomial outcome, there’s two outcomes that are being tallied, 1 or 0, and either 1 happens with probability <span class="math inline">\(\pi_1\)</span>, or 0 happens with probability <span class="math inline">\(1-\pi_1\)</span> in each trial. Here, the <span class="math inline">\(\sum \pi_i = 1\)</span> assumption is making it so that either outcome <span class="math inline">\(i\)</span> happens with probability <span class="math inline">\(\pi_i\)</span>, or one of the other <span class="math inline">\(i' \in \{ 1, ..., k\} \backslash i\)</span> outcomes happens with probability <span class="math inline">\(1 - \pi_i\)</span>.</p>
 </details>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -512,7 +529,7 @@ Tip
 <summary>
 The Multinomial Theorem
 </summary>
-For any positive integer <span class="math inline">\(m\)</span> and non-negative integer <span class="math inline">\(n\)</span>, <span class="math display">\[(x_1 + ... + x_m)^n = \sum_{k_1+...+ k_m = n} {n \choose k_1, ..., k_m} \prod_{i=1}^m x_i^{k_i},\]</span> where <span class="math inline">\(k_1, ..., k_m \in \mathbb N\)</span> and <span class="math inline">\({n \choose k_1, ..., k_m} = \frac{n!}{k_1!\cdots k_m!}\)</span>.
+<p>For any positive integer <span class="math inline">\(m\)</span> and non-negative integer <span class="math inline">\(n\)</span>, <span class="math display">\[(x_1 + ... + x_m)^n = \sum_{k_1+...+ k_m = n} {n \choose k_1, ..., k_m} \prod_{i=1}^m x_i^{k_i},\]</span> where <span class="math inline">\(k_1, ..., k_m \in \mathbb N\)</span> and <span class="math inline">\({n \choose k_1, ..., k_m} = \frac{n!}{k_1!\cdots k_m!}\)</span>.</p>
 </details>
 </div>
 </div>
@@ -531,9 +548,9 @@ X_1, ..., X_{10} \Bigg\vert \sum_{i=1}^{10} X_i = 43 \sim
 <p>Poisson-Multinomial Relationship</p>
 <p>The Poisson and Multinomial distributions have an interesting relationship. When the outcomes <span class="math inline">\(X_1, ..., X_k\)</span> are such that <span class="math inline">\(X_i \sim \text{Poisson}(\lambda_i)\)</span>, then <span class="math inline">\(\sum_{i=1}^k X_i \sim \text{Poisson}(\sum_{i=1}^k \lambda_i).\)</span></p>
 <p>One can easily derive via the definition of conditional probability that <span class="math display">\[(X_1, ..., X_k) {\Bigg\vert} \sum_{i=1}^k X_i = N = n \sim \text{Multinomial}(n, k, \pi),\]</span> where <span class="math inline">\(\pi = \left(\frac{\lambda_1}{\sum \lambda_i}, ..., \frac{\lambda_k}{\sum \lambda_i}\right)\)</span>.</p>
-See <a href="https://online.stat.psu.edu/stat504/lesson/2/2.3/2.3.6">here</a> for example.
+<p>See <a href="https://online.stat.psu.edu/stat504/lesson/2/2.3/2.3.6">here</a> for example.</p>
 <details open="">
-<span class="math display">\[
+<p><span class="math display">\[
 \begin{aligned}
 P(X = x \Big \vert N = n) &amp; = \frac{P(X = x, N = n)}{P(N = n)}  \\
 &amp; = \frac{P(X = x)}{P(N = n)} \\
@@ -542,7 +559,7 @@ P(X = x \Big \vert N = n) &amp; = \frac{P(X = x, N = n)}{P(N = n)}  \\
 &amp; = {n \choose x_1, ..., x_k} \left( \frac{\lambda_i}{\sum \lambda_i} \right)^{x_i} \\
 &amp; \sim \text{Multinomial}(n, k, \pi).
 \end{aligned}
-\]</span>
+\]</span></p>
 </details>
 </div>
 </div>
@@ -556,13 +573,13 @@ P(X = x \Big \vert N = n) &amp; = \frac{P(X = x, N = n)}{P(N = n)}  \\
 &amp; = \frac{\cancel{n!}}{x_1!\cdots x_k!} \pi_1^{x_1}\cdots \pi_k^{x_k} \left( \frac{e^{-\lambda} \lambda^{n}}{\cancel{n!}} \right).
 \end{aligned}
 \]</span> Assume as given in the problem that the cookies are uniformly randomly given out, and <span class="math inline">\(\pi_i = \pi_{i'}\;  \forall i, i' \in \{ 1, ..., k \}\)</span>; this single probability must be <span class="math inline">\(1/k\)</span> (or in our case, <span class="math inline">\(k = 10\)</span> children).</p>
-<span class="math display">\[
+<p><span class="math display">\[
 \begin{aligned}
 P(X = x) &amp; = \frac{e^{-\lambda}}{x_1! \cdots x_k!} \left( \frac{\lambda}{k} \right)^{\sum x_i} \\
 &amp; = \prod_{i=1}^k \frac{e^{-\lambda/k} \left( \frac{\lambda}{k} \right)^{x_i}}{x_i!}, \\
 \text{a product of the }&amp;\text{density for $k$ iid Poisson}\left(\frac{\lambda}{k}\right) \text{ variables}.
 \end{aligned}
-\]</span>
+\]</span></p>
 </details>
 <p>We said that if <span class="math inline">\(n\)</span> cookies are given out, then there’s a <span class="math inline">\(p_n\)</span> probability that the 10 children all receive 2+ cookies. Then <em>without conditioning on the number of cookies given out,</em> the probability that all kids receive 2+ cookies is given by <span class="math display">\[\E\left[\E[p_n | N = n]\right] = \sum_{n=0}^\infty \frac{e^{-\lambda} \lambda^n}{n!} p_n.\]</span></p>
 <p>On the other hand, since the <span class="math inline">\(X_1, ..., X_k\)</span> are iid Poisson, the probability that all 10 kids receive 2+ cookies is <span class="math inline">\(P(X_1 \geq 2)^{10} = (1-P(X_1 \leq 1))^{10} =
@@ -572,7 +589,7 @@ P(X = x) &amp; = \frac{e^{-\lambda}}{x_1! \cdots x_k!} \left( \frac{\lambda}{k} 
 =
 \left[1-e^{-\frac{\lambda}{10}} - \frac{\lambda}{10}e^{-\frac{\lambda}{10}}\right]^{10}.
 \]</span></p>
-<details>
+<details class="page-columns page-full">
 <summary>
 Reference materials on Poissonization and related ideas.
 </summary>
@@ -584,11 +601,11 @@ Reference materials on Poissonization and related ideas.
 <li><a href="https://www.youtube.com/watch?v=4lvfTKiLyXw" class="uri">https://www.youtube.com/watch?v=4lvfTKiLyXw</a></li>
 </ul>
 <p>I get the sense that the Chernoff bound for the Poisson-tail is something I should learn about further. The application of Stirling’s approximation to the distribution of deviations from the expected value of a Poisson process that Seshadhri presents is quite beautiful, and something I’d like to learn more about.</p>
-There’s also this interesting approximation of the Multinomial cell-specific count outcomes as Poisson that I saw popping up here and there <span class="citation" data-cites="Ahmad1985Poisson">(<a href="#ref-Ahmad1985Poisson" role="doc-biblioref">Ahmad 1985</a>)</span>.
-</details>
+<p>There’s also this interesting approximation of the Multinomial cell-specific count outcomes as Poisson that I saw popping up here and there <span class="citation" data-cites="Ahmad1985Poisson">(<a href="#ref-Ahmad1985Poisson" role="doc-biblioref">Ahmad 1985</a>)</span>.</p>
 <div class="no-row-height column-margin column-container"><div id="ref-Ahmad1985Poisson" class="csl-entry" role="listitem">
 Ahmad, I. A. 1985. <span>“On the Poisson Approximation of Multinomial Probabilities.”</span> <em>Statistics &amp; Probability Letters</em> 3 (1): 55–56. <a href="https://doi.org/10.1016/0167-7152(85)90013-6">https://doi.org/10.1016/0167-7152(85)90013-6</a>.
-</div></div><p>Now, recall that <span class="math inline">\(e^{x}\)</span> has a series expansion. If we multiply both sides by <span class="math inline">\(e^{\lambda}\)</span> and by <span class="math inline">\(43!\)</span>, we should find that the coefficient on the left-hand-side series for <span class="math inline">\(\lambda^{43}\)</span> is just <span class="math inline">\(p_n\)</span>, and the right-hand-side series coefficient for <span class="math inline">\(\lambda^{43}\)</span> gives an expression we can evaluate for <span class="math inline">\(p_{43}\)</span>. They must be equal, because in order for two convergent power series to coincide on a non-empty interval, their coefficients must be equal.</p>
+</div></div></details>
+<p>Now, recall that <span class="math inline">\(e^{x}\)</span> has a series expansion. If we multiply both sides by <span class="math inline">\(e^{\lambda}\)</span> and by <span class="math inline">\(43!\)</span>, we should find that the coefficient on the left-hand-side series for <span class="math inline">\(\lambda^{43}\)</span> is just <span class="math inline">\(p_n\)</span>, and the right-hand-side series coefficient for <span class="math inline">\(\lambda^{43}\)</span> gives an expression we can evaluate for <span class="math inline">\(p_{43}\)</span>. They must be equal, because in order for two convergent power series to coincide on a non-empty interval, their coefficients must be equal.</p>
 <p>So what we’re going to do is expand the function <span class="math inline">\(e^{x} = \sum_{t=0}^\infty \frac{x^t}{t!}\)</span> wherever we see it on the modified right-hand-side and use that to identify the coefficient of <span class="math inline">\(\lambda^{43}\)</span>, which is <span class="math inline">\(p_{43}\)</span>.</p>
 <p>However, this is a bit hard to do by hand, so we’ll use the symbolic algebra library <code>sympy</code> in Python to do it for us.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> symbols, exp, factorial, series, Pow</span>
@@ -633,7 +650,6 @@ Ahmad, I. A. 1985. <span>“On the Poisson Approximation of Multinomial Probabil
 [1] 0.49178
 &gt; var_estimate
 [1] 2.499349e-06</code></pre>
-<p>Alright, I think I’m happy with that.</p>
 
 
 

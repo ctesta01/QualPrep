@@ -1,0 +1,23 @@
+---
+title: "Linear Regression"
+---
+{{< include ../preamble.qmd  >}}
+
+Our typical problem is to estimate the 
+linear relationship between $Y$ and $p$ covariates/predictors $(x_1, ..., x_p)$. 
+
+In modeling, we can distinguish between the *systematic* 
+and *random* parts of a model. 
+
+Consider the model: 
+
+$$Y_i = \beta_0 + \beta_1 x_1 + ... + \beta_p x_{ip}, \quad i = 1, ..., n,$$
+
+with the assumptions: 
+
+  1. (Size of Data) $p < n$, 
+  1. (Mean-Zero Error) $\E(\varepsilon_i) = 0$
+  1. (Homoscedasticity) $\Var(\varepsilon_i) = \sigma^2$, 
+  1. (Uncorrelated Error) $\Cov(\varepsilon_i, \varepsilon_j) = 0.$
+
+
