@@ -1,5 +1,6 @@
 ---
 title: "Probability and Inference"
+citation-location: document
 ---
 
 Largely the probability and inference material that we will be examined on 
@@ -10,7 +11,7 @@ notes are publicly available, nor do I have permission to share them. As such, I
 try to find corroborating references for the same material when I get to that point. 
 
 For the probability-focused material, we may also refer to a handful of other references
-including [@blitzstein2019introduction; @bishop2006pattern; @gut2009intermediate; @stoyanov2013counterexamples]. 
+including [@blitzstein2019introduction; @bishop2006pattern; @gut2009intermediate; @stoyanov2013counterexamples; @Feller1968; @DasGupta2011; @Durrett2019]. 
 
 --- 
 
@@ -26,3 +27,6 @@ statistical statement might be that a particular way of constructing a confidenc
 (under assumptions) has a 95% probability of containing the true population parameter when 
 repeatedly performing the same experiment (e.g., in the Frequentist paradigm). 
 
+---
+
+## References

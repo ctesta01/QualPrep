@@ -259,6 +259,9 @@ window.Quarto = {
 </header>
 
 
+<p><span class="math display">\[
+\newcommand{\E}{\mathbb{E}}
+\]</span></p>
 <blockquote class="blockquote">
 <p><em>I believe that we do not know anything for certain, but everything probably.</em> Christiaan Huygens, Oeuvres Completes</p>
 </blockquote>
@@ -295,9 +298,9 @@ Langou, Julien. 2009. <span>“Translation and Modern Interpretation of Laplace�
 <li>Following the <em>See Also</em> section from the Monty Hall Problem Wikipedia page yields <a href="https://en.wikipedia.org/wiki/Sleeping_Beauty_problem">the Sleeping Beauty Problem</a> and <a href="https://en.wikipedia.org/wiki/Boy_or_girl_paradox">the Boy or Girl Paradox</a>.</li>
 </ul>
 <div class="no-row-height column-margin column-container"><div id="ref-gardner1956mathematics" class="csl-entry" role="listitem">
-Gardner, Martin. 1956. <em>Mathematics, Magic and Mystery</em>. Dover Puzzle Books: Math Puzzles Ser. Dover Publications. <a href="https://www.ebay.com/itm/264709866263">https://www.ebay.com/itm/264709866263</a>.
+Gardner, Martin. 1956. <em>Mathematics, Magic and Mystery</em>. Dover Puzzle Books: Math Puzzles Ser. Dover Publications.
 </div><div id="ref-gardner2005colossal" class="csl-entry" role="listitem">
-———. 2005. <em>The Colossal Book of Short Puzzles and Problems</em>. Edited by Dana Richards. W. W. Norton &amp; Company. <a href="https://www.barnesandnoble.com/w/the-colossal-book-of-short-puzzles-and-problems-martin-gardner/1100872012">https://www.barnesandnoble.com/w/the-colossal-book-of-short-puzzles-and-problems-martin-gardner/1100872012</a>.
+———. 2005. <em>The Colossal Book of Short Puzzles and Problems</em>. Edited by Dana Richards. W. W. Norton &amp; Company.
 </div></div><section id="monty-hall-problem" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="monty-hall-problem">Monty Hall Problem</h2>
 <p>The Monty Hall problem can be stated so simply:</p>
@@ -371,7 +374,7 @@ Exercise in flawed thinking.
 <p>Find the flaw in the following logic:</p>
 <p>Consider the outcomes where each child has 2+ cookies. Then, for 20 cookies, we already know how those are distributed (each of the 10 children gets two cookies). The remaining 23 cookies can be assigned arbitrarily, so across the 10 kids there are a remaining <span class="math inline">\(10^{23}\)</span> ways to distribute the cookies for each of the <span class="math inline">\({43 \choose 20}\)</span> ways that the 20-cookies already spoken-for can be distributed.</p>
 <p>That gives us <span class="math display">\[\frac{P(\text{ways to get to every child having 2+ cookies})}{P(\text{total number of ways to distribute 43 cookies})} =
-\frac{{43 \choose 20} \cdot 10^{23}}{10^{43}} = \frac{{43 \choose 20}}{10^{23}}.\]</span></p>
+\frac{{43 \choose 20} \cdot 10^{23}}{10^{43}} = \frac{{43 \choose 20}}{10^{20}}.\]</span></p>
 <details>
 <summary>
 Click to reveal the problem in the above logic.
@@ -385,7 +388,7 @@ In general, the real flaw was in not adequately formalizing our work and using h
 </div>
 <p>First, notice that this is a classic multinomial setup. The multinomial distribution can be thought of as giving the probability of observing the outcome <span class="math inline">\(i \in \{ 1, ..., k \}\)</span> coming up <span class="math inline">\(x_i\)</span> times when rolling a <span class="math inline">\(k\)</span>-sided die <span class="math inline">\(n\)</span> times, and is a generalization of the Binomial distribution. We have that the probability of each outcome <span class="math inline">\(i\)</span> coming up on a single roll is given by <span class="math inline">\(\pi_i\)</span>.</p>
 <p>If the so-called die is fair, <span class="math inline">\(\pi_i = \pi_{i'}\; \forall i, i' \in \{ 1, ..., k\}\)</span> or the die is unfair and <span class="math inline">\(\pi_i\)</span> is not necessarily equal to <span class="math inline">\(\pi_i'\)</span>. In all cases, we assume <span class="math inline">\(\sum \pi_i = 1\)</span>.</p>
-<p>Let <span class="math inline">\(X = (X_1, ..., X_k)\)</span> be a <span class="math inline">\(\text{Multinomial}(n, \pi)\)</span> distributed where <span class="math inline">\(\pi = (\pi_1, ..., \pi_k)\)</span>.</p>
+<p>Let <span class="math inline">\(X = (X_1, ..., X_k)\)</span> be a <span class="math inline">\(\text{Multinomial}(n, k, \pi)\)</span> distributed where <span class="math inline">\(\pi = (\pi_1, ..., \pi_k)\)</span>.</p>
 <p>The density of the Multinomial distribution is<br>
 <span class="math display">\[
 \begin{aligned}
@@ -467,9 +470,9 @@ P(X = x) &amp; = \frac{e^{-\lambda}}{x_1! \cdots x_k!} \left( \frac{\lambda}{k} 
 \end{aligned}
 \]</span>
 </details>
-<p>We said that if <span class="math inline">\(n\)</span> cookies are given out, then there’s a <span class="math inline">\(p_n\)</span> probability that the 10 children all receive 2+ cookies. Then <em>without conditioning on the number of cookies given out,</em> the probability that all kids receive 2+ cookies is given by <span class="math display">\[\sum_{n=0}^\infty \frac{e^{-\lambda} \lambda^n}{n!} p_n.\]</span></p>
-<p>On the other hand, the probability that all 10 kids receive 2+ cookies is <span class="math inline">\(P(X_1 \geq 2)^{10} = (1-P(X_1 \leq 1))^{10} =
-(1-e^{-\frac{\lambda}{10}} - \frac{\lambda}{10}e^{-\frac{\lambda}{10}})^{10},\)</span> since it’s clear that <span class="math inline">\(X_1, ..., X_{10}\)</span> are independently and identically distributed.</p>
+<p>We said that if <span class="math inline">\(n\)</span> cookies are given out, then there’s a <span class="math inline">\(p_n\)</span> probability that the 10 children all receive 2+ cookies. Then <em>without conditioning on the number of cookies given out,</em> the probability that all kids receive 2+ cookies is given by <span class="math display">\[\E\left[\E[p_n | N = n]\right] = \sum_{n=0}^\infty \frac{e^{-\lambda} \lambda^n}{n!} p_n.\]</span></p>
+<p>On the other hand, since the <span class="math inline">\(X_1, ..., X_k\)</span> are iid Poisson, the probability that all 10 kids receive 2+ cookies is <span class="math inline">\(P(X_1 \geq 2)^{10} = (1-P(X_1 \leq 1))^{10} =
+(1-e^{-\frac{\lambda}{10}} - \frac{\lambda}{10}e^{-\frac{\lambda}{10}})^{10}\)</span>.</p>
 <p>Now we have that <span class="math display">\[
 \sum_{n=0}^\infty \frac{e^{-\lambda} \lambda^n}{n!} p_n
 =

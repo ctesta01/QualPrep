@@ -2,4 +2,19 @@
 title: "Data Structures & Algorithms"
 ---
 
-Lorem ipsum ad absurdum 
+Course outline: 
+
+  - Random Numbers
+  - Concepts of Algorithms 
+  - Data Structures
+  - Heaps 
+  - Greedy Algorithms and Dynamic Programming
+  - Parallel Computing 
+  - P and NP
+  - Numerical Aspects of Algorithms 
+  - Systems of Linear Equations 
+  - Least Squares
+  - Eigenvalues and Sparse Matrices
+  - Systems of Nonlinear Equations 
+  - Numerical Integration and MCMC 
+  - Numerical Optimization

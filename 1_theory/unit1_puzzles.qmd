@@ -2,6 +2,8 @@
 title: "Unit 1: History: Puzzles, Paradoxes, and Motivation"
 ---
 
+{{< include ../preamble.qmd >}}
+
 > *I believe that we do not know anything for certain, but everything probably.*
 Christiaan Huygens, Oeuvres Completes
 
@@ -156,7 +158,7 @@ the 20-cookies already spoken-for can be distributed.
 
 That gives us 
 $$\frac{P(\text{ways to get to every child having 2+ cookies})}{P(\text{total number of ways to distribute 43 cookies})} = 
-\frac{{43 \choose 20} \cdot 10^{23}}{10^{43}} = \frac{{43 \choose 20}}{10^{23}}.$$
+\frac{{43 \choose 20} \cdot 10^{23}}{10^{43}} = \frac{{43 \choose 20}}{10^{20}}.$$
 
 <details>
 <summary>
@@ -191,7 +193,7 @@ If the so-called die is fair, $\pi_i = \pi_{i'}\; \forall i, i' \in \{ 1, ..., k
 the die is unfair and $\pi_i$ is not necessarily equal to $\pi_i'$. In all cases, 
 we assume $\sum \pi_i = 1$. 
 
-Let $X = (X_1, ..., X_k)$ be a $\text{Multinomial}(n, \pi)$
+Let $X = (X_1, ..., X_k)$ be a $\text{Multinomial}(n, k, \pi)$
 distributed where $\pi = (\pi_1, ..., \pi_k)$. 
 
 The density of the Multinomial distribution is  
@@ -301,12 +303,12 @@ $$
 We said that if $n$ cookies are given out, then there's a $p_n$ probability
 that the 10 children all receive 2+ cookies. Then 
 _without conditioning on the number of cookies given out,_ the probability that all kids receive 2+ cookies is given by 
-$$\sum_{n=0}^\infty \frac{e^{-\lambda} \lambda^n}{n!} p_n.$$
+$$\E\left[\E[p_n | N = n]\right] = \sum_{n=0}^\infty \frac{e^{-\lambda} \lambda^n}{n!} p_n.$$
 
-On the other hand, the probability that all 10 kids 
+On the other hand, since the $X_1, ..., X_k$ are iid Poisson, the probability 
+that all 10 kids 
 receive 2+ cookies is $P(X_1 \geq 2)^{10} = (1-P(X_1 \leq 1))^{10} = 
-(1-e^{-\frac{\lambda}{10}} - \frac{\lambda}{10}e^{-\frac{\lambda}{10}})^{10},$
-since it's clear that $X_1, ..., X_{10}$ are independently and identically distributed. 
+(1-e^{-\frac{\lambda}{10}} - \frac{\lambda}{10}e^{-\frac{\lambda}{10}})^{10}$. 
 
 Now we have that 
 $$
