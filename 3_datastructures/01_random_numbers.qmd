@@ -1,0 +1,103 @@
+---
+title: "Random Numbers"
+subtitle: |
+  > "Anyone who considers arithmetical methods of producing random digits is, of course, in a state of sin." —Von Neumann
+---
+
+There are plenty of suboptimal ways to 
+produce pseudorandom numbers.
+Some that we looked at are the [middle-square method](https://en.wikipedia.org/wiki/Middle-square_method) and [linear congruential generators](https://en.wikipedia.org/wiki/Linear_congruential_generator). 
+
+:::{.column-margin}
+![<small>[John von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann) (1903-1957) was a Hungarian and American mathematician, physicist, computer scientist, engineer and polymath, to quote Wikipedia.</small>](https://upload.wikimedia.org/wikipedia/commons/5/5e/JohnvonNeumann-LosAlamos.gif){width='1in'}
+:::
+
+
+A crucial flaw with the mid-square method was that if a prior state had two zeroes behind the decimal point, 
+they never disappear, leading to predictability in the 
+not-very-random pseudorandom numbers generated. 
+
+A challenging flaw of the linear congruential
+generator approach is that the generated 
+pseudorandom numbers live on a relatively 
+small number of hyperplanes (at most $\sqrt[n]{n! \cdot m}$ due to Marsaglia's theorem). The exact 
+number of hyperparameters can be adjusted by 
+selecting $n$ and $m$, but if carelessly chosen, this can represent a weakness of the pseudorandom numbers. 
+
+:::{.column-margin}
+![<small>From the [LCG Wikipedia Page](https://en.wikipedia.org/wiki/Linear_congruential_generator)](https://upload.wikimedia.org/wikipedia/commons/a/a3/Lcg_3d.gif){width='2in'}
+:::
+
+## Desiderata of Pseudoranom Numbers:
+
+  - Uniformity on [0,1]
+  - Independence 
+  - [Diehard tests](https://en.wikipedia.org/wiki/Diehard_tests)
+  - Replication
+  - Cycle Length
+  - Speed
+  - Memory usage
+  - Parallel Implementation 
+  - Cryptographically secure
+
+## Related topics: 
+
+  * Hashing
+  * Password Storage and Verification 
+  * Verification of Successful Data Transfer
+
+## Brief intro to Hashing
+
+References: 
+
+  - <https://www.geeksforgeeks.org/what-is-hashing/>
+  - <https://en.wikipedia.org/wiki/Hash_function>
+
+From <https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1136/lectures/20/Slides20.pdf>: 
+
+A hash function converts a large object (a genome, a string, a sequence, etc) into a smaller object (a shorter string, an integer, etc). 
+
+A hash function must necessarily be deterministic: given the same input, it must always produce the same output. (Why? Because we want to use it for comparison
+or lookup. It needs to be a _reliable shortcut_.)
+
+A hash function should try to produce different
+outputs for different inputs. I.e., we want
+to minimize hash collisions.
+
+Why are hash functions related to pseudorandomness? 
+Because a good hash function will scramble up the 
+bits of the input into something that looks random.
+
+## Password Verification 
+
+We can use cryptographic hashes to store merely a hash
+of the user's password rather than their actual password, thereby enhancing security. 
+
+See <https://en.wikipedia.org/wiki/Cryptographic_hash_function#Password_verification>
+
+Intriguingly, Wikipedia says "use of standard cryptographic hash functions, such as the SHA series, is no longer considered safe for password storage."
+
+## Verification of Data Transfer 
+
+See <https://en.wikipedia.org/wiki/Cryptographic_hash_function#Verifying_the_integrity_of_messages_and_files>
+
+"An important application of secure hashes is the verification of message integrity."
+
+## What makes a hash cryptographically secure?
+
+Well, we can define it by its converse: a 
+cryptographic hash should be resistant against a 
+cryptanalytic attack, or in other words: 
+
+  - (Preimage resistance) It should be hard to recover the 
+  pre-image `m` from only having `h = hash(m)`
+  - (Weak Collision Resistance) Given `m1`, it should be difficult to
+  find another `m2` such that `hash(m1) = hash(m2)`
+  - (Strong Collision Resistance) It should be difficult
+  to find any pair `m1, m2` such that `hash(m1) = hash(m2)`
+
+--- 
+
+This YouTube video looks quite nice — enjoy if you have time: 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QTk2AxzZYfc?si=TLQvsqwuo-x6ZOgQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

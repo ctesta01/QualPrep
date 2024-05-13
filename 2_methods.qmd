@@ -2,4 +2,20 @@
 title: "Methods"
 ---
 
-Lorem ipsum ad absurdum 
+BST 232 at Harvard has the following publicly available description:
+
+> [BST 232 is an] introductory course in the analysis of Gaussian and categorical data, the general linear regression model, ANOVA, robust alternatives based on permutations, model building, resampling methods (bootstrap and jackknife), contingency tables, exact methods, logistic regression.
+
+Course Outline: 
+
+  - Linear Regression 
+  - Diagnostics
+  - Model Selection 
+  - Bootstrap Permutation
+  - Heteroscedastic Errors
+  - Proportions and Contingency Tables
+  - Likelihood Theory
+  - GLMs
+  - Binary Outcomes
+  - Count Outcomes
+  - Survival Outcomes

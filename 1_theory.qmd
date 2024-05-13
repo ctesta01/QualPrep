@@ -29,4 +29,26 @@ repeatedly performing the same experiment (e.g., in the Frequentist paradigm).
 
 ---
 
+Outline of Probability: 
+
+  - Introduction/Background
+  - Probability Basics
+  - Random Variables
+  - Expected Values 
+  - Families of Distributions 
+  - Multiple Random Variables 
+  - Independence and Conditional Expectation
+  - Bivariate Dependence
+  - Inequalities
+  - Multivariate Normal
+  - Statistics of Random Samples
+  - Laws of Large Numbers and Central Limit Theorem 
+  - Stochastic Processes
+
+--- 
+
+Some particularly nice looking inference course materials are 
+available online from Stanfords STATS 200: <https://web.stanford.edu/class/archive/stats/stats200/stats200.1172/lectures.html>
+
+
 ## References

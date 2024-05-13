@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Exercises and notes in preparation for PhD Qualifying Exams in Biostatistics">
 
 <title>Qualifying Exam Preparation - Methods</title>
 <style>
@@ -30,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./3_datastructures.html" rel="next">
+<link href="./2_methods/01_linear_regression.html" rel="next">
 <link href="./1_theory/unit1_puzzles.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -72,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -115,11 +116,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./1_theory.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Probability and Inference</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1_theory/unit1_puzzles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unit 1: History: Puzzles, Paradoxes, and Motivation</span></a>
@@ -128,21 +129,119 @@ ul.task-list li input[type="checkbox"] {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Methods</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="./2_methods.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2_methods/01_linear_regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">01_linear_regression.html</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Data Structures &amp; Algorithms</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="./3_datastructures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Structures &amp; Algorithms</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_datastructures/01_random_numbers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">01_random_numbers.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_datastructures/02_concepts.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">02_concepts.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_datastructures/03_data_structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">03_data_structures.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_datastructures/04_heaps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">04_heaps.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_datastructures/05_greedy_and_dynamic_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">05_greedy_and_dynamic_algorithms.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_datastructures/06_parallel_computing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">06_parallel_computing.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_datastructures/07_p_and_np.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">07_p_and_np.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_datastructures/08_numerical_aspects_of_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">08_numerical_aspects_of_algorithms.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_datastructures/09_linear_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">09_linear_equations.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_datastructures/10_least_squares.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10_least_squares.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_datastructures/11_eigenvalues_and_sparse_matrices.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">11_eigenvalues_and_sparse_matrices.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_datastructures/12_nonlinear_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">12_nonlinear_equations.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_datastructures/14_optimization.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14_optimization.html</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./4_appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendices on Supplemental Material</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4_appendix/01_calculus.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">01_calculus.html</span></a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -165,7 +264,24 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Lorem ipsum ad absurdum</p>
+<p>BST 232 at Harvard has the following publicly available description:</p>
+<blockquote class="blockquote">
+<p>[BST 232 is an] introductory course in the analysis of Gaussian and categorical data, the general linear regression model, ANOVA, robust alternatives based on permutations, model building, resampling methods (bootstrap and jackknife), contingency tables, exact methods, logistic regression.</p>
+</blockquote>
+<p>Course Outline:</p>
+<ul>
+<li>Linear Regression</li>
+<li>Diagnostics</li>
+<li>Model Selection</li>
+<li>Bootstrap Permutation</li>
+<li>Heteroscedastic Errors</li>
+<li>Proportions and Contingency Tables</li>
+<li>Likelihood Theory</li>
+<li>GLMs</li>
+<li>Binary Outcomes</li>
+<li>Count Outcomes</li>
+<li>Survival Outcomes</li>
+</ul>
 
 
 
@@ -568,8 +684,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./3_datastructures.html" class="pagination-link" aria-label="Data Structures &amp; Algorithms">
-        <span class="nav-page-text">Data Structures &amp; Algorithms</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./2_methods/01_linear_regression.html" class="pagination-link" aria-label="01_linear_regression.html">
+        <span class="nav-page-text"><span class="chapter-title">01_linear_regression.html</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

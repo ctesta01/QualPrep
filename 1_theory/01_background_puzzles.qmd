@@ -1,12 +1,13 @@
 ---
-title: "Unit 1: History: Puzzles, Paradoxes, and Motivation"
+title: "History: Puzzles, Paradoxes, and Motivation"
+subtitle: |
+  > *I believe that we do not know anything for certain, but everything probably.*
+  Christiaan Huygens, Oeuvres Completes
 ---
-
 {{< include ../preamble.qmd >}}
-
-> *I believe that we do not know anything for certain, but everything probably.*
-Christiaan Huygens, Oeuvres Completes
-
+:::{.column-margin}
+![<small>[Christiaan Huygens](https://en.wikipedia.org/wiki/Christiaan_Huygens), Lord of Zeelhem (1629-1695) was a Dutch mathematician, physicist, engineer, astronomer, and inventor who is regarded as a key figure in the Scientific Revolution, to quote Wikipedia.</small>](https://upload.wikimedia.org/wikipedia/commons/a/a4/Christiaan_Huygens-painting.jpeg)
+:::
 # History 
 
 One of the things I loved about the presentation in our Probability class (BST 230)
