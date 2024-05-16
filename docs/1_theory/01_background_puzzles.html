@@ -241,66 +241,6 @@ window.Quarto = {
   <a href="../3_datastructures/01_random_numbers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Random Numbers</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/02_concepts.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">02_concepts.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/03_data_structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">03_data_structures.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/04_heaps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">04_heaps.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/05_greedy_and_dynamic_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">05_greedy_and_dynamic_algorithms.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/06_parallel_computing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">06_parallel_computing.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/07_p_and_np.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">07_p_and_np.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/08_numerical_aspects_of_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">08_numerical_aspects_of_algorithms.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/09_linear_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">09_linear_equations.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/10_least_squares.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10_least_squares.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/11_eigenvalues_and_sparse_matrices.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">11_eigenvalues_and_sparse_matrices.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/12_nonlinear_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">12_nonlinear_equations.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/14_optimization.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14_optimization.html</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -361,9 +301,6 @@ window.Quarto = {
 \renewcommand{\bar}{\overline}
 \newcommand{\supp}[1]{\text{supp}(#1)}
 \newcommand\independent{\perp\!\!\!\perp}
-\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
-\newcommand*{\vertbar}{\rule[-1ex]{0.5pt}{2.5ex}} % for use in matrix equations
-\newcommand*{\horzbar}{\rule[.5ex]{2.5ex}{0.5pt}}
 \renewcommand{\d}[0]{\mathrm{d}}
 \newcommand{\pp}[2][]{\frac{\partial#1}{\partial#2}}
 \newcommand{\dd}[2][]{\frac{\mathrm d#1}{\mathrm d#2}}
@@ -589,7 +526,7 @@ P(X = x) &amp; = \frac{e^{-\lambda}}{x_1! \cdots x_k!} \left( \frac{\lambda}{k} 
 =
 \left[1-e^{-\frac{\lambda}{10}} - \frac{\lambda}{10}e^{-\frac{\lambda}{10}}\right]^{10}.
 \]</span></p>
-<details class="page-columns page-full">
+<details>
 <summary>
 Reference materials on Poissonization and related ideas.
 </summary>
@@ -601,11 +538,11 @@ Reference materials on Poissonization and related ideas.
 <li><a href="https://www.youtube.com/watch?v=4lvfTKiLyXw" class="uri">https://www.youtube.com/watch?v=4lvfTKiLyXw</a></li>
 </ul>
 <p>I get the sense that the Chernoff bound for the Poisson-tail is something I should learn about further. The application of Stirling’s approximation to the distribution of deviations from the expected value of a Poisson process that Seshadhri presents is quite beautiful, and something I’d like to learn more about.</p>
-<p>There’s also this interesting approximation of the Multinomial cell-specific count outcomes as Poisson that I saw popping up here and there <span class="citation" data-cites="Ahmad1985Poisson">(<a href="#ref-Ahmad1985Poisson" role="doc-biblioref">Ahmad 1985</a>)</span>.</p>
+There’s also this interesting approximation of the Multinomial cell-specific count outcomes as Poisson that I saw popping up here and there <span class="citation" data-cites="Ahmad1985Poisson">(<a href="#ref-Ahmad1985Poisson" role="doc-biblioref">Ahmad 1985</a>)</span>.
+</details>
 <div class="no-row-height column-margin column-container"><div id="ref-Ahmad1985Poisson" class="csl-entry" role="listitem">
 Ahmad, I. A. 1985. <span>“On the Poisson Approximation of Multinomial Probabilities.”</span> <em>Statistics &amp; Probability Letters</em> 3 (1): 55–56. <a href="https://doi.org/10.1016/0167-7152(85)90013-6">https://doi.org/10.1016/0167-7152(85)90013-6</a>.
-</div></div></details>
-<p>Now, recall that <span class="math inline">\(e^{x}\)</span> has a series expansion. If we multiply both sides by <span class="math inline">\(e^{\lambda}\)</span> and by <span class="math inline">\(43!\)</span>, we should find that the coefficient on the left-hand-side series for <span class="math inline">\(\lambda^{43}\)</span> is just <span class="math inline">\(p_n\)</span>, and the right-hand-side series coefficient for <span class="math inline">\(\lambda^{43}\)</span> gives an expression we can evaluate for <span class="math inline">\(p_{43}\)</span>. They must be equal, because in order for two convergent power series to coincide on a non-empty interval, their coefficients must be equal.</p>
+</div></div><p>Now, recall that <span class="math inline">\(e^{x}\)</span> has a series expansion. If we multiply both sides by <span class="math inline">\(e^{\lambda}\)</span> and by <span class="math inline">\(43!\)</span>, we should find that the coefficient on the left-hand-side series for <span class="math inline">\(\lambda^{43}\)</span> is just <span class="math inline">\(p_n\)</span>, and the right-hand-side series coefficient for <span class="math inline">\(\lambda^{43}\)</span> gives an expression we can evaluate for <span class="math inline">\(p_{43}\)</span>. They must be equal, because in order for two convergent power series to coincide on a non-empty interval, their coefficients must be equal.</p>
 <p>So what we’re going to do is expand the function <span class="math inline">\(e^{x} = \sum_{t=0}^\infty \frac{x^t}{t!}\)</span> wherever we see it on the modified right-hand-side and use that to identify the coefficient of <span class="math inline">\(\lambda^{43}\)</span>, which is <span class="math inline">\(p_{43}\)</span>.</p>
 <p>However, this is a bit hard to do by hand, so we’ll use the symbolic algebra library <code>sympy</code> in Python to do it for us.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> symbols, exp, factorial, series, Pow</span>

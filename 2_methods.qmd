@@ -1,8 +1,9 @@
 ---
 title: "Methods"
+citation-location: document
 ---
 
-BST 232 at Harvard has the following publicly available description:
+BST 232, Methods, has the following description:
 
 > [BST 232 is an] introductory course in the analysis of Gaussian and categorical data, the general linear regression model, ANOVA, robust alternatives based on permutations, model building, resampling methods (bootstrap and jackknife), contingency tables, exact methods, logistic regression.
 
@@ -19,3 +20,27 @@ Course Outline:
   - Binary Outcomes
   - Count Outcomes
   - Survival Outcomes
+
+The listed primary references are: 
+
+  - @kutner2005applied
+  - @agresti2013categorical
+  - @collett2015modelling
+
+Secondary references: 
+
+  - @vittinghoff2012regression
+  - @Chatterjee2006
+  - @mccullagh1989generalized
+  - @faraway2016extending
+  - @James2013
+
+Some online references: 
+
+  - Frank Harrell's Regression Modeling Strategies <small><https://hbiostat.org/rmsc/></small>
+  - Advanced Statistical Modeling III from Durham University <small><https://bookdown.org/cnguyen/ASM_term2_lecture_notes/></small>
+  - Regression Modelling for Biostatistics 1 from Biostatistics Collaboration of Australia 
+  <small><https://bookdown.org/stephane_heritier/RM1TEST/></small>
+
+References:
+--- 

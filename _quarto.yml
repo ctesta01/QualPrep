@@ -17,18 +17,18 @@ book:
     - part: 3_datastructures.qmd
       chapters:
       - 3_datastructures/01_random_numbers.qmd
-      - 3_datastructures/02_concepts.qmd
-      - 3_datastructures/03_data_structures.qmd
-      - 3_datastructures/04_heaps.qmd
-      - 3_datastructures/05_greedy_and_dynamic_algorithms.qmd
-      - 3_datastructures/06_parallel_computing.qmd
-      - 3_datastructures/07_p_and_np.qmd
-      - 3_datastructures/08_numerical_aspects_of_algorithms.qmd
-      - 3_datastructures/09_linear_equations.qmd
-      - 3_datastructures/10_least_squares.qmd
-      - 3_datastructures/11_eigenvalues_and_sparse_matrices.qmd
-      - 3_datastructures/12_nonlinear_equations.qmd
-      - 3_datastructures/14_optimization.qmd
+      # - 3_datastructures/02_concepts.qmd
+      # - 3_datastructures/03_data_structures.qmd
+      # - 3_datastructures/04_heaps.qmd
+      # - 3_datastructures/05_greedy_and_dynamic_algorithms.qmd
+      # - 3_datastructures/06_parallel_computing.qmd
+      # - 3_datastructures/07_p_and_np.qmd
+      # - 3_datastructures/08_numerical_aspects_of_algorithms.qmd
+      # - 3_datastructures/09_linear_equations.qmd
+      # - 3_datastructures/10_least_squares.qmd
+      # - 3_datastructures/11_eigenvalues_and_sparse_matrices.qmd
+      # - 3_datastructures/12_nonlinear_equations.qmd
+      # - 3_datastructures/14_optimization.qmd
     - part: 4_appendix.qmd
       chapters:
       - 4_appendix/01_calculus.qmd

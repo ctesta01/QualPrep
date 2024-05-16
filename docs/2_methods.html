@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -32,7 +52,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./2_methods/01_linear_regression.html" rel="next">
-<link href="./1_theory/unit1_puzzles.html" rel="prev">
+<link href="./1_theory/01_background_puzzles.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -123,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1_theory/unit1_puzzles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unit 1: History: Puzzles, Paradoxes, and Motivation</span></a>
+  <a href="./1_theory/01_background_puzzles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">History: Puzzles, Paradoxes, and Motivation</span></a>
   </div>
 </li>
       </ul>
@@ -139,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2_methods/01_linear_regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">01_linear_regression.html</span></a>
+  <a href="./2_methods/01_linear_regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Linear Regression</span></a>
   </div>
 </li>
       </ul>
@@ -155,67 +175,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3_datastructures/01_random_numbers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">01_random_numbers.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./3_datastructures/02_concepts.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">02_concepts.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./3_datastructures/03_data_structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">03_data_structures.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./3_datastructures/04_heaps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">04_heaps.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./3_datastructures/05_greedy_and_dynamic_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">05_greedy_and_dynamic_algorithms.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./3_datastructures/06_parallel_computing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">06_parallel_computing.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./3_datastructures/07_p_and_np.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">07_p_and_np.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./3_datastructures/08_numerical_aspects_of_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">08_numerical_aspects_of_algorithms.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./3_datastructures/09_linear_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">09_linear_equations.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./3_datastructures/10_least_squares.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10_least_squares.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./3_datastructures/11_eigenvalues_and_sparse_matrices.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">11_eigenvalues_and_sparse_matrices.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./3_datastructures/12_nonlinear_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">12_nonlinear_equations.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./3_datastructures/14_optimization.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14_optimization.html</span></a>
+  <a href="./3_datastructures/01_random_numbers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Random Numbers</span></a>
   </div>
 </li>
       </ul>
@@ -264,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>BST 232 at Harvard has the following publicly available description:</p>
+<p>BST 232, Methods, has the following description:</p>
 <blockquote class="blockquote">
 <p>[BST 232 is an] introductory course in the analysis of Gaussian and categorical data, the general linear regression model, ANOVA, robust alternatives based on permutations, model building, resampling methods (bootstrap and jackknife), contingency tables, exact methods, logistic regression.</p>
 </blockquote>
@@ -282,8 +242,56 @@ ul.task-list li input[type="checkbox"] {
 <li>Count Outcomes</li>
 <li>Survival Outcomes</li>
 </ul>
+<p>The listed primary references are:</p>
+<ul>
+<li><span class="citation" data-cites="kutner2005applied">Kutner et al. (<a href="#ref-kutner2005applied" role="doc-biblioref">2005</a>)</span></li>
+<li><span class="citation" data-cites="agresti2013categorical">Agresti (<a href="#ref-agresti2013categorical" role="doc-biblioref">2013</a>)</span></li>
+<li><span class="citation" data-cites="collett2015modelling">Collett (<a href="#ref-collett2015modelling" role="doc-biblioref">2015</a>)</span></li>
+</ul>
+<p>Secondary references:</p>
+<ul>
+<li><span class="citation" data-cites="vittinghoff2012regression">Vittinghoff et al. (<a href="#ref-vittinghoff2012regression" role="doc-biblioref">2012</a>)</span></li>
+<li><span class="citation" data-cites="Chatterjee2006">Chatterjee and Hadi (<a href="#ref-Chatterjee2006" role="doc-biblioref">2006</a>)</span></li>
+<li><span class="citation" data-cites="mccullagh1989generalized">McCullagh and Nelder (<a href="#ref-mccullagh1989generalized" role="doc-biblioref">1989</a>)</span></li>
+<li><span class="citation" data-cites="faraway2016extending">Faraway (<a href="#ref-faraway2016extending" role="doc-biblioref">2016</a>)</span></li>
+<li><span class="citation" data-cites="James2013">James et al. (<a href="#ref-James2013" role="doc-biblioref">2013</a>)</span></li>
+</ul>
+<p>Some online references:</p>
+<ul>
+<li>Frank Harrell’s Regression Modeling Strategies <small><a href="https://hbiostat.org/rmsc/" class="uri">https://hbiostat.org/rmsc/</a></small></li>
+<li>Advanced Statistical Modeling III from Durham University <small><a href="https://bookdown.org/cnguyen/ASM_term2_lecture_notes/" class="uri">https://bookdown.org/cnguyen/ASM_term2_lecture_notes/</a></small></li>
+<li>Regression Modelling for Biostatistics 1 from Biostatistics Collaboration of Australia <small><a href="https://bookdown.org/stephane_heritier/RM1TEST/" class="uri">https://bookdown.org/stephane_heritier/RM1TEST/</a></small></li>
+</ul>
+<p>References:</p>
+<hr>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-agresti2013categorical" class="csl-entry" role="listitem">
+Agresti, Alan. 2013. <em>Categorical Data Analysis</em>. 3rd ed. Hoboken, NJ: Wiley.
+</div>
+<div id="ref-Chatterjee2006" class="csl-entry" role="listitem">
+Chatterjee, Samprit, and Ali S. Hadi. 2006. <em>Regression Analysis by Example</em>. 4th ed. John Wiley &amp; Sons.
+</div>
+<div id="ref-collett2015modelling" class="csl-entry" role="listitem">
+Collett, David. 2015. <em>Modelling Survival Data in Medical Research</em>. 3rd ed. Chapman &amp; Hall/CRC Texts in Statistical Science. CRC Press. <a href="https://www.crcpress.com/Modelling-Survival-Data-in-Medical-Research/Collett/p/book/9781439856789">https://www.crcpress.com/Modelling-Survival-Data-in-Medical-Research/Collett/p/book/9781439856789</a>.
+</div>
+<div id="ref-faraway2016extending" class="csl-entry" role="listitem">
+Faraway, Julian J. 2016. <em>Extending the Linear Model with r: Generalized Linear, Mixed Effects and Nonparametric Regression Models</em>. 2nd ed. Boca Raton: CRC Press.
+</div>
+<div id="ref-James2013" class="csl-entry" role="listitem">
+James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. 2013. <em>An Introduction to Statistical Learning: With Applications in r</em>. Springer. <a href="https://faculty.marshall.usc.edu/gareth-james/ISL/">https://faculty.marshall.usc.edu/gareth-james/ISL/</a>.
+</div>
+<div id="ref-kutner2005applied" class="csl-entry" role="listitem">
+Kutner, Michael H., Christopher J. Nachtsheim, John Neter, and William Li. 2005. <em>Applied Linear Statistical Models</em>. 5th ed. Boston: McGraw-Hill Irwin.
+</div>
+<div id="ref-mccullagh1989generalized" class="csl-entry" role="listitem">
+McCullagh, P., and J. A. Nelder. 1989. <em>Generalized Linear Models</em>. 2nd ed. London: Chapman; Hall.
+</div>
+<div id="ref-vittinghoff2012regression" class="csl-entry" role="listitem">
+Vittinghoff, Eric, David V. Glidden, Stephen C. Shiboski, and Charles E. McCulloch. 2012. <em>Regression Methods in Biostatistics: Linear, Logistic, Survival, and Repeated Measures Models</em>. 2nd ed. New York: Springer.
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -679,13 +687,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <input type="hidden" id="giscus-alt-theme" value="dark">
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./1_theory/unit1_puzzles.html" class="pagination-link" aria-label="Unit 1: History: Puzzles, Paradoxes, and Motivation">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Unit 1: History: Puzzles, Paradoxes, and Motivation</span></span>
+      <a href="./1_theory/01_background_puzzles.html" class="pagination-link" aria-label="History: Puzzles, Paradoxes, and Motivation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">History: Puzzles, Paradoxes, and Motivation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./2_methods/01_linear_regression.html" class="pagination-link" aria-label="01_linear_regression.html">
-        <span class="nav-page-text"><span class="chapter-title">01_linear_regression.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./2_methods/01_linear_regression.html" class="pagination-link" aria-label="Linear Regression">
+        <span class="nav-page-text"><span class="chapter-title">Linear Regression</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

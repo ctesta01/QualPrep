@@ -18,3 +18,12 @@ Course outline:
   - Systems of Nonlinear Equations 
   - Numerical Integration and MCMC 
   - Numerical Optimization
+
+Some online resources I've found helpful:
+
+* Steven Skiena <small><https://m.youtube.com/watch?v=A2bFN3MyNDA&list=PLOtl7M3yp-DX32N0fVIyvn7ipWKNGmwpp></small>
+* MIT 6.006
+<small><https://m.youtube.com/playlist?list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb></small>
+* An Open Guide to Data Structures and Algorithms <small><https://pressbooks.palni.org/anopenguidetodatastructuresandalgorithms/></small>
+* Algorithms by Jeff Erickson <small><http://jeffe.cs.illinois.edu/teaching/algorithms/#book></small>
+* Awesome Algorithms on GitHub <small><https://github.com/tayllan/awesome-algorithms></small>
