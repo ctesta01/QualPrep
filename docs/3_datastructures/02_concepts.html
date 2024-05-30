@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Exercises and notes in preparation for PhD Qualifying Exams in Biostatistics">
 
-<title>Qualifying Exam Preparation</title>
+<title>Qualifying Exam Preparation - Concepts of Algorithms</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,7 +51,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../3_datastructures/03_data_structures.html" rel="next">
+<link href="../4_appendix.html" rel="next">
 <link href="../3_datastructures/01_random_numbers.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -69,10 +90,39 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -81,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../3_datastructures.html">Data Structures &amp; Algorithms</a></li><li class="breadcrumb-item"><a href="../3_datastructures/02_concepts.html"><span class="chapter-title">02_concepts.html</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../3_datastructures.html">Data Structures &amp; Algorithms</a></li><li class="breadcrumb-item"><a href="../3_datastructures/02_concepts.html"><span class="chapter-title">Concepts of Algorithms</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -115,21 +165,33 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../1_theory.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Probability and Inference</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../1_theory/unit1_puzzles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unit 1: History: Puzzles, Paradoxes, and Motivation</span></a>
+  <a href="../1_theory/01_background_puzzles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">History: Puzzles, Paradoxes, and Motivation</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Methods</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="../2_methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2_methods/01_linear_regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Linear Regression</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -142,74 +204,31 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/01_random_numbers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">01_random_numbers.html</span></a>
+  <a href="../3_datastructures/01_random_numbers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Random Numbers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/02_concepts.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">02_concepts.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/03_data_structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">03_data_structures.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/04_heaps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">04_heaps.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/05_greedy_and_dynamic_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">05_greedy_and_dynamic_algorithms.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/06_parallel_computing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">06_parallel_computing.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/07_p_and_np.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">07_p_and_np.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/08_numerical_aspects_of_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">08_numerical_aspects_of_algorithms.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/09_linear_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">09_linear_equations.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/10_least_squares.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10_least_squares.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/11_eigenvalues_and_sparse_matrices.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">11_eigenvalues_and_sparse_matrices.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/12_nonlinear_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">12_nonlinear_equations.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../3_datastructures/14_optimization.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14_optimization.html</span></a>
+  <a href="../3_datastructures/02_concepts.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Concepts of Algorithms</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Appendices on Supplemental Material</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="../4_appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendices on Supplemental Material</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../4_appendix/01_calculus.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">01_calculus.html</span></a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
@@ -217,16 +236,91 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../3_datastructures.html">Data Structures &amp; Algorithms</a></li><li class="breadcrumb-item"><a href="../3_datastructures/02_concepts.html"><span class="chapter-title">Concepts of Algorithms</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Concepts of Algorithms</span></h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="o-notation" class="level2">
+<h2 class="anchored" data-anchor-id="o-notation">O Notation</h2>
+<ul>
+<li><span class="math inline">\(f(n) = O(g(n))\)</span> means <span class="math inline">\(g(n)\)</span> is an upper bound on <span class="math inline">\(f(n)\)</span>. As in, <span class="math inline">\(\exists c &gt; 0, n_0 &gt; 0\)</span> such that <span class="math inline">\(0 \leq f(n) \leq cg(n)\)</span> for all <span class="math inline">\(n \geq n_0\)</span>.</li>
+<li><span class="math inline">\(f(n) = \Omega(g(n))\)</span> means <span class="math inline">\(g(n)\)</span> is a lower bound on <span class="math inline">\(f(n)\)</span>. As in, <span class="math inline">\(\exists c &gt; 0, n_0 &gt; 0\)</span> such that <span class="math inline">\(0 \leq cg(n) \leq f(n)\)</span> for all <span class="math inline">\(n \geq n_0\)</span>.</li>
+<li><span class="math inline">\(f(n) = \Theta(g(n))\)</span> means <span class="math inline">\(g(n)\)</span> is a tight bound on <span class="math inline">\(f(n)\)</span>. As in, <span class="math inline">\(\exists c_1, c_2 &gt; 0, n_0 &gt; 0\)</span> such that <span class="math inline">\(0 \leq c_1g(n) \leq f(n) \leq c_2g(n) \; \; \forall n \geq n_0\)</span>.</li>
+</ul>
+<p>We can essentially think of these as <span class="math inline">\(O(g(n))\)</span> being an upper bound, <span class="math inline">\(\Omega(g(n))\)</span> being a lower bound, and <span class="math inline">\(\Theta(g(n))\)</span> being a tight bound on the asymptotic runtime.</p>
+</section>
+<section id="asymptotic-complexity-classes" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="asymptotic-complexity-classes">Asymptotic Complexity Classes</h2>
+<div class="cell" data-layout-align="center" data-fontsize="8">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02_concepts_files/figure-html/p1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>From the plot we can see that <span class="math inline">\(n!\)</span> grows the fastest, followed by <span class="math inline">\(2^n\)</span>, <span class="math inline">\(n^2 + n\)</span>, <span class="math inline">\(n^2\)</span>, <span class="math inline">\(n \log n\)</span>, <span class="math inline">\(n\)</span>, and <span class="math inline">\(\log n\)</span>. In some kind of qualitative sense, we can see that <span class="math inline">\(n!\)</span>, <span class="math inline">\(2^n\)</span>, <span class="math inline">\(n^2 + n\)</span>, <span class="math inline">\(n^2\)</span>, and <span class="math inline">\(n \log n\)</span> are all growing pretty rapidly in contrast to <span class="math inline">\(n\)</span> which is about as good as any operation that reads data can get, and <span class="math inline">\(\log n\)</span> which is the increasing slowest. This means we would much rather our algorithm’s time complexity be <span class="math inline">\(\log n\)</span> or <span class="math inline">\(n\)</span> compared to any of the others.</p>
+<p>From the figure, we can see that <span class="math display">\[O(\log n) \subseteq O(n) \subseteq O(n \log n) \subseteq O(n^2) = O(n^2 + n)  \subseteq O(2^n) \subseteq O(n!).\]</span></p>
+<p>More detail would be required to prove the result, but the above statement is nonetheless true. Recall that <span class="math inline">\(O(f) = \{ \text{functions }g \mid \exists \; c \in \mathbb{R}^+, n_0 \in \mathbb N^+ : 0 \leq g(n) \leq c f(n) \text{ for all } n \geq n_0 \}\)</span>.</p>
+<p><span class="citation" data-cites="Skiena2020">Skiena (<a href="#ref-Skiena2020" role="doc-biblioref">2020</a>)</span> writes this result as</p>
+<div class="no-row-height column-margin column-container"><div id="ref-Skiena2020" class="csl-entry" role="listitem">
+Skiena, Steven S. 2020. <em>The Algorithm Design Manual</em>. 3rd ed. Texts in Computer Science. Springer. <a href="https://doi.org/10.1007/978-3-030-54256-6">https://doi.org/10.1007/978-3-030-54256-6</a>.
+</div></div><p><span class="math display">\[ n! \gg 2^n \gg n^3 \gg n^2 \gg n \log n \gg n \gg \log n \gg 1.\]</span></p>
+<p>Rules for working with O-notation:</p>
+<ul>
+<li><span class="math inline">\(O(f + g) = O(\max(f, g))\)</span>, same for <span class="math inline">\(\Omega\)</span> and <span class="math inline">\(\Theta\)</span>.</li>
+<li><span class="math inline">\(O(c \cdot f) = O(f)\)</span> for constants <span class="math inline">\(c &gt; 0\)</span>.</li>
+<li><span class="math inline">\(O(f \cdot g) = O(f) \cdot O(g)\)</span>.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/common_algorithm_runtimes/common_algorithm_runtimes.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>A table with some common algorithms and their runtimes. Average runtime is only mentioned if notable.</figcaption>
+</figure>
+</div>
+<p>Links:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Merge_sort">Merge Sort</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Quicksort">Quicksort</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Heapsort">Heapsort</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Bubble_sort">Bubblesort</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Insertion_sort">Insertion Sort</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Selection_sort">Selection Sort</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra’s Algorithm</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm">Floyd Warshall Algorithm</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Prim%27s_algorithm">Prim’s Algorithm</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Binary_search_algorithm">Binary Search Algorithm</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Breadth-first_search">Breadth-First Search</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Depth-first_search">Depth-First Search</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Singular_value_decomposition">Singular Value Decomposition</a></li>
+<li><a href="https://en.wikipedia.org/wiki/LU_decomposition">LU Decomposition</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cholesky_decomposition">Cholesky Decomposition</a></li>
+<li><a href="https://en.wikipedia.org/wiki/QR_decomposition">QR Decomposition</a></li>
+</ul>
 
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -622,13 +716,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <input type="hidden" id="giscus-alt-theme" value="dark">
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../3_datastructures/01_random_numbers.html" class="pagination-link" aria-label="01_random_numbers.html">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">01_random_numbers.html</span></span>
+      <a href="../3_datastructures/01_random_numbers.html" class="pagination-link" aria-label="Random Numbers">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Random Numbers</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../3_datastructures/03_data_structures.html" class="pagination-link" aria-label="03_data_structures.html">
-        <span class="nav-page-text"><span class="chapter-title">03_data_structures.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../4_appendix.html" class="pagination-link" aria-label="Appendices on Supplemental Material">
+        <span class="nav-page-text">Appendices on Supplemental Material</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

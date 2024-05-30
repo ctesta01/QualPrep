@@ -1,0 +1,99 @@
+---
+title: Concepts of Algorithms
+--- 
+
+## O Notation
+
+* $f(n) = O(g(n))$ means $g(n)$ is an upper bound on $f(n)$. As in,
+$\exists c > 0, n_0 > 0$ such that $0 \leq f(n) \leq cg(n)$ for all $n \geq n_0$.
+* $f(n) = \Omega(g(n))$ means $g(n)$ is a lower bound on $f(n)$. As in,
+$\exists c > 0, n_0 > 0$ such that $0 \leq cg(n) \leq f(n)$ for all $n \geq n_0$.
+* $f(n) = \Theta(g(n))$ means $g(n)$ is a tight bound on $f(n)$. As in,
+$\exists c_1, c_2 > 0, n_0 > 0$ such that $0 \leq c_1g(n) \leq f(n) \leq c_2g(n) \; \; \forall n \geq n_0$.
+
+We can essentially think of these as $O(g(n))$ being an upper bound, $\Omega(g(n))$ being a lower bound, and $\Theta(g(n))$ being a tight bound on the asymptotic runtime.
+
+## Asymptotic Complexity Classes
+```{r p1}
+#| echo: false
+#| message: false
+#| warning: false
+#| out.width: 100%
+#| fig.align: center
+#| fig.width: 7
+#| fig.height: 4
+#| fig.cap: ""
+#| fontsize: 8
+
+library(tidyverse)
+library(MetBrewer)
+
+x <- seq(1, 10, by = .1)^2
+ys <- list(
+    `n!` = factorial(x),
+    `2^n` = 2^x,
+    `n^2` = x^2,
+    `log(n)` = log(x),
+    `n log(n)` = x * log(x),
+    `n` = x,
+    `n^2 + n` = x^2 + x
+  )
+
+df <- dplyr::bind_cols(x=x, ys)
+
+df |> 
+  tidyr::pivot_longer(cols = -x, names_to = "fn", values_to = "y") |> 
+  ggplot(aes(x = x, y = y, color = fn, linetype = fn, shape = fn)) + 
+  geom_line(alpha = 0.8) + 
+  geom_point(alpha = .7) + 
+  labs(title = "Ranking of functions", x = "n", y = "f(n)", color = "Function", 
+    linetype = "Function", shape = "Function") + 
+  scale_color_manual(values=met.brewer("Egypt", 7)) + 
+  theme_minimal() + 
+  ylim(0, 100)
+```
+
+From the plot we can see that $n!$ grows the fastest, followed by $2^n$,
+$n^2 + n$, $n^2$, $n \log n$, $n$, and $\log n$. In some kind of qualitative sense, 
+we can see that $n!$, $2^n$, $n^2 + n$, $n^2$, and $n \log n$ are all growing 
+pretty rapidly in contrast to $n$ which is about as good as any operation that
+reads data can get, and $\log n$ which is the increasing slowest. This means
+we would much rather our algorithm's time complexity be $\log n$ or $n$ compared to 
+any of the others. 
+
+From the figure, we can see that 
+$$O(\log n) \subseteq O(n) \subseteq O(n \log n) \subseteq O(n^2) = O(n^2 + n)  \subseteq O(2^n) \subseteq O(n!).$$  
+
+More detail would be required to prove the result, but the above statement is nonetheless true. Recall that $O(f) = \{ \text{functions }g \mid \exists \; c \in \mathbb{R}^+, n_0 \in \mathbb N^+ : 0 \leq g(n) \leq c f(n) \text{ for all } n \geq n_0 \}$.
+
+@Skiena2020 writes this result as 
+
+$$ n! \gg 2^n \gg n^3 \gg n^2 \gg n \log n \gg n \gg \log n \gg 1.$$
+
+Rules for working with O-notation: 
+
+  * $O(f + g) = O(\max(f, g))$, same for $\Omega$ and $\Theta$.
+  * $O(c \cdot f) = O(f)$ for constants $c > 0$.
+  * $O(f \cdot g) = O(f) \cdot O(g)$.
+
+![A table with some common algorithms and their runtimes. Average runtime is only mentioned if notable.](figures/common_algorithm_runtimes/common_algorithm_runtimes.svg){width='100%'}
+
+
+Links: 
+
+  - [Merge Sort](https://en.wikipedia.org/wiki/Merge_sort)
+  - [Quicksort](https://en.wikipedia.org/wiki/Quicksort)
+  - [Heapsort](https://en.wikipedia.org/wiki/Heapsort)
+  - [Bubblesort](https://en.wikipedia.org/wiki/Bubble_sort)
+  - [Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort) 
+  - [Selection Sort](https://en.wikipedia.org/wiki/Selection_sort)
+  - [Dijkstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
+  - [Floyd Warshall Algorithm](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm)
+  - [Prim's Algorithm](https://en.wikipedia.org/wiki/Prim%27s_algorithm)
+  - [Binary Search Algorithm](https://en.wikipedia.org/wiki/Binary_search_algorithm)
+  - [Breadth-First Search](https://en.wikipedia.org/wiki/Breadth-first_search)
+  - [Depth-First Search](https://en.wikipedia.org/wiki/Depth-first_search)
+  - [Singular Value Decomposition](https://en.wikipedia.org/wiki/Singular_value_decomposition)
+  - [LU Decomposition](https://en.wikipedia.org/wiki/LU_decomposition)
+  - [Cholesky Decomposition](https://en.wikipedia.org/wiki/Cholesky_decomposition)
+  - [QR Decomposition](https://en.wikipedia.org/wiki/QR_decomposition)

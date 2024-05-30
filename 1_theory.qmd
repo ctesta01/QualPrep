@@ -45,6 +45,79 @@ Outline of Probability:
   - Laws of Large Numbers and Central Limit Theorem 
   - Stochastic Processes
 
+---
+
+Outline of Inference: 
+
+1. Introduction
+    - Identifiability
+    - Scale Families
+    - Exponential Families
+    - Moments
+2. Principles of Data Reduction 
+    - Data Reduction
+    - Sufficiency 
+        - Order Statistics
+        - Factorization Theorem 
+        - Minimal Sufficiency 
+        - Ratio of Densities
+    - Ancillary Statistics
+        - Location-Scale Families
+        - Conditioning / Conditionality Principle
+    - Complete Families
+        - Basu's Theorem 
+    - Likelihood Principle
+3. Methods of Estimation 
+    - Method of Moments
+    - Maximum Likelihood
+        - Multiple Parameters
+        - Invariance Property
+        - Exponential Families
+    - Other Methods
+4. Evaluating Estimators
+    - Mean Squared Error and Bias-Variance Tradeoff
+    - Best Unbiased Estimation
+        - Cramér-Rao Inequality
+        - Rao-Blackwell 
+        - Complete Families
+5. Asymptotic Distributions 
+    - Consistency 
+    - Convergence in Distribution 
+      - Slutsky's Theorem 
+      - Delta Method 
+      - Lyapunov Central Limit Theorem 
+    - Multivariate Distributions 
+      - Asymptotics
+6. Intro to Hypothesis Testing 
+    - Basic Concepts 
+    - Likelihood Ratio Test
+    - Type I and Type II Error Rate 
+    - P-Values 
+7. Theory of Optimal Tests 
+    - UMP Tests 
+      - Neyman-Pearson Lemma 
+      - Randomized Tests 
+      - More on Neyman-Pearson 
+      - Karlin-Rubin 
+      - Two-Sided Alternatives 
+    - Locally Most Powerful Tests
+    - Multiple Parameters
+8. Distribution of MLEs and Asymptotic Efficiency 
+    - Notation and Assumptions 
+      - Multiple Parameters
+    - Consistency of MLEs
+    - Regularity Conditions
+    - Asymptotic Distribution of MLEs
+      - Non-IID Data
+      - Multi-Parameter Models 
+    - Asymptotic Relative Efficiency 
+    - Asymptotic Efficiecny 
+    - Asymptotic Confidence Intervals 
+ 9. Likelihood Ratio, Score, and Wald Tests
+    - Likelihood Ratio, Score, and Wald Tests
+    - Multidimensional Parameters
+    - Composite Null 
+
 --- 
 
 Some particularly nice looking inference course materials are 

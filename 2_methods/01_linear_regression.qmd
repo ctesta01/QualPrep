@@ -125,7 +125,8 @@ $$\hat \beta = (\mathbf X^\top \mathbf X)^{-1} \mathbf X^\top \mathbf y.$$
 </details>
 :::
 
-## Visualizing Interactions
+:::{.content-hidden}
+## Visualizing Interactions 
 
 One of the interesting things from Methods was learning
 about useful off-the-shelf tools like `jtools::summ` and
@@ -263,3 +264,5 @@ jtools::summ(lm_model, model.info = FALSE)
 jtools::plot_summs(lm_model)
 ```
 --> 
+
+:::

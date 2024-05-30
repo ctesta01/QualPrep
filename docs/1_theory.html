@@ -90,6 +90,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -178,6 +207,11 @@ div.csl-indent {
   <a href="./3_datastructures/01_random_numbers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Random Numbers</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_datastructures/02_concepts.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Concepts of Algorithms</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -246,6 +280,117 @@ div.csl-indent {
 <li>Laws of Large Numbers and Central Limit Theorem</li>
 <li>Stochastic Processes</li>
 </ul>
+<hr>
+<p>Outline of Inference:</p>
+<ol type="1">
+<li>Introduction
+<ul>
+<li>Identifiability</li>
+<li>Scale Families</li>
+<li>Exponential Families</li>
+<li>Moments</li>
+</ul></li>
+<li>Principles of Data Reduction
+<ul>
+<li>Data Reduction</li>
+<li>Sufficiency
+<ul>
+<li>Order Statistics</li>
+<li>Factorization Theorem</li>
+<li>Minimal Sufficiency</li>
+<li>Ratio of Densities</li>
+</ul></li>
+<li>Ancillary Statistics
+<ul>
+<li>Location-Scale Families</li>
+<li>Conditioning / Conditionality Principle</li>
+</ul></li>
+<li>Complete Families
+<ul>
+<li>Basu’s Theorem</li>
+</ul></li>
+<li>Likelihood Principle</li>
+</ul></li>
+<li>Methods of Estimation
+<ul>
+<li>Method of Moments</li>
+<li>Maximum Likelihood
+<ul>
+<li>Multiple Parameters</li>
+<li>Invariance Property</li>
+<li>Exponential Families</li>
+</ul></li>
+<li>Other Methods</li>
+</ul></li>
+<li>Evaluating Estimators
+<ul>
+<li>Mean Squared Error and Bias-Variance Tradeoff</li>
+<li>Best Unbiased Estimation
+<ul>
+<li>Cramér-Rao Inequality</li>
+<li><span class="math inline">\(\star\)</span> Midterm <span class="math inline">\(\star\)</span></li>
+<li>Rao-Blackwell</li>
+<li>Complete Families</li>
+</ul></li>
+</ul></li>
+<li>Asymptotic Distributions
+<ul>
+<li>Consistency</li>
+<li>Convergence in Distribution
+<ul>
+<li>Slutsky’s Theorem</li>
+<li>Delta Method</li>
+<li>Lyapunov Central Limit Theorem</li>
+</ul></li>
+<li>Multivariate Distributions
+<ul>
+<li>Asymptotics</li>
+</ul></li>
+</ul></li>
+<li>Intro to Hypothesis Testing
+<ul>
+<li>Basic Concepts</li>
+<li>Likelihood Ratio Test</li>
+<li>Type I and Type II Error Rate</li>
+<li>P-Values</li>
+</ul></li>
+<li>Theory of Optimal Tests
+<ul>
+<li>UMP Tests
+<ul>
+<li>Neyman-Pearson Lemma</li>
+<li>Randomized Tests</li>
+<li>More on Neyman-Pearson</li>
+<li>Karlin-Rubin</li>
+<li>Two-Sided Alternatives</li>
+</ul></li>
+<li>Locally Most Powerful Tests</li>
+<li>Multiple Parameters</li>
+</ul></li>
+<li>Distribution of MLEs and Asymptotic Efficiency
+<ul>
+<li>Notation and Assumptions
+<ul>
+<li>Multiple Parameters</li>
+</ul></li>
+<li>Consistency of MLEs</li>
+<li>Regularity Conditions</li>
+<li>Asymptotic Distribution of MLEs
+<ul>
+<li>Non-IID Data</li>
+<li>Multi-Parameter Models</li>
+</ul></li>
+<li>Asymptotic Relative Efficiency</li>
+<li>Asymptotic Efficiecny</li>
+<li>Asymptotic Confidence Intervals</li>
+</ul></li>
+<li>Likelihood Ratio, Score, and Wald Tests
+<ul>
+<li>Likelihood Ratio, Score, and Wald Tests</li>
+<li>Multidimensional Parameters</li>
+<li>Composite Null</li>
+</ul></li>
+</ol>
 <hr>
 <p>Some particularly nice looking inference course materials are available online from Stanfords STATS 200: <a href="https://web.stanford.edu/class/archive/stats/stats200/stats200.1172/lectures.html" class="uri">https://web.stanford.edu/class/archive/stats/stats200/stats200.1172/lectures.html</a></p>
 <section id="references" class="level2">

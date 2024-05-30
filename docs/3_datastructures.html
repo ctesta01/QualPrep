@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -73,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating fullcontent">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -158,6 +178,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="./3_datastructures/01_random_numbers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Random Numbers</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_datastructures/02_concepts.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Concepts of Algorithms</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -181,9 +206,10 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -229,8 +255,17 @@ ul.task-list li input[type="checkbox"] {
 <li>Algorithms by Jeff Erickson <small><a href="http://jeffe.cs.illinois.edu/teaching/algorithms/#book" class="uri">http://jeffe.cs.illinois.edu/teaching/algorithms/#book</a></small></li>
 <li>Awesome Algorithms on GitHub <small><a href="https://github.com/tayllan/awesome-algorithms" class="uri">https://github.com/tayllan/awesome-algorithms</a></small></li>
 </ul>
+<section id="references" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><span class="citation" data-cites="Skiena2020">(<a href="#ref-Skiena2020" role="doc-biblioref">Skiena 2020</a>)</span></li>
+</ul>
 
 
+<div class="no-row-height column-margin column-container"><div id="ref-Skiena2020" class="csl-entry" role="listitem">
+Skiena, Steven S. 2020. <em>The Algorithm Design Manual</em>. 3rd ed. Texts in Computer Science. Springer. <a href="https://doi.org/10.1007/978-3-030-54256-6">https://doi.org/10.1007/978-3-030-54256-6</a>.
+</div></div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

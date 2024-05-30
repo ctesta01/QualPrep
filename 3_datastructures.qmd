@@ -27,3 +27,7 @@ Some online resources I've found helpful:
 * An Open Guide to Data Structures and Algorithms <small><https://pressbooks.palni.org/anopenguidetodatastructuresandalgorithms/></small>
 * Algorithms by Jeff Erickson <small><http://jeffe.cs.illinois.edu/teaching/algorithms/#book></small>
 * Awesome Algorithms on GitHub <small><https://github.com/tayllan/awesome-algorithms></small>
+
+## References 
+
+- [@Skiena2020]

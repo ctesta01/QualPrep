@@ -17,7 +17,7 @@ book:
     - part: 3_datastructures.qmd
       chapters:
       - 3_datastructures/01_random_numbers.qmd
-      # - 3_datastructures/02_concepts.qmd
+      - 3_datastructures/02_concepts.qmd
       # - 3_datastructures/03_data_structures.qmd
       # - 3_datastructures/04_heaps.qmd
       # - 3_datastructures/05_greedy_and_dynamic_algorithms.qmd
