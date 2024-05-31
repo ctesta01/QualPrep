@@ -297,5 +297,38 @@
     "crumbs": [
       "Data Structures & Algorithms"
     ]
+  },
+  {
+    "objectID": "4_appendix/01_calculus.html",
+    "href": "4_appendix/01_calculus.html",
+    "title": "Calculus Review",
+    "section": "",
+    "text": "\\(u\\)-substitution\nSteps:\nExample:\n\\[\\int x e^{x^2} dx\\]\nLet \\(u = x^2\\), so that \\(du/dx = 2x\\) or \\(dx = \\frac{du}{2x}\\).\n\\[\\int x e^{x^2} dx = \\int x e^u \\cdot \\frac{du}{dx} = \\frac{1}{2} \\int e^u du = \\frac{1}{2} e^u + C = \\frac{1}{2} e^{x^2} + C.\\]",
+    "crumbs": [
+      "Appendices on Supplemental Material",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Calculus Review</span>"
+    ]
+  },
+  {
+    "objectID": "4_appendix/01_calculus.html#integration-by-parts",
+    "href": "4_appendix/01_calculus.html#integration-by-parts",
+    "title": "Calculus Review",
+    "section": "Integration by Parts",
+    "text": "Integration by Parts\nBasically, integration by parts is the ‘product rule’ for derivatives in reverse (i.e., integration instead of differentiation).\nThe formula is always \\[ \\int u dv = uv - \\int v du.\\]\nSteps:\n\nIdentify the parts of the integral \\(u\\) and \\(dv\\).\nDifferentiate \\(u\\) to get \\(du\\).\nIntegrate \\(dv\\) to get \\(v\\).\nSubstitute into the formula.\n\nExample:\n\\[\\int x e^x dx.\\]\nLet \\(u = x\\) and \\(dv = e^x dx\\). Then \\(du = dx\\) and \\(v = e^x\\). \\[\\int x e^x dx = xe^x - \\int e^x dx = xe^x - e^x + C = e^x(x-1) + C.\\]\n\n\n\n\n\n\nTip\n\n\n\n\n\nA Gamma-Poisson Relationship\n\nSometimes repeated application of integration by parts until reaching some kind of a base-case is the most elegant way to solve a problem.\nProblem 3.19 from Casella & Berger asks one to show the relation \\[\\int_x^\\infty \\frac{1}{\\Gamma(\\alpha)} z^{\\alpha - 1} e^{-z} dz = \\sum_{y=0}^{\\alpha - 1} \\frac{x^y e^{-x}}{y!}, \\quad \\alpha = 1, 2, 3, ...\\]\nFirst, notice what the left- and right-hand-sides are: \\[\n\\begin{array}{c}\n\\text{RHS: } P(Y &lt; \\alpha), \\text{ where } Y \\sim \\text{Poisson}(x) \\\\\n\\text{LHS: } P(Z &gt; x), \\text{ where } Z \\sim \\text{Gamma}(\\alpha, 1).\n\\end{array}\n\\]\nRecall also that if \\(\\alpha \\in \\mathbb N^{+}\\), then \\(\\Gamma(\\alpha) = (\\alpha-1)!\\).\nNotice that repeated application of the differential \\(\\frac{d}{dz}\\) to \\(z^{\\alpha-1}\\) will yield a factorial term \\((\\alpha-1)!\\).\nLet \\(u = \\frac{1}{\\Gamma(\\alpha)} z^{\\alpha - 1}\\) and \\(dv = e^{-z} dz\\). Therefore, \\[\\frac{du}{dz} = \\frac{d}{dz} \\frac{1}{\\Gamma(\\alpha)} z^{\\alpha-1} = (\\alpha - 1)\\frac{1}{\\Gamma(\\alpha)} z^{\\alpha - 2} = \\frac{1}{\\Gamma(\\alpha-1)} z^{\\alpha-2}.\\] Also, \\[\\int dv = v = \\int e^{-z} dz = - e^{-z}.\\] \\[\\therefore \\int_x^{\\infty} \\frac{1}{\\Gamma(\\alpha)} z^{\\alpha-1} e^{-z} dz = \\frac{1}{\\Gamma(\\alpha)} z^{\\alpha - 1} \\cdot (-e^{-z}) \\Bigg \\vert_{z=x}^{z=\\infty} + \\int_{x}^\\infty \\frac{1}{\\Gamma(\\alpha - 1)} z^{\\alpha-2} e^{-z}dz.\\] Observe that as \\(z \\to \\infty\\), \\(e^{-z} \\to 0\\), so what remains is \\[\\frac{1}{\\Gamma(\\alpha)} x^{\\alpha - 1} e^{-x} + \\int_x^{\\infty} \\frac{1}{\\Gamma(\\alpha - 1)} z^{\\alpha - 2} e^{-z}dz.\\] Repeat integration by parts until one is left with the term, \\(\\int_x^\\infty \\frac{1}{\\Gamma(1)} z^1 e^{-z} dz\\). Performing another \\(u\\)-substitution, similar to the first example above, let \\(u = z\\) and \\(dv = e^{-z} dz\\). Thus \\(du/dz = 1\\) and \\(v = - e^{-z}\\). As a result, we have that \\[\\underbrace{\\frac{1}{\\Gamma(1)}}_{=1} \\int_x^\\infty z e^{-z} dz = e^{-x} + e^{-x}.\\] These correspond to the \\(y = 1\\) and \\(y = 0\\) terms of the series in the problem statement’s RHS series summation.\nAs such, we have shown that repeated integration by parts yields the following relation \\[\n\\begin{aligned}\n\\int_x^\\infty \\frac{1}{\\Gamma(\\alpha)} z^{\\alpha - 1} e^{-z} dz = \\frac{1}{(\\alpha-1)!} x^{\\alpha - 1} e^{-x} + & \\frac{1}{(\\alpha - 2)!} x^{\\alpha - 2} e^{-x} + \\; \\cdots \\; + e^{-x} + e^{-x} \\\\\n& = \\sum_{y=0}^{\\alpha-1} \\frac{x^y e^{-x}}{y!}.\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Appendices on Supplemental Material",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Calculus Review</span>"
+    ]
+  },
+  {
+    "objectID": "4_appendix/01_calculus.html#u-substitution",
+    "href": "4_appendix/01_calculus.html#u-substitution",
+    "title": "Calculus Review",
+    "section": "",
+    "text": "Choose \\(u = g(x)\\) where \\(g(x)\\) is a function inside the integral.\nCompute \\(du/dx\\) and solve for \\(dx\\).\nSubstitute \\(u\\) and \\(dx\\) into the integral.\nIntegrate with respect to \\(u\\).\nSubstitute the definition of \\(u\\) back in to get the answer in terms of \\(x\\).",
+    "crumbs": [
+      "Appendices on Supplemental Material",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Calculus Review</span>"
+    ]
   }
 ]
