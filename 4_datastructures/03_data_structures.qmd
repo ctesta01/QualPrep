@@ -1,0 +1,149 @@
+---
+title: Data Structures
+--- 
+
+## Stacks, Queues, and Trees
+
+Read about stacks and queues in Python here:
+
+  - <https://www.geeksforgeeks.org/stack-and-queues-in-python/>
+
+In essence, we want to use arrays for stacks as popping off the end
+of the array is `O(1)`, while we want to use `deque` from `collections` to implement a queue as it has fast popping off 
+the front and end
+
+<small>
+```python
+import timeit
+from collections import deque
+
+num_elements = 100000
+
+test_list = list(range(num_elements))
+test_deque = deque(range(num_elements))
+
+def pop_front_list():
+    while test_list:
+        test_list.pop(0)
+
+def pop_front_deque():
+    while test_deque:
+        test_deque.popleft()
+
+def pop_back_list():
+    while test_list:
+        test_list.pop()
+
+def pop_back_deque():
+    while test_deque:
+        test_deque.pop()
+
+# timing 
+time_pop_front_list = timeit.timeit(pop_front_list, number=1)
+time_pop_front_deque = timeit.timeit(pop_front_deque, number=1)
+time_pop_back_list = timeit.timeit(pop_back_list, number=1)
+time_pop_back_deque = timeit.timeit(pop_back_deque, number=1)
+
+print(f"Time to pop all elements from the front of the list: {time_pop_front_list:.5f} seconds")
+
+print(f"Time to pop all elements from the front of the deque: {time_pop_front_deque:.5f} seconds")
+
+print(f"Time to pop all elements from the back of the list: {time_pop_back_list:.5f} seconds")
+
+print(f"Time to pop all elements from the back of the deque: {time_pop_back_deque:.5f} seconds")
+```
+
+```
+>>> print(f"Time to pop all elements from the front of the list: {time_pop_front_list:.5f} seconds")
+Time to pop all elements from the front of the list: 0.93451 seconds
+
+>>> print(f"Time to pop all elements from the front of the deque: {time_pop_front_deque:.5f} seconds")
+Time to pop all elements from the front of the deque: 0.00246 seconds
+
+>>> print(f"Time to pop all elements from the back of the list: {time_pop_back_list:.5f} seconds")
+Time to pop all elements from the back of the list: 0.00000 seconds
+
+>>> print(f"Time to pop all elements from the back of the deque: {time_pop_back_deque:.5f} seconds")
+Time to pop all elements from the back of the deque: 0.00000 seconds
+```
+</small>
+
+
+Trees are explained here: 
+
+  - <https://www.geeksforgeeks.org/introduction-to-tree-data-structure/> 
+
+The core of it is that a tree is implemented as a class `Node`
+that has `self.data` and `self.children = []`. 
+
+<small>
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.children = []
+    def add_child(self, child):
+        self.children.append(child)
+    def __repr__(self, level=0):
+        """
+        the __repr__ method is overwritten so that when 
+        one just prints out a tree, it's nicely formatted.
+        """
+        ret = "\t"*level + repr(self.data) + "\n"
+        for child in self.children:
+            ret += child.__repr__(level+1)
+        return ret
+
+# Create the root node
+root = Node('Root')
+
+# Create child nodes
+child1 = Node('Child1')
+child2 = Node('Child2')
+child3 = Node('Child3')
+
+# Add children to the root
+root.add_child(child1)
+root.add_child(child2)
+
+# Create and add children for child1
+child1_1 = Node('Child1_1')
+child1_2 = Node('Child1_2')
+child1.add_child(child1_1)
+child1.add_child(child1_2)
+
+# Create and add a child for child2
+child2_1 = Node('Child2_1')
+child2.add_child(child2_1)
+
+# Add a single child to child3 (who is not yet connected to the tree)
+child3_1 = Node('Child3_1')
+child3.add_child(child3_1)
+
+# Now let's add child3 to the root to complete the tree
+root.add_child(child3)
+
+# Print the structure of the tree
+print(root)
+```
+
+```
+'Root'
+        'Child1'
+                'Child1_1'
+                'Child1_2'
+        'Child2'
+                'Child2_1'
+        'Child3'
+                'Child3_1'
+```
+</small>
+
+Read about red-black trees here: 
+
+  - <https://www.geeksforgeeks.org/introduction-to-red-black-tree/> 
+
+And AVL trees here: 
+
+  - <https://www.geeksforgeeks.org/avl-tree-in-python/>
+

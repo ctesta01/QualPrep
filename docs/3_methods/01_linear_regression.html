@@ -8,7 +8,7 @@
 
 <meta name="description" content="Exercises and notes in preparation for PhD Qualifying Exams in Biostatistics">
 
-<title>Qualifying Exam Preparation - Probability</title>
+<title>Qualifying Exam Preparation - Linear Regression</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -44,24 +44,24 @@ div.csl-indent {
 }</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./1_probability/01_background_puzzles.html" rel="next">
-<link href="./index.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../4_datastructures.html" rel="next">
+<link href="../3_methods.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -90,10 +90,39 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating fullcontent">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -102,7 +131,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_theory.html">Probability</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../3_methods.html">Methods</a></li><li class="breadcrumb-item"><a href="../3_methods/01_linear_regression.html"><span class="chapter-title">Linear Regression</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -117,7 +146,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Qualifying Exam Preparation</a> 
+      <a href="../">Qualifying Exam Preparation</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -129,28 +158,28 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome!</span></a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome!</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./1_theory.html" class="sidebar-item-text sidebar-link active">
+            <a href="../1_theory.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Probability</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1_probability/01_background_puzzles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">History: Puzzles, Paradoxes, and Motivation</span></a>
+  <a href="../1_probability/01_background_puzzles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">History: Puzzles, Paradoxes, and Motivation</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./2_inference.html" class="sidebar-item-text sidebar-link">
+            <a href="../2_inference.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Inference</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -159,30 +188,30 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2_inference/05_asymptotic_distributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unit 5: Asymptotic Distributions</span></a>
+  <a href="../2_inference/05_asymptotic_distributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Asymptotic Distributions</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./3_methods.html" class="sidebar-item-text sidebar-link">
+            <a href="../3_methods.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Methods</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3_methods/01_linear_regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Linear Regression</span></a>
+  <a href="../3_methods/01_linear_regression.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Linear Regression</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./4_datastructures.html" class="sidebar-item-text sidebar-link">
+            <a href="../4_datastructures.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Structures &amp; Algorithms</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -191,19 +220,24 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4_datastructures/01_random_numbers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Random Numbers</span></a>
+  <a href="../4_datastructures/01_random_numbers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Random Numbers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4_datastructures/02_concepts.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Concepts of Algorithms</span></a>
+  <a href="../4_datastructures/02_concepts.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Concepts of Algorithms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../4_datastructures/03_data_structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Structures</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./5_appendix.html" class="sidebar-item-text sidebar-link">
+            <a href="../5_appendix.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Appendices on Supplemental Material</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -212,7 +246,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./5_appendix/01_calculus.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Calculus Review</span></a>
+  <a href="../5_appendix/01_calculus.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Calculus Review</span></a>
   </div>
 </li>
       </ul>
@@ -222,13 +256,17 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../3_methods.html">Methods</a></li><li class="breadcrumb-item"><a href="../3_methods/01_linear_regression.html"><span class="chapter-title">Linear Regression</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Probability</h1>
+<h1 class="title"><span class="chapter-title">Linear Regression</span></h1>
+<p class="subtitle lead"></p><blockquote class="blockquote">
+<p><em>An approximate answer to the right problem is worth a good deal more than an exact answer to an approximate problem.</em> John Tukey</p>
+</blockquote><p></p>
 </div>
 
 
@@ -245,58 +283,119 @@ div.csl-indent {
 </header>
 
 
-<p>The probability material can be mostly found in <span class="citation" data-cites="casella2002statistical">(<a href="#ref-casella2002statistical" role="doc-biblioref">Casella and Berger 2002</a>)</span>.</p>
-<p>For the probability-focused material, we may also refer to a handful of other references including <span class="citation" data-cites="blitzstein2019introduction bishop2006pattern gut2009intermediate stoyanov2013counterexamples Feller1968 DasGupta2011 Durrett2019">(<a href="#ref-blitzstein2019introduction" role="doc-biblioref">Blitzstein and Hwang 2019</a>; <a href="#ref-bishop2006pattern" role="doc-biblioref">Bishop 2006</a>; <a href="#ref-gut2009intermediate" role="doc-biblioref">Gut 2009</a>; <a href="#ref-stoyanov2013counterexamples" role="doc-biblioref">Stoyanov 2013</a>; <a href="#ref-Feller1968" role="doc-biblioref">Feller 1968</a>; <a href="#ref-DasGupta2011" role="doc-biblioref">DasGupta 2011</a>; <a href="#ref-Durrett2019" role="doc-biblioref">Durrett 2019</a>)</span>.</p>
-<hr>
-<p>At a high-level, how do we distinguish Probability and Statistics?</p>
-<p>In general, these are answers to dual problems: Probability theory gives us the tools to carry out deductive reasoning, where based on <em>perfect, complete knowledge</em> of random processes, we can derive true statements about the result (e.g., statements about expectation, variance, etc.). On the other hand, statistical inference allows us to go from <em>observed data</em> and combine it with assumptions to draw conclusions inductively, which may or may not be correct. For example, a statistical statement might be that a particular way of constructing a confidence interval (under assumptions) has a 95% probability of containing the true population parameter when repeatedly performing the same experiment (e.g., in the Frequentist paradigm).</p>
-<hr>
-<p>Outline of Probability:</p>
+<p><span class="math display">\[
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\text{Var}}
+\newcommand{\Cov}{\text{Cov}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\MLE}{\text{MLE}}
+\renewcommand{\bar}{\overline}
+\newcommand{\supp}[1]{\text{supp}(#1)}
+\newcommand\independent{\perp\!\!\!\perp}
+\renewcommand{\d}[0]{\mathrm{d}}
+\newcommand{\pp}[2][]{\frac{\partial#1}{\partial#2}}
+\newcommand{\dd}[2][]{\frac{\mathrm d#1}{\mathrm d#2}}
+\]</span></p>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/01_pr_density_of_linear_model/pr_density_of_linear_model.svg" class="nolightbox img-fluid figure-img" style="width:6in"></p>
+<figcaption>Visualizing probability density in linear regression</figcaption>
+</figure>
+</div>
+</div>
+<section id="on-the-history-of-regression" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="on-the-history-of-regression">On the history of regression:</h3>
+<p>See <span class="citation" data-cites="stigler1981invention">Stigler (<a href="#ref-stigler1981invention" role="doc-biblioref">1981</a>)</span> on the invention of least squares, and <span class="citation" data-cites="stigler1997regression">Stigler (<a href="#ref-stigler1997regression" role="doc-biblioref">1997</a>)</span> discussing the history of linear “regression”.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-stigler1981invention" class="csl-entry" role="listitem">
+Stigler, Stephen M. 1981. <span>“Gauss and the Invention of Least Squares.”</span> <em>The Annals of Statistics</em> 9 (3): 465–74. <a href="http://www.jstor.org/stable/2240811">http://www.jstor.org/stable/2240811</a>.
+</div><div id="ref-stigler1997regression" class="csl-entry" role="listitem">
+———. 1997. <span>“Regression Towards the Mean, Historically Considered.”</span> <em>Statistical Methods in Medical Research</em> 6 (2): 103–14. <a href="https://doi.org/10.1177/096228029700600202">https://doi.org/10.1177/096228029700600202</a>.
+</div></div></section>
+<section id="linear-regression" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="linear-regression">Linear Regression</h2>
+<p>Our typical problem is to estimate the linear relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(p\)</span> covariates/predictors <span class="math inline">\((x_1, ..., x_p)\)</span>.</p>
+<p>In modeling, we can distinguish between the <em>systematic</em> and <em>random</em> parts of a model.</p>
+<p>Consider the model:</p>
+<p><span class="math display">\[Y_i = \beta_0 + \beta_1 x_1 + ... + \beta_p x_{ip}, \quad i = 1, ..., n,\]</span></p>
+<p>with the assumptions:</p>
+<ol type="1">
+<li>(Size of Data) <span class="math inline">\(p &lt; n\)</span>,</li>
+<li>(Mean-Zero Error) <span class="math inline">\(\E(\varepsilon_i) = 0\)</span></li>
+<li>(Homoscedasticity) <span class="math inline">\(\Var(\varepsilon_i) = \sigma^2\)</span>,</li>
+<li>(Uncorrelated Error) <span class="math inline">\(\Cov(\varepsilon_i, \varepsilon_j) = 0.\)</span></li>
+</ol>
+<p>We can also write this model in the following way: <span class="math display">\[\mathbf Y = \mathbf X \pmb \beta + \pmb \epsilon, \quad \text{ where } \]</span> <span class="math display">\[\mathbf Y = \begin{bmatrix} Y_1 \\ Y_2 \\ \vdots \\ Y_n \end{bmatrix}, \quad
+\pmb X = \begin{bmatrix} 1 &amp; x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1p} \\
+1 &amp; x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2p} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+1 &amp; x_{n1} &amp; x_{n2} &amp; \cdots &amp; x_{np}
+\end{bmatrix},\]</span> <span class="math display">\[\pmb \beta = \begin{bmatrix} \beta_0 \\ \beta_1 \\ \vdots \\ \beta_p \end{bmatrix}, \quad
+\pmb \epsilon = \begin{bmatrix} \epsilon_0 \\ \epsilon_1 \\ \vdots \\ \epsilon_p\end{bmatrix}.\]</span></p>
+<p>We assume that this is the <em>true</em> model. Our task is to do the best we can coming up with <span class="math inline">\(\hat {\pmb \beta}\)</span> such that <span class="math inline">\(\mathbf X \hat{\pmb \beta}\)</span> is as close as possible to <span class="math inline">\(\mathbf y\)</span>.</p>
+<p>We’ll use <span class="math inline">\(\mathbf y\)</span> to refer to observed values and <span class="math inline">\(\mathbf Y\)</span> to denote the corresponding random vector that generates these observations. That is to say, <span class="math inline">\(\E(\mathbf Y) = \mathbf X \pmb \beta\)</span>.</p>
+<p>Euclidean distance is usually defined as <span class="math display">\[d(\mathbf y, \mathbf X \pmb \beta) = \sqrt{(\mathbf y - \mathbf X \pmb \beta)^\top (\mathbf y - \mathbf X \pmb \beta)}.\]</span></p>
+<p>Since it’s easier to minimize over a function that doesn’t involve a square-root, and squaring is a monotone transformation on <span class="math inline">\(\mathbb R^+\)</span>, the vector <span class="math inline">\(\hat{\pmb \beta}\)</span> that minimizes <span class="math inline">\(d(\mathbf y, \mathbf X \pmb \beta)\)</span> will also minimize <span class="math inline">\(d(\mathbf y, \mathbf X \pmb \beta)^2\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Let } S(\pmb \beta) &amp; =d(\mathbf y, \mathbf X \pmb \beta)^2 = (\mathbf y - \mathbf X \pmb \beta)^\top (\mathbf y - \mathbf X \pmb \beta)  \\
+&amp; = \mathbf y^\top \mathbf y - 2 \mathbf y^\top \mathbf X \pmb \beta + \pmb \beta^\top \mathbf X^\top \mathbf X \pmb \beta.
+\end{aligned}
+\]</span></p>
+<p>Why do we call this <span class="math inline">\(S\)</span>?</p>
 <ul>
-<li>Introduction/Background</li>
-<li>Probability Basics</li>
-<li>Random Variables</li>
-<li>Expected Values</li>
-<li>Families of Distributions</li>
-<li>Multiple Random Variables</li>
-<li>Independence and Conditional Expectation</li>
-<li>Bivariate Dependence</li>
-<li>Inequalities</li>
-<li>Multivariate Normal</li>
-<li>Statistics of Random Samples</li>
-<li>Laws of Large Numbers and Central Limit Theorem</li>
-<li>Stochastic Processes</li>
+<li>It is the squared Euclidean distance;</li>
+<li>Also the sum of squared errors/residuals (SSE).</li>
 </ul>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
+<p><span class="math inline">\(S(\pmb \beta)\)</span> is our objective function, and the minimization of <span class="math inline">\(S(\pmb \beta)\)</span> under the assumption of normal errors leads to the best linear unbiased estimator (BLUE) of the regression coefficients due to the Gauss-Markov Theorem.</p>
+<p>To find the OLS estimate, we minimize our loss function by computing the gradient, setting it equal to zero, and solving for the coefficient vector <span class="math inline">\(\pmb \beta\)</span> satisfying this constraint.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\pp[S(\pmb \beta)]{\pmb \beta} &amp; = -2 \mathbf X^\top \mathbf y + 2 \mathbf X^\top\mathbf X \pmb \beta \stackrel {set} = \pmb 0 \\
+&amp; 2 \mathbf X^\top (\mathbf y - \mathbf X\pmb \beta) = 0
+\end{aligned}
+\]</span> From this we get the <em>least squares normal equations</em>: <span class="math display">\[\mathbf X^\top \mathbf X \hat {\pmb \beta} = \mathbf X'\mathbf y,\]</span> <span class="math display">\[ \hat \beta = (\mathbf X^{\top} \mathbf X)^{-1} \mathbf X^\top \mathbf y,\]</span> provided that <span class="math inline">\((\mathbf X^\top \mathbf X)^{-1}\)</span> exists, which it will if the predictors are linearly independent.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<details>
+<summary>
+How exactly was the above worked out?
+</summary>
+<p>First, expand <span class="math inline">\(S(\pmb \beta)\)</span>: <span class="math display">\[
+\begin{aligned}
+S(\pmb \beta) &amp; = (\mathbf y - \mathbf X \pmb \beta)^{\top}(\mathbf y - \mathbf X \pmb \beta)\\
+&amp; = \mathbf y^\top \mathbf y - \mathbf y^\top \mathbf X \pmb \beta - (\mathbf X \pmb \beta)^{\top} \mathbf y + (\mathbf X \pmb \beta)^\top \mathbf X \pmb \beta
+\end{aligned}
+\]</span></p>
+<p>Since <span class="math inline">\((\mathbf X \pmb \beta)^\top \mathbf y = \mathbf y^\top \mathbf X \pmb \beta\)</span> (as it’s a scalar and equal to its transpose), we can simplify to <span class="math display">\[
+S(\pmb \beta) = \mathbf y^\top \mathbf y - 2 \mathbf y^\top \mathbf X \pmb \beta + \pmb \beta^\top \mathbf X^\top \mathbf X \pmb \beta.
+\]</span></p>
+<ul>
+<li>The derivative of <span class="math inline">\(\mathbf y^\top \mathbf y\)</span> with respect to <span class="math inline">\(\pmb \beta\)</span> is 0</li>
+<li>The derivative of <span class="math inline">\(-2\mathbf y^\top \mathbf X \pmb \beta\)</span> with respect to <span class="math inline">\(\pmb \beta\)</span> is <span class="math inline">\(-2 \mathbf X^\top \mathbf y\)</span> since the derivative of <span class="math inline">\(\mathbf a^\top \pmb \beta\)</span> is <span class="math inline">\(\mathbf a\)</span>. (Page 10, 2.4.1 of <span class="citation" data-cites="petersen2012matrix">Petersen and Pedersen (<a href="#ref-petersen2012matrix" role="doc-biblioref">2012</a>)</span>)</li>
+<li>The derivative of <span class="math inline">\(\pmb \beta^\top \mathbf X^\top \mathbf X \pmb \beta\)</span> with respect to <span class="math inline">\(\pmb \beta\)</span> is <span class="math inline">\(2 \mathbf X^\top \mathbf X \pmb \beta\)</span> by applying the derivative rule for quadratic forms. (See equation 81 from <span class="citation" data-cites="petersen2012matrix">Petersen and Pedersen (<a href="#ref-petersen2012matrix" role="doc-biblioref">2012</a>)</span>, and observe that <span class="math inline">\(\mathbf X^\top \mathbf X\)</span> is symmetric).</li>
+</ul>
+<p>Hence <span class="math display">\[\nabla S(\pmb \beta) = -2 \mathbf X^\top \mathbf y + 2 \mathbf X^\top \mathbf X \pmb \beta = \pmb 0.
+\]</span></p>
+<p>Setting <span class="math inline">\(\nabla S(\pmb \beta) = 0\)</span> gives us the normal equations: <span class="math display">\[\mathbf X^\top \mathbf X \hat {\pmb \beta} = \mathbf X^\top \mathbf y.\]</span></p>
+Finally we solve for <span class="math inline">\(\hat \beta\)</span> by multiplying both sides by <span class="math inline">\((\mathbf X^\top \mathbf X)^{-1}\)</span>: <span class="math display">\[\hat \beta = (\mathbf X^\top \mathbf X)^{-1} \mathbf X^\top \mathbf y.\]</span>
+</details>
+</div>
+</div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-bishop2006pattern" class="csl-entry" role="listitem">
-Bishop, Christopher M. 2006. <em>Pattern Recognition and Machine Learning</em>. Springer.
-</div>
-<div id="ref-blitzstein2019introduction" class="csl-entry" role="listitem">
-Blitzstein, Joseph K., and Jessica Hwang. 2019. <em>Introduction to Probability</em>. 2nd ed. Chapman; Hall/CRC.
-</div>
-<div id="ref-casella2002statistical" class="csl-entry" role="listitem">
-Casella, George, and Roger L Berger. 2002. <em>Statistical Inference</em>. Vol. 2. Duxbury Pacific Grove, CA.
-</div>
-<div id="ref-DasGupta2011" class="csl-entry" role="listitem">
-DasGupta, Anirban. 2011. <em>Probability for Statistics and Machine Learning: Fundamentals and Advanced Topics</em>. New York: Springer. <a href="https://doi.org/10.1007/978-1-4419-9634-3">https://doi.org/10.1007/978-1-4419-9634-3</a>.
-</div>
-<div id="ref-Durrett2019" class="csl-entry" role="listitem">
-Durrett, Rick. 2019. <em>Probability: Theory and Examples</em>. 5th ed. Cambridge Series in Statistical and Probabilistic Mathematics 49. Cambridge University Press. <a href="https://www.cambridge.org/core/books/probability-theory-and-examples/82A04569DDBEE06644D01E73E00E10EE">https://www.cambridge.org/core/books/probability-theory-and-examples/82A04569DDBEE06644D01E73E00E10EE</a>.
-</div>
-<div id="ref-Feller1968" class="csl-entry" role="listitem">
-Feller, William. 1968. <em>An Introduction to Probability Theory and Its Applications, Volume 1</em>. 3rd ed. John Wiley &amp; Sons.
-</div>
-<div id="ref-gut2009intermediate" class="csl-entry" role="listitem">
-Gut, Alan. 2009. <em>An Intermediate Course in Probability</em>. 2nd ed. Springer.
-</div>
-<div id="ref-stoyanov2013counterexamples" class="csl-entry" role="listitem">
-Stoyanov, Jordan M. 2013. <em>Counterexamples in Probability</em>. 3rd ed. Dover Publications.
-</div>
-</div>
+<div class="no-row-height column-margin column-container"><div id="ref-petersen2012matrix" class="csl-entry" role="listitem">
+Petersen, Kaare Brandt, and Michael Syskind Pedersen. 2012. <span>“The Matrix Cookbook.”</span> <a href="https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf">https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf</a>.
+</div></div><div class="no-row-height column-margin column-container"></div>
 </section>
 
 </main> <!-- /main -->
@@ -693,13 +792,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <input type="hidden" id="giscus-alt-theme" value="dark">
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Welcome!">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Welcome!</span></span>
+      <a href="../3_methods.html" class="pagination-link" aria-label="Methods">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Methods</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./1_probability/01_background_puzzles.html" class="pagination-link" aria-label="History: Puzzles, Paradoxes, and Motivation">
-        <span class="nav-page-text"><span class="chapter-title">History: Puzzles, Paradoxes, and Motivation</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../4_datastructures.html" class="pagination-link" aria-label="Data Structures &amp; Algorithms">
+        <span class="nav-page-text">Data Structures &amp; Algorithms</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

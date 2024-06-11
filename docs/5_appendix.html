@@ -8,7 +8,7 @@
 
 <meta name="description" content="Exercises and notes in preparation for PhD Qualifying Exams in Biostatistics">
 
-<title>Qualifying Exam Preparation - Probability</title>
+<title>Qualifying Exam Preparation - Appendices on Supplemental Material</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,27 +21,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -51,8 +31,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./1_probability/01_background_puzzles.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./5_appendix/01_calculus.html" rel="next">
+<link href="./4_datastructures/02_concepts.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -102,7 +82,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_theory.html">Probability</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./5_appendix.html">Appendices on Supplemental Material</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -134,13 +114,13 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./1_theory.html" class="sidebar-item-text sidebar-link active">
+            <a href="./1_theory.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Probability</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1_probability/01_background_puzzles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">History: Puzzles, Paradoxes, and Motivation</span></a>
@@ -203,13 +183,13 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./5_appendix.html" class="sidebar-item-text sidebar-link">
+            <a href="./5_appendix.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Appendices on Supplemental Material</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./5_appendix/01_calculus.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Calculus Review</span></a>
@@ -228,7 +208,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Probability</h1>
+<h1 class="title">Appendices on Supplemental Material</h1>
 </div>
 
 
@@ -245,59 +225,14 @@ div.csl-indent {
 </header>
 
 
-<p>The probability material can be mostly found in <span class="citation" data-cites="casella2002statistical">(<a href="#ref-casella2002statistical" role="doc-biblioref">Casella and Berger 2002</a>)</span>.</p>
-<p>For the probability-focused material, we may also refer to a handful of other references including <span class="citation" data-cites="blitzstein2019introduction bishop2006pattern gut2009intermediate stoyanov2013counterexamples Feller1968 DasGupta2011 Durrett2019">(<a href="#ref-blitzstein2019introduction" role="doc-biblioref">Blitzstein and Hwang 2019</a>; <a href="#ref-bishop2006pattern" role="doc-biblioref">Bishop 2006</a>; <a href="#ref-gut2009intermediate" role="doc-biblioref">Gut 2009</a>; <a href="#ref-stoyanov2013counterexamples" role="doc-biblioref">Stoyanov 2013</a>; <a href="#ref-Feller1968" role="doc-biblioref">Feller 1968</a>; <a href="#ref-DasGupta2011" role="doc-biblioref">DasGupta 2011</a>; <a href="#ref-Durrett2019" role="doc-biblioref">Durrett 2019</a>)</span>.</p>
-<hr>
-<p>At a high-level, how do we distinguish Probability and Statistics?</p>
-<p>In general, these are answers to dual problems: Probability theory gives us the tools to carry out deductive reasoning, where based on <em>perfect, complete knowledge</em> of random processes, we can derive true statements about the result (e.g., statements about expectation, variance, etc.). On the other hand, statistical inference allows us to go from <em>observed data</em> and combine it with assumptions to draw conclusions inductively, which may or may not be correct. For example, a statistical statement might be that a particular way of constructing a confidence interval (under assumptions) has a 95% probability of containing the true population parameter when repeatedly performing the same experiment (e.g., in the Frequentist paradigm).</p>
-<hr>
-<p>Outline of Probability:</p>
+<p>Material that doesn’t quite fit anywhere else, including:</p>
 <ul>
-<li>Introduction/Background</li>
-<li>Probability Basics</li>
-<li>Random Variables</li>
-<li>Expected Values</li>
-<li>Families of Distributions</li>
-<li>Multiple Random Variables</li>
-<li>Independence and Conditional Expectation</li>
-<li>Bivariate Dependence</li>
-<li>Inequalities</li>
-<li>Multivariate Normal</li>
-<li>Statistics of Random Samples</li>
-<li>Laws of Large Numbers and Central Limit Theorem</li>
-<li>Stochastic Processes</li>
+<li>Reminders of Important Calculus Concepts</li>
+<li>Refreshers on Important Real Analysis Concepts</li>
+<li>Refreshers on Linear Algebra Concepts</li>
 </ul>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-bishop2006pattern" class="csl-entry" role="listitem">
-Bishop, Christopher M. 2006. <em>Pattern Recognition and Machine Learning</em>. Springer.
-</div>
-<div id="ref-blitzstein2019introduction" class="csl-entry" role="listitem">
-Blitzstein, Joseph K., and Jessica Hwang. 2019. <em>Introduction to Probability</em>. 2nd ed. Chapman; Hall/CRC.
-</div>
-<div id="ref-casella2002statistical" class="csl-entry" role="listitem">
-Casella, George, and Roger L Berger. 2002. <em>Statistical Inference</em>. Vol. 2. Duxbury Pacific Grove, CA.
-</div>
-<div id="ref-DasGupta2011" class="csl-entry" role="listitem">
-DasGupta, Anirban. 2011. <em>Probability for Statistics and Machine Learning: Fundamentals and Advanced Topics</em>. New York: Springer. <a href="https://doi.org/10.1007/978-1-4419-9634-3">https://doi.org/10.1007/978-1-4419-9634-3</a>.
-</div>
-<div id="ref-Durrett2019" class="csl-entry" role="listitem">
-Durrett, Rick. 2019. <em>Probability: Theory and Examples</em>. 5th ed. Cambridge Series in Statistical and Probabilistic Mathematics 49. Cambridge University Press. <a href="https://www.cambridge.org/core/books/probability-theory-and-examples/82A04569DDBEE06644D01E73E00E10EE">https://www.cambridge.org/core/books/probability-theory-and-examples/82A04569DDBEE06644D01E73E00E10EE</a>.
-</div>
-<div id="ref-Feller1968" class="csl-entry" role="listitem">
-Feller, William. 1968. <em>An Introduction to Probability Theory and Its Applications, Volume 1</em>. 3rd ed. John Wiley &amp; Sons.
-</div>
-<div id="ref-gut2009intermediate" class="csl-entry" role="listitem">
-Gut, Alan. 2009. <em>An Intermediate Course in Probability</em>. 2nd ed. Springer.
-</div>
-<div id="ref-stoyanov2013counterexamples" class="csl-entry" role="listitem">
-Stoyanov, Jordan M. 2013. <em>Counterexamples in Probability</em>. 3rd ed. Dover Publications.
-</div>
-</div>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -693,13 +628,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <input type="hidden" id="giscus-alt-theme" value="dark">
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Welcome!">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Welcome!</span></span>
+      <a href="./4_datastructures/02_concepts.html" class="pagination-link" aria-label="Concepts of Algorithms">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Concepts of Algorithms</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./1_probability/01_background_puzzles.html" class="pagination-link" aria-label="History: Puzzles, Paradoxes, and Motivation">
-        <span class="nav-page-text"><span class="chapter-title">History: Puzzles, Paradoxes, and Motivation</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./5_appendix/01_calculus.html" class="pagination-link" aria-label="Calculus Review">
+        <span class="nav-page-text"><span class="chapter-title">Calculus Review</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

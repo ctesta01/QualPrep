@@ -8,7 +8,7 @@
 
 <meta name="description" content="Exercises and notes in preparation for PhD Qualifying Exams in Biostatistics">
 
-<title>Qualifying Exam Preparation - Probability</title>
+<title>Qualifying Exam Preparation - Random Numbers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,47 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./1_probability/01_background_puzzles.html" rel="next">
-<link href="./index.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../4_datastructures/02_concepts.html" rel="next">
+<link href="../4_datastructures.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -90,10 +70,39 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating fullcontent">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -102,7 +111,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_theory.html">Probability</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../4_datastructures.html">Data Structures &amp; Algorithms</a></li><li class="breadcrumb-item"><a href="../4_datastructures/01_random_numbers.html"><span class="chapter-title">Random Numbers</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -117,7 +126,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Qualifying Exam Preparation</a> 
+      <a href="../">Qualifying Exam Preparation</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -129,28 +138,28 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome!</span></a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome!</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./1_theory.html" class="sidebar-item-text sidebar-link active">
+            <a href="../1_theory.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Probability</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1_probability/01_background_puzzles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">History: Puzzles, Paradoxes, and Motivation</span></a>
+  <a href="../1_probability/01_background_puzzles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">History: Puzzles, Paradoxes, and Motivation</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./2_inference.html" class="sidebar-item-text sidebar-link">
+            <a href="../2_inference.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Inference</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -159,14 +168,14 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2_inference/05_asymptotic_distributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unit 5: Asymptotic Distributions</span></a>
+  <a href="../2_inference/05_asymptotic_distributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Asymptotic Distributions</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./3_methods.html" class="sidebar-item-text sidebar-link">
+            <a href="../3_methods.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Methods</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -175,35 +184,50 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3_methods/01_linear_regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Linear Regression</span></a>
+  <a href="../3_methods/01_linear_regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Linear Regression</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./4_datastructures.html" class="sidebar-item-text sidebar-link">
+            <a href="../4_datastructures.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Structures &amp; Algorithms</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4_datastructures/01_random_numbers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Random Numbers</span></a>
+  <a href="../4_datastructures/01_random_numbers.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Random Numbers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4_datastructures/02_concepts.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Concepts of Algorithms</span></a>
+  <a href="../4_datastructures/02_concepts.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Concepts of Algorithms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../4_datastructures/03_data_structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Structures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../4_datastructures/04_heaps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Heaps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../4_datastructures/05_greedy_and_dynamic_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Greedy &amp; Dynamic Algorithms</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./5_appendix.html" class="sidebar-item-text sidebar-link">
+            <a href="../5_appendix.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Appendices on Supplemental Material</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -212,7 +236,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./5_appendix/01_calculus.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Calculus Review</span></a>
+  <a href="../5_appendix/01_calculus.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Calculus Review</span></a>
   </div>
 </li>
       </ul>
@@ -222,13 +246,17 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../4_datastructures.html">Data Structures &amp; Algorithms</a></li><li class="breadcrumb-item"><a href="../4_datastructures/01_random_numbers.html"><span class="chapter-title">Random Numbers</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Probability</h1>
+<h1 class="title"><span class="chapter-title">Random Numbers</span></h1>
+<p class="subtitle lead"></p><blockquote class="blockquote">
+<p>“Anyone who considers arithmetical methods of producing random digits is, of course, in a state of sin.” —Von Neumann</p>
+</blockquote><p></p>
 </div>
 
 
@@ -245,61 +273,88 @@ div.csl-indent {
 </header>
 
 
-<p>The probability material can be mostly found in <span class="citation" data-cites="casella2002statistical">(<a href="#ref-casella2002statistical" role="doc-biblioref">Casella and Berger 2002</a>)</span>.</p>
-<p>For the probability-focused material, we may also refer to a handful of other references including <span class="citation" data-cites="blitzstein2019introduction bishop2006pattern gut2009intermediate stoyanov2013counterexamples Feller1968 DasGupta2011 Durrett2019">(<a href="#ref-blitzstein2019introduction" role="doc-biblioref">Blitzstein and Hwang 2019</a>; <a href="#ref-bishop2006pattern" role="doc-biblioref">Bishop 2006</a>; <a href="#ref-gut2009intermediate" role="doc-biblioref">Gut 2009</a>; <a href="#ref-stoyanov2013counterexamples" role="doc-biblioref">Stoyanov 2013</a>; <a href="#ref-Feller1968" role="doc-biblioref">Feller 1968</a>; <a href="#ref-DasGupta2011" role="doc-biblioref">DasGupta 2011</a>; <a href="#ref-Durrett2019" role="doc-biblioref">Durrett 2019</a>)</span>.</p>
-<hr>
-<p>At a high-level, how do we distinguish Probability and Statistics?</p>
-<p>In general, these are answers to dual problems: Probability theory gives us the tools to carry out deductive reasoning, where based on <em>perfect, complete knowledge</em> of random processes, we can derive true statements about the result (e.g., statements about expectation, variance, etc.). On the other hand, statistical inference allows us to go from <em>observed data</em> and combine it with assumptions to draw conclusions inductively, which may or may not be correct. For example, a statistical statement might be that a particular way of constructing a confidence interval (under assumptions) has a 95% probability of containing the true population parameter when repeatedly performing the same experiment (e.g., in the Frequentist paradigm).</p>
-<hr>
-<p>Outline of Probability:</p>
+<p>There are plenty of suboptimal ways to produce pseudorandom numbers. Some that we looked at are the <a href="https://en.wikipedia.org/wiki/Middle-square_method">middle-square method</a> and <a href="https://en.wikipedia.org/wiki/Linear_congruential_generator">linear congruential generators</a>.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/JohnvonNeumann-LosAlamos.gif" class="img-fluid figure-img" style="width:1in"></p>
+<figcaption><small><a href="https://en.wikipedia.org/wiki/John_von_Neumann">John von Neumann</a> (1903-1957) was a Hungarian and American mathematician, physicist, computer scientist, engineer and polymath, to quote Wikipedia.</small></figcaption>
+</figure>
+</div>
+</div></div><p>A crucial flaw with the mid-square method was that if a prior state had two zeroes behind the decimal point, they never disappear, leading to predictability in the not-very-random pseudorandom numbers generated.</p>
+<p>A challenging flaw of the linear congruential generator approach is that the generated pseudorandom numbers live on a relatively small number of hyperplanes (at most <span class="math inline">\(\sqrt[n]{n! \cdot m}\)</span> due to Marsaglia’s theorem). The exact number of hyperparameters can be adjusted by selecting <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span>, but if carelessly chosen, this can represent a weakness of the pseudorandom numbers.</p>
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Lcg_3d.gif" class="img-fluid figure-img" style="width:2in"></p>
+<figcaption><small>From the <a href="https://en.wikipedia.org/wiki/Linear_congruential_generator">LCG Wikipedia Page</a></small></figcaption><small>
+</small></figure><small>
+</small></div><small>
+</small></div></div><small>
+<section id="desiderata-of-pseudoranom-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="desiderata-of-pseudoranom-numbers">Desiderata of Pseudoranom Numbers:</h2>
 <ul>
-<li>Introduction/Background</li>
-<li>Probability Basics</li>
-<li>Random Variables</li>
-<li>Expected Values</li>
-<li>Families of Distributions</li>
-<li>Multiple Random Variables</li>
-<li>Independence and Conditional Expectation</li>
-<li>Bivariate Dependence</li>
-<li>Inequalities</li>
-<li>Multivariate Normal</li>
-<li>Statistics of Random Samples</li>
-<li>Laws of Large Numbers and Central Limit Theorem</li>
-<li>Stochastic Processes</li>
+<li>Uniformity on [0,1]</li>
+<li>Independence</li>
+<li><a href="https://en.wikipedia.org/wiki/Diehard_tests">Diehard tests</a></li>
+<li>Replication</li>
+<li>Cycle Length</li>
+<li>Speed</li>
+<li>Memory usage</li>
+<li>Parallel Implementation</li>
+<li>Cryptographically secure</li>
 </ul>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
+</section>
+<section id="related-topics" class="level2">
+<h2 class="anchored" data-anchor-id="related-topics">Related topics:</h2>
+<ul>
+<li>Hashing</li>
+<li>Password Storage and Verification</li>
+<li>Verification of Successful Data Transfer</li>
+</ul>
+</section>
+<section id="brief-intro-to-hashing" class="level2">
+<h2 class="anchored" data-anchor-id="brief-intro-to-hashing">Brief intro to Hashing</h2>
+<p>References:</p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/what-is-hashing/" class="uri">https://www.geeksforgeeks.org/what-is-hashing/</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Hash_function" class="uri">https://en.wikipedia.org/wiki/Hash_function</a></li>
+</ul>
+<p>From <a href="https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1136/lectures/20/Slides20.pdf" class="uri">https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1136/lectures/20/Slides20.pdf</a>:</p>
+<p>A hash function converts a large object (a genome, a string, a sequence, etc) into a smaller object (a shorter string, an integer, etc).</p>
+<p>A hash function must necessarily be deterministic: given the same input, it must always produce the same output. (Why? Because we want to use it for comparison or lookup. It needs to be a <em>reliable shortcut</em>.)</p>
+<p>A hash function should try to produce different outputs for different inputs. I.e., we want to minimize hash collisions.</p>
+<p>Why are hash functions related to pseudorandomness? Because a good hash function will scramble up the bits of the input into something that looks random.</p>
+</section>
+<section id="password-verification" class="level2">
+<h2 class="anchored" data-anchor-id="password-verification">Password Verification</h2>
+<p>We can use cryptographic hashes to store merely a hash of the user’s password rather than their actual password, thereby enhancing security.</p>
+<p>See <a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function#Password_verification" class="uri">https://en.wikipedia.org/wiki/Cryptographic_hash_function#Password_verification</a></p>
+<p>Intriguingly, Wikipedia says “use of standard cryptographic hash functions, such as the SHA series, is no longer considered safe for password storage.”</p>
+</section>
+<section id="verification-of-data-transfer" class="level2">
+<h2 class="anchored" data-anchor-id="verification-of-data-transfer">Verification of Data Transfer</h2>
+<p>See <a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function#Verifying_the_integrity_of_messages_and_files" class="uri">https://en.wikipedia.org/wiki/Cryptographic_hash_function#Verifying_the_integrity_of_messages_and_files</a></p>
+<p>“An important application of secure hashes is the verification of message integrity.”</p>
+</section>
+<section id="what-makes-a-hash-cryptographically-secure" class="level2">
+<h2 class="anchored" data-anchor-id="what-makes-a-hash-cryptographically-secure">What makes a hash cryptographically secure?</h2>
+<p>Well, we can define it by its converse: a cryptographic hash should be resistant against a cryptanalytic attack, or in other words:</p>
+<ul>
+<li>(Preimage resistance) It should be hard to recover the pre-image <code>m</code> from only having <code>h = hash(m)</code></li>
+<li>(Weak Collision Resistance) Given <code>m1</code>, it should be difficult to find another <code>m2</code> such that <code>hash(m1) = hash(m2)</code></li>
+<li>(Strong Collision Resistance) It should be difficult to find any pair <code>m1, m2</code> such that <code>hash(m1) = hash(m2)</code></li>
+</ul>
+<hr>
+<p>This YouTube video looks quite nice — enjoy if you have time:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QTk2AxzZYfc?si=TLQvsqwuo-x6ZOgQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-bishop2006pattern" class="csl-entry" role="listitem">
-Bishop, Christopher M. 2006. <em>Pattern Recognition and Machine Learning</em>. Springer.
-</div>
-<div id="ref-blitzstein2019introduction" class="csl-entry" role="listitem">
-Blitzstein, Joseph K., and Jessica Hwang. 2019. <em>Introduction to Probability</em>. 2nd ed. Chapman; Hall/CRC.
-</div>
-<div id="ref-casella2002statistical" class="csl-entry" role="listitem">
-Casella, George, and Roger L Berger. 2002. <em>Statistical Inference</em>. Vol. 2. Duxbury Pacific Grove, CA.
-</div>
-<div id="ref-DasGupta2011" class="csl-entry" role="listitem">
-DasGupta, Anirban. 2011. <em>Probability for Statistics and Machine Learning: Fundamentals and Advanced Topics</em>. New York: Springer. <a href="https://doi.org/10.1007/978-1-4419-9634-3">https://doi.org/10.1007/978-1-4419-9634-3</a>.
-</div>
-<div id="ref-Durrett2019" class="csl-entry" role="listitem">
-Durrett, Rick. 2019. <em>Probability: Theory and Examples</em>. 5th ed. Cambridge Series in Statistical and Probabilistic Mathematics 49. Cambridge University Press. <a href="https://www.cambridge.org/core/books/probability-theory-and-examples/82A04569DDBEE06644D01E73E00E10EE">https://www.cambridge.org/core/books/probability-theory-and-examples/82A04569DDBEE06644D01E73E00E10EE</a>.
-</div>
-<div id="ref-Feller1968" class="csl-entry" role="listitem">
-Feller, William. 1968. <em>An Introduction to Probability Theory and Its Applications, Volume 1</em>. 3rd ed. John Wiley &amp; Sons.
-</div>
-<div id="ref-gut2009intermediate" class="csl-entry" role="listitem">
-Gut, Alan. 2009. <em>An Intermediate Course in Probability</em>. 2nd ed. Springer.
-</div>
-<div id="ref-stoyanov2013counterexamples" class="csl-entry" role="listitem">
-Stoyanov, Jordan M. 2013. <em>Counterexamples in Probability</em>. 3rd ed. Dover Publications.
-</div>
-</div>
 </section>
 
-</main> <!-- /main -->
+</small></main><small> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -693,19 +748,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <input type="hidden" id="giscus-alt-theme" value="dark">
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Welcome!">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Welcome!</span></span>
+      <a href="../4_datastructures.html" class="pagination-link" aria-label="Data Structures &amp; Algorithms">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data Structures &amp; Algorithms</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./1_probability/01_background_puzzles.html" class="pagination-link" aria-label="History: Puzzles, Paradoxes, and Motivation">
-        <span class="nav-page-text"><span class="chapter-title">History: Puzzles, Paradoxes, and Motivation</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../4_datastructures/02_concepts.html" class="pagination-link" aria-label="Concepts of Algorithms">
+        <span class="nav-page-text"><span class="chapter-title">Concepts of Algorithms</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
-</div> <!-- /content -->
+</small></div><small> <!-- /content -->
 
 
 
 
-</body></html>
+</small></body></html>

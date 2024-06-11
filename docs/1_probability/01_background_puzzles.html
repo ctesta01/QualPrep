@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Exercises and notes in preparation for PhD Qualifying Exams in Biostatistics">
+
+<title>Qualifying Exam Preparation - History: Puzzles, Paradoxes, and Motivation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../2_inference.html" rel="next">
+<link href="../1_theory.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../1_theory.html">Probability</a></li><li class="breadcrumb-item"><a href="../1_probability/01_background_puzzles.html"><span class="chapter-title">History: Puzzles, Paradoxes, and Motivation</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Qualifying Exam Preparation</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../1_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probability</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../1_probability/01_background_puzzles.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">History: Puzzles, Paradoxes, and Motivation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../2_inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inference</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2_inference/05_asymptotic_distributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Asymptotic Distributions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../3_methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../3_methods/01_linear_regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Linear Regression</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../4_datastructures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Structures &amp; Algorithms</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../4_datastructures/01_random_numbers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Random Numbers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../4_datastructures/02_concepts.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Concepts of Algorithms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../4_datastructures/03_data_structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Structures</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../5_appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendices on Supplemental Material</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../5_appendix/01_calculus.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Calculus Review</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../1_theory.html">Probability</a></li><li class="breadcrumb-item"><a href="../1_probability/01_background_puzzles.html"><span class="chapter-title">History: Puzzles, Paradoxes, and Motivation</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">History: Puzzles, Paradoxes, and Motivation</span></h1>
+<p class="subtitle lead"></p><blockquote class="blockquote">
+<p><em>I believe that we do not know anything for certain, but everything probably.</em> Christiaan Huygens, Oeuvres Completes</p>
+</blockquote><p></p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><span class="math display">\[
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\text{Var}}
+\newcommand{\Cov}{\text{Cov}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\MLE}{\text{MLE}}
+\renewcommand{\bar}{\overline}
+\newcommand{\supp}[1]{\text{supp}(#1)}
+\newcommand\independent{\perp\!\!\!\perp}
+\renewcommand{\d}[0]{\mathrm{d}}
+\newcommand{\pp}[2][]{\frac{\partial#1}{\partial#2}}
+\newcommand{\dd}[2][]{\frac{\mathrm d#1}{\mathrm d#2}}
+\]</span></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Christiaan_Huygens-painting.jpeg" class="img-fluid figure-img" style="width:1in"></p>
+<figcaption>Christiaan Huygens, Lord of Zeelhem (1629-1695) was a Dutch mathematician, physicist, engineer, astronomer, and inventor who is regarded as a key figure in the Scientific Revolution, to quote Wikipedia.</figcaption>
+</figure>
+</div>
+</div></div><section id="history" class="level1 page-columns page-full">
+<h1>History</h1>
+<p>One of the things I loved about the presentation in our Probability class (BST 230) was that we had a brief unit on the history of probability at the beginning.</p>
+<p>I trust that the reader can peruse the following references on their own:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Probability_theory#History_of_probability">Wikipedia: History of Probability</a></li>
+<li><a href="https://bcss.org.my/tut/bayes-with-jags-a-tutorial-for-wildlife-researchers/probability/a-brief-history-of-probability/">Blogpost on History of Probability</a></li>
+<li><a href="https://www.usu.edu/math/schneit/StatsStuff/Probability/probability2.html">Kady Schneiter and Todd Partridge’s Post on History of Probability</a></li>
+<li><a href="https://www.britannica.com/science/probability">Britannica, Probability</a></li>
+<li><span class="citation" data-cites="todhunter2014history">(<a href="#ref-todhunter2014history" role="doc-biblioref">Todhunter 2014</a>)</span></li>
+<li><span class="citation" data-cites="langou2009translation">(<a href="#ref-langou2009translation" role="doc-biblioref">Langou 2009</a>)</span></li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="ref-todhunter2014history" class="csl-entry" role="listitem">
+Todhunter, Isaac. 2014. <em>A History of the Mathematical Theory of Probability: From the Time of Pascal to That of Laplace</em>. Cambridge University Press.
+</div><div id="ref-langou2009translation" class="csl-entry" role="listitem">
+Langou, Julien. 2009. <span>“Translation and Modern Interpretation of Laplace’s Théorie Analytique Des Probabilités, Pages 505-512, 516-520.”</span> <a href="https://arxiv.org/abs/0907.4695">https://arxiv.org/abs/0907.4695</a>.
+</div></div></section>
+<section id="puzzles" class="level1 page-columns page-full">
+<h1>Puzzles</h1>
+<p>Our course made a great deal about motivating examples like:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Monty_Hall_problem">The Monty Hall Problem</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Two_envelopes_problem">The Exchange Paradox / Two Envelopes Problem</a></li>
+<li><a href="https://en.wikipedia.org/wiki/St._Petersburg_paradox">The St.&nbsp;Petersburg Problem</a></li>
+</ul>
+<p>What I learned from these examples is that almost no matter how good your naïve intuition is, formalizing your assumptions and using line-by-line justified proofs seems much more likely to land you at a valid conclusion than heuristic reasoning. And while I don’t expect the Gambler’s Fallacy to appear on a qualifying exam, I certainly wouldn’t want to be caught off-guard by a puzzle-style problem that stresses exactly this skill of translating a word-problem into a formal, mathematical setup and asking us to follow through on its logical consequences.</p>
+<p>To some extent, I wish to find a compendium of probability-themed puzzles, and I have a few leads that I have not yet verified:</p>
+<ul>
+<li>I strongly suspect that Martin Gardner’s writing <span class="citation" data-cites="gardner1956mathematics gardner2005colossal">(<a href="#ref-gardner1956mathematics" role="doc-biblioref">Gardner 1956</a>, <a href="#ref-gardner2005colossal" role="doc-biblioref">2005</a>)</span> emphasizes probability puzzles, so I’ll try to select a few to do from his work. In a similar vein, I’m not sure if I can find old copies of the American Statistician, but I know the Monty Hall puzzle was originally proposed as a puzzle in the American Statistician, so that may be a fruitful place to look.</li>
+<li>I have also found that the Institute of Mathematical Statistics has a <em>Student Puzzle Corner</em> here: <a href="https://imstat.org/2023/12/15/student-puzzle-corner-48/" class="uri">https://imstat.org/2023/12/15/student-puzzle-corner-48/</a></li>
+<li>Following the <em>See Also</em> section from the Monty Hall Problem Wikipedia page yields <a href="https://en.wikipedia.org/wiki/Sleeping_Beauty_problem">the Sleeping Beauty Problem</a> and <a href="https://en.wikipedia.org/wiki/Boy_or_girl_paradox">the Boy or Girl Paradox</a>.</li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="ref-gardner1956mathematics" class="csl-entry" role="listitem">
+Gardner, Martin. 1956. <em>Mathematics, Magic and Mystery</em>. Dover Puzzle Books: Math Puzzles Ser. Dover Publications.
+</div><div id="ref-gardner2005colossal" class="csl-entry" role="listitem">
+———. 2005. <em>The Colossal Book of Short Puzzles and Problems</em>. Edited by Dana Richards. W. W. Norton &amp; Company.
+</div></div><section id="monty-hall-problem" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="monty-hall-problem">Monty Hall Problem</h2>
+<p>The Monty Hall problem can be stated so simply:</p>
+<blockquote class="blockquote">
+<p>Suppose you’re on a game show, and you’re given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No.&nbsp;1, and the host [Monty], who knows what’s behind the doors, opens another door, say No.&nbsp;3, which has a goat. He then says to you, “Do you want to pick door No.&nbsp;2?” Is it to your advantage to switch your choice?</p>
+</blockquote>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Monty_open_door.svg" class="img-fluid figure-img"></p>
+<figcaption>Depiction of Monty Hall Problem: 3 doors, 3rd is open showing a goat</figcaption>
+</figure>
+</div>
+</div></div><p>How should you ‘model’ your choices?</p>
+<p>Do we have all the information necessary?</p>
+<p>We need to know: is there an equal initial probability of the car being behind each door? We’ll assume yes. Let’s additionally assume that Monty never reveals the car, and if he has a choice between two doors with goats behind them, he picks randomly either with probability <span class="math inline">\(1/2\)</span>.</p>
+<p>Let <span class="math inline">\(M_i\)</span> denote the event where Monty opens the <span class="math inline">\(i\)</span>th door. Also, let <span class="math inline">\(D_i\)</span> denote the event where the car is behind door <span class="math inline">\(i\)</span>. We will assume as in the puzzle given that we have chosen door 1 and Monty has shown us there is a goat behind door 3.</p>
+<p>Notice that <span class="math inline">\(P(D_1) = P(D_2) = P(D_3) = 1/3\)</span> by our first assumption. (These are unconditioned probabilities, before we learn anything). Our second assumption then implies the following table of probabilities for the joint events <span class="math inline">\(P(M_i \text{ and } D_j \mid \text{we chose door 1})\)</span> for <span class="math inline">\(i, j \in \{ 1, 2, 3 \}\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/unit1_monty_hall_table/monty_hall_table.svg" class="img-fluid figure-img" style="width:85.0%"></p>
+<figcaption>Joint probabilities for where the car is and what door Monty shows</figcaption>
+</figure>
+</div>
+<p>Bayes’ Rule Approach:</p>
+<p>Now we want to compare <span class="math inline">\(P(D_1 | M_3)\)</span> vs.&nbsp;<span class="math inline">\(P(D_2 | M_3)\)</span>. We can use Bayes’ rule to calculate this using quantities we either already have or can get.</p>
+<p><span class="math display">\[P(D_1 | M_3) = \frac{P(M_3 | D_1)P(D_1)}{P(M_3)} = \frac{(1/2) \times (1/3)}{(1/2)} = \frac{1}{3}.\]</span> <span class="math display">\[P(D_2 | M_3) = \frac{P(M_3 | D_2)P(D_2)}{P(M_3)} = \frac{1 \times (1/3)}{(1/2)} = \frac{2}{3}.\]</span></p>
+<p>Justifications: We take by assumption that we chose door 1, so Monty will never choose door 1, and hence <span class="math inline">\(P(M_3) = 1/2\)</span>. In the first case, Monty’s hand is not forced. In the second case, Monty’s hand is forced, and hence <span class="math inline">\(P(M_3 | D_2) = 1\)</span>.</p>
+<p>Thus we conclude that it is superior to switch to door 2.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Derivation of Bayes’ Formula</p>
+<p>Recall the definition of conditional probability. <span class="math display">\[P(A | B) = P(A \cap B) / P(B), \quad \quad P(B | A) = P(A \cap B) / P(A)\]</span> <span class="math display">\[\implies \; P(A | B) P(B) = P(B | A) P(A)\]</span> <span class="math display">\[\therefore P(B | A) = \frac{P(A | B) P(B)}{P(A)}.\]</span></p>
+</div>
+</div>
+<p>Direct Approach:</p>
+<p>You could say, can’t we just use the definition of conditional probability straight away? Yes, you can. Essentially it’s constructing the above table that’s the important part in seeing the solution clearly.</p>
+<p><span class="math display">\[P(D_1 | M_3 ) = \frac{P(D_1 \cap M_3)}{P(M_3)} = \frac{1/6}{1/2} = \frac{1}{3}.\]</span> <span class="math display">\[P(D_2 | M_3 ) = \frac{P(D_2 \cap M_3)}{P(M_3)} = \frac{1/3}{1/2} = \frac{2}{3}.\]</span></p>
+<p>Problematic Approach:</p>
+<p>What’s wrong with saying <span class="math inline">\(M_3\)</span> implies that either <span class="math inline">\(D_1\)</span> or <span class="math inline">\(D_2\)</span> must hold, so <span class="math display">\[P(D_1 | M_3) = \frac{P(D_1 \cap M_3)}{P(M_3)} = \frac{P(D_1 \cap \{ D_1, D_2 \})}{P(\{D_1, D_2\})} = \frac{1/3}{2/3} = \frac{1}{2},\]</span> and by the fact that <span class="math inline">\(P(D_2 | M_3) = 1-P(D_1|M_3)\)</span>, we have that <span class="math inline">\(P(D_2 | M_3) = 1/2\)</span> as well, where <span class="math inline">\(P(\{D_1, D_2\})\)</span> refers to the probability of <em>either</em> the car being behind door 1 or door 2.</p>
+<p>Well, <span class="math inline">\(M_3\)</span> and <span class="math inline">\(\{D_1, D_2\}\)</span> are not the same events. It is true that <span class="math inline">\(M_3\)</span> implies the car is behind either door one or door two, but it’s not the case that the door being behind either door one or door two implies that Monty will open door 3. If they’re not the same events, then we cannot assume that their probabilities are equal. Hence, the above steps incorrectly replace <span class="math inline">\(P(M_3)\)</span> with 2/3, and <span class="math inline">\(P(D_1 \cap M_3)\)</span>, and in the numerator, the joint probability of <span class="math inline">\(P(D_1 \cap M_3)\)</span> need not equal <span class="math inline">\(P(D_1 \cap \{ D_1, D_2 \}) = P(D_1)\)</span>.</p>
+</section>
+<section id="puzzle-1" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="puzzle-1">Puzzle #1</h2>
+<blockquote class="blockquote">
+<p>There are 43 cookies to be given out at random to 10 children. What is the probability that each child gets at least 2 cookies?</p>
+</blockquote>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<details>
+<summary>
+Exercise in flawed thinking.
+</summary>
+<p>Find the flaw in the following logic:</p>
+<p>Consider the outcomes where each child has 2+ cookies. Then, for 20 cookies, we already know how those are distributed (each of the 10 children gets two cookies). The remaining 23 cookies can be assigned arbitrarily, so across the 10 kids there are a remaining <span class="math inline">\(10^{23}\)</span> ways to distribute the cookies for each of the <span class="math inline">\({43 \choose 20}\)</span> ways that the 20-cookies already spoken-for can be distributed.</p>
+<p>That gives us <span class="math display">\[\frac{P(\text{ways to get to every child having 2+ cookies})}{P(\text{total number of ways to distribute 43 cookies})} =
+\frac{{43 \choose 20} \cdot 10^{23}}{10^{43}} = \frac{{43 \choose 20}}{10^{20}}.\]</span></p>
+<details>
+<summary>
+Click to reveal the problem in the above logic.
+</summary>
+<p>I think we’re double-counting solutions when we say that for each of the <span class="math inline">\({43 \choose 20}\)</span> ways that we can say that the 20 cookies are already spoken for, there are another <span class="math inline">\(10^{23}\)</span> ways to assign the other cookies.</p>
+<p>Let’s take a smaller example: assigning 4 cookies to 2 students, and I want to know how often to expect each student gets 1+ cookie. If I consider outcomes where cookies 1, 2, 3, 4 get assigned to children <span class="math inline">\(1, 2, *, *\)</span>, I would count <span class="math inline">\(1,2,1,2\)</span> towards this tally. But if I later also consider outcomes of the form <span class="math inline">\(*, *, 1, 2\)</span>, I would again count the outcome <span class="math inline">\(1,2,1,2\)</span> twice. This is wrong, and a crucial mistake.</p>
+<p>In general, the real flaw was in not adequately formalizing our work and using heuristics like “if cookies are spoken for,” which is not a rigorously defined probability concept.</p>
+</details>
+</details>
+</div>
+</div>
+<p>First, notice that this is a classic multinomial setup. The multinomial distribution can be thought of as giving the probability of observing the outcome <span class="math inline">\(i \in \{ 1, ..., k \}\)</span> coming up <span class="math inline">\(x_i\)</span> times when rolling a <span class="math inline">\(k\)</span>-sided die <span class="math inline">\(n\)</span> times, and is a generalization of the Binomial distribution. We have that the probability of each outcome <span class="math inline">\(i\)</span> coming up on a single roll is given by <span class="math inline">\(\pi_i\)</span>.</p>
+<p>If the so-called die is fair, <span class="math inline">\(\pi_i = \pi_{i'}\; \forall i, i' \in \{ 1, ..., k\}\)</span> or the die is unfair and <span class="math inline">\(\pi_i\)</span> is not necessarily equal to <span class="math inline">\(\pi_i'\)</span>. In all cases, we assume <span class="math inline">\(\sum \pi_i = 1\)</span>.</p>
+<p>Let <span class="math inline">\(X = (X_1, ..., X_k)\)</span> be a <span class="math inline">\(\text{Multinomial}(n, k, \pi)\)</span> distributed where <span class="math inline">\(\pi = (\pi_1, ..., \pi_k)\)</span>.</p>
+<p>The density of the Multinomial distribution is<br>
+<span class="math display">\[
+\begin{aligned}
+P(X = x) &amp; = {n \choose x_1,...,x_k!} \prod_{i=1}^k \pi_i^{x_i} \\
+&amp; = \frac{n!}{x_1!\cdots x_k!}\pi_1^{x_1} \cdots \pi_k^{x_k}.
+\end{aligned}
+\]</span></p>
+<div class="callout-info">
+<details>
+<summary>
+Intuition
+</summary>
+<p>I think of it this way: in the traditional Binomial outcome, there’s two outcomes that are being tallied, 1 or 0, and either 1 happens with probability <span class="math inline">\(\pi_1\)</span>, or 0 happens with probability <span class="math inline">\(1-\pi_1\)</span> in each trial. Here, the <span class="math inline">\(\sum \pi_i = 1\)</span> assumption is making it so that either outcome <span class="math inline">\(i\)</span> happens with probability <span class="math inline">\(\pi_i\)</span>, or one of the other <span class="math inline">\(i' \in \{ 1, ..., k\} \backslash i\)</span> outcomes happens with probability <span class="math inline">\(1 - \pi_i\)</span>.</p>
+</details>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<details>
+<summary>
+The Multinomial Theorem
+</summary>
+<p>For any positive integer <span class="math inline">\(m\)</span> and non-negative integer <span class="math inline">\(n\)</span>, <span class="math display">\[(x_1 + ... + x_m)^n = \sum_{k_1+...+ k_m = n} {n \choose k_1, ..., k_m} \prod_{i=1}^m x_i^{k_i},\]</span> where <span class="math inline">\(k_1, ..., k_m \in \mathbb N\)</span> and <span class="math inline">\({n \choose k_1, ..., k_m} = \frac{n!}{k_1!\cdots k_m!}\)</span>.</p>
+</details>
+</div>
+</div>
+<p>Returning to the problem, let <span class="math inline">\(p_n\)</span> denote the probability that all 10 children receive at least 2 cookies each given that <span class="math inline">\(n\)</span> are given out uniformly at random.</p>
+<p>Let <span class="math inline">\(X_1, ..., X_{10}\)</span> denote the random variables representing how many cookies each of the 10 children gets. Notice that <span class="math display">\[
+{\small
+X_1, ..., X_{10} \Bigg\vert \sum_{i=1}^{10} X_i = 43 \sim
+\text{Multinomial}(n = 43, k = 10, \pi_i = 1/10),}
+\]</span> where <span class="math inline">\(\pi_i = 1/10\)</span> indicates that the distribution of cookies is uniformly random (e.g., equal probability) across the 10 children.</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Poisson-Multinomial Relationship</p>
+<p>The Poisson and Multinomial distributions have an interesting relationship. When the outcomes <span class="math inline">\(X_1, ..., X_k\)</span> are such that <span class="math inline">\(X_i \sim \text{Poisson}(\lambda_i)\)</span>, then <span class="math inline">\(\sum_{i=1}^k X_i \sim \text{Poisson}(\sum_{i=1}^k \lambda_i).\)</span></p>
+<p>One can easily derive via the definition of conditional probability that <span class="math display">\[(X_1, ..., X_k) {\Bigg\vert} \sum_{i=1}^k X_i = N = n \sim \text{Multinomial}(n, k, \pi),\]</span> where <span class="math inline">\(\pi = \left(\frac{\lambda_1}{\sum \lambda_i}, ..., \frac{\lambda_k}{\sum \lambda_i}\right)\)</span>.</p>
+<p>See <a href="https://online.stat.psu.edu/stat504/lesson/2/2.3/2.3.6">here</a> for example.</p>
+<details open="">
+<p><span class="math display">\[
+\begin{aligned}
+P(X = x \Big \vert N = n) &amp; = \frac{P(X = x, N = n)}{P(N = n)}  \\
+&amp; = \frac{P(X = x)}{P(N = n)} \\
+&amp; = \left( \frac{e^{-\sum \lambda_i} \prod \lambda_i^{x_i}}{\prod x_i!} \right) \Bigg / \left( \frac{e^{-\sum \lambda_i} (\sum \lambda_i)^{n}}{n!} \right) \\
+&amp; = {n \choose x_1, ..., x_k} \frac{\prod \lambda_i^{x_i}}{\left( \sum \lambda_i \right)^n} \\
+&amp; = {n \choose x_1, ..., x_k} \left( \frac{\lambda_i}{\sum \lambda_i} \right)^{x_i} \\
+&amp; \sim \text{Multinomial}(n, k, \pi).
+\end{aligned}
+\]</span></p>
+</details>
+</div>
+</div>
+</div>
+<p>Since no information was given to us about how it came about that <span class="math inline">\(n = 43\)</span> cookies were given out, let’s assume that it was the result of a <span class="math inline">\(\text{Poisson}(\lambda)\)</span> process. This implies that the <span class="math inline">\(X_i\)</span> are independently and identically distributed as <span class="math inline">\(\text{Poisson}(\lambda/10)\)</span> by a similar argument in the reverse direction.</p>
+<details open="">
+<p><span class="math display">\[P(X = x \Bigg| \sum X_i = n) = \frac{P(X = x, \sum X_i = n)}{\underbrace{P(\sum X_i = n)}_{\text{Poisson}(\lambda)}},\]</span> and <span class="math inline">\(X = x \implies \sum X_i = \sum x_i = n\)</span>, so <span class="math inline">\(P(X = x, \sum X_i = n) = P(X = x)\)</span> as long as <span class="math inline">\(n = \sum x_i\)</span>. <span class="math display">\[
+\begin{aligned}
+\therefore \;\; P(X = x) &amp; = P(X = x \Bigg| \sum X_i = n) \cdot P(\sum X_i = n) \\
+&amp; = \left[ {n \choose \pi_1, ..., \pi_k} \prod \pi_i^{x_i} \right] \cdot \left( \frac{e^{-\lambda} \lambda^{\sum x_i}}{\sum x_i! } \right) \\
+&amp; = \frac{\cancel{n!}}{x_1!\cdots x_k!} \pi_1^{x_1}\cdots \pi_k^{x_k} \left( \frac{e^{-\lambda} \lambda^{n}}{\cancel{n!}} \right).
+\end{aligned}
+\]</span> Assume as given in the problem that the cookies are uniformly randomly given out, and <span class="math inline">\(\pi_i = \pi_{i'}\;  \forall i, i' \in \{ 1, ..., k \}\)</span>; this single probability must be <span class="math inline">\(1/k\)</span> (or in our case, <span class="math inline">\(k = 10\)</span> children).</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(X = x) &amp; = \frac{e^{-\lambda}}{x_1! \cdots x_k!} \left( \frac{\lambda}{k} \right)^{\sum x_i} \\
+&amp; = \prod_{i=1}^k \frac{e^{-\lambda/k} \left( \frac{\lambda}{k} \right)^{x_i}}{x_i!}, \\
+\text{a product of the }&amp;\text{density for $k$ iid Poisson}\left(\frac{\lambda}{k}\right) \text{ variables}.
+\end{aligned}
+\]</span></p>
+</details>
+<p>We said that if <span class="math inline">\(n\)</span> cookies are given out, then there’s a <span class="math inline">\(p_n\)</span> probability that the 10 children all receive 2+ cookies. Then <em>without conditioning on the number of cookies given out,</em> the probability that all kids receive 2+ cookies is given by <span class="math display">\[\E\left[\E[p_n | N = n]\right] = \sum_{n=0}^\infty \frac{e^{-\lambda} \lambda^n}{n!} p_n.\]</span></p>
+<p>On the other hand, since the <span class="math inline">\(X_1, ..., X_k\)</span> are iid Poisson, the probability that all 10 kids receive 2+ cookies is <span class="math inline">\(P(X_1 \geq 2)^{10} = (1-P(X_1 \leq 1))^{10} =
+(1-e^{-\frac{\lambda}{10}} - \frac{\lambda}{10}e^{-\frac{\lambda}{10}})^{10}\)</span>.</p>
+<p>Now we have that <span class="math display">\[
+\sum_{n=0}^\infty \frac{e^{-\lambda} \lambda^n}{n!} p_n
+=
+\left[1-e^{-\frac{\lambda}{10}} - \frac{\lambda}{10}e^{-\frac{\lambda}{10}}\right]^{10}.
+\]</span></p>
+<details>
+<summary>
+Reference materials on Poissonization and related ideas.
+</summary>
+<p>So, I didn’t know the first thing about “Poissonization,” but I’ve been trying to learn.</p>
+<p>It appears that <a href="https://www.youtube.com/@marywootters7651">Mary Wootters</a> [<a href="https://sites.google.com/site/marywootters/">site</a>] and <a href="https://www.youtube.com/@c.seshadhri6776/playlists">C. Seshadhri</a> [<a href="https://users.soe.ucsc.edu/~sesh/">site</a>] have nice online YouTube playlists of their randomized algorithms lectures in which they talked about Poissonization.</p>
+<p>See the specific videos:</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=P71s05H2T5E" class="uri">https://www.youtube.com/watch?v=P71s05H2T5E</a></li>
+<li><a href="https://www.youtube.com/watch?v=4lvfTKiLyXw" class="uri">https://www.youtube.com/watch?v=4lvfTKiLyXw</a></li>
+</ul>
+<p>I get the sense that the Chernoff bound for the Poisson-tail is something I should learn about further. The application of Stirling’s approximation to the distribution of deviations from the expected value of a Poisson process that Seshadhri presents is quite beautiful, and something I’d like to learn more about.</p>
+There’s also this interesting approximation of the Multinomial cell-specific count outcomes as Poisson that I saw popping up here and there <span class="citation" data-cites="Ahmad1985Poisson">(<a href="#ref-Ahmad1985Poisson" role="doc-biblioref">Ahmad 1985</a>)</span>.
+</details>
+<div class="no-row-height column-margin column-container"><div id="ref-Ahmad1985Poisson" class="csl-entry" role="listitem">
+Ahmad, I. A. 1985. <span>“On the Poisson Approximation of Multinomial Probabilities.”</span> <em>Statistics &amp; Probability Letters</em> 3 (1): 55–56. <a href="https://doi.org/10.1016/0167-7152(85)90013-6">https://doi.org/10.1016/0167-7152(85)90013-6</a>.
+</div></div><p>Now, recall that <span class="math inline">\(e^{x}\)</span> has a series expansion. If we multiply both sides by <span class="math inline">\(e^{\lambda}\)</span> and by <span class="math inline">\(43!\)</span>, we should find that the coefficient on the left-hand-side series for <span class="math inline">\(\lambda^{43}\)</span> is just <span class="math inline">\(p_n\)</span>, and the right-hand-side series coefficient for <span class="math inline">\(\lambda^{43}\)</span> gives an expression we can evaluate for <span class="math inline">\(p_{43}\)</span>. They must be equal, because in order for two convergent power series to coincide on a non-empty interval, their coefficients must be equal.</p>
+<p>So what we’re going to do is expand the function <span class="math inline">\(e^{x} = \sum_{t=0}^\infty \frac{x^t}{t!}\)</span> wherever we see it on the modified right-hand-side and use that to identify the coefficient of <span class="math inline">\(\lambda^{43}\)</span>, which is <span class="math inline">\(p_{43}\)</span>.</p>
+<p>However, this is a bit hard to do by hand, so we’ll use the symbolic algebra library <code>sympy</code> in Python to do it for us.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> symbols, exp, factorial, series, Pow</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>lambda_ <span class="op">=</span> symbols(<span class="st">'lambda'</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>inner_expression <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> exp(<span class="op">-</span>lambda_<span class="op">/</span><span class="dv">10</span>) <span class="op">-</span> (lambda_<span class="op">/</span><span class="dv">10</span>)<span class="op">*</span>exp(<span class="op">-</span>lambda_<span class="op">/</span><span class="dv">10</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>raised_expression <span class="op">=</span> inner_expression<span class="op">**</span><span class="dv">10</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>complete_expression <span class="op">=</span> exp(lambda_) <span class="op">*</span> raised_expression</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>expanded_series <span class="op">=</span> series(complete_expression, x<span class="op">=</span>lambda_, n<span class="op">=</span><span class="dv">44</span>).removeO()</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>coeff_lambda_43 <span class="op">=</span> expanded_series.coeff(lambda_<span class="op">**</span><span class="dv">43</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>p_43 <span class="op">=</span> factorial(<span class="dv">43</span>) <span class="op">*</span> coeff_lambda_43</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>p_43</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[
+\frac{38360235213946776318553037176114920309}{78125000000000000000000000000000000000} \approx 0.491
+\]</span></p>
+<p>Thus we conclude that if 43 cookies are given out to 10 children uniformly at random, then the probability that each child receives at least 2 cookies is <span class="math inline">\(\approx .491.\)</span></p>
+<p>Let’s see if we can confirm that via a simple simulation in R:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>num_trials <span class="ot">&lt;-</span> <span class="dv">100000</span>  <span class="co"># Number of simulations</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>num_children <span class="ot">&lt;-</span> <span class="dv">10</span>    <span class="co"># Number of children</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>num_cookies <span class="ot">&lt;-</span> <span class="dv">43</span>     <span class="co"># Number of cookies</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">replicate</span>(num_trials, {</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  cookies <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>num_children, num_cookies, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  counts <span class="ot">&lt;-</span> <span class="fu">table</span>(<span class="fu">factor</span>(cookies, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>))</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">all</span>(counts <span class="sc">&gt;=</span> <span class="dv">2</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>prob_estimate <span class="ot">&lt;-</span> <span class="fu">mean</span>(results)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>var_estimate <span class="ot">&lt;-</span> <span class="fu">var</span>(results) <span class="sc">/</span> num_trials</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>prob_estimate</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>var_estimate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>&gt; prob_estimate
+[1] 0.49178
+&gt; var_estimate
+[1] 2.499349e-06</code></pre>
+
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="ctesta01/QualPrep" data-repo-id="R_kgDOL53WeA" data-category="General" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../1_theory.html" class="pagination-link" aria-label="Probability">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Probability</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../2_inference.html" class="pagination-link" aria-label="Inference">
+        <span class="nav-page-text">Inference</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

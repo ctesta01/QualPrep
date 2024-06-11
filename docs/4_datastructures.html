@@ -8,7 +8,7 @@
 
 <meta name="description" content="Exercises and notes in preparation for PhD Qualifying Exams in Biostatistics">
 
-<title>Qualifying Exam Preparation - Probability</title>
+<title>Qualifying Exam Preparation - Data Structures &amp; Algorithms</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -51,8 +51,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./1_probability/01_background_puzzles.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./4_datastructures/01_random_numbers.html" rel="next">
+<link href="./3_methods/01_linear_regression.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -93,7 +93,7 @@ div.csl-indent {
 
 </head>
 
-<body class="nav-sidebar floating fullcontent">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -102,7 +102,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_theory.html">Probability</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4_datastructures.html">Data Structures &amp; Algorithms</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -134,13 +134,13 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./1_theory.html" class="sidebar-item-text sidebar-link active">
+            <a href="./1_theory.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Probability</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1_probability/01_background_puzzles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">History: Puzzles, Paradoxes, and Motivation</span></a>
@@ -182,13 +182,13 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./4_datastructures.html" class="sidebar-item-text sidebar-link">
+            <a href="./4_datastructures.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Data Structures &amp; Algorithms</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./4_datastructures/01_random_numbers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Random Numbers</span></a>
@@ -222,13 +222,14 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Probability</h1>
+<h1 class="title">Data Structures &amp; Algorithms</h1>
 </div>
 
 
@@ -245,58 +246,41 @@ div.csl-indent {
 </header>
 
 
-<p>The probability material can be mostly found in <span class="citation" data-cites="casella2002statistical">(<a href="#ref-casella2002statistical" role="doc-biblioref">Casella and Berger 2002</a>)</span>.</p>
-<p>For the probability-focused material, we may also refer to a handful of other references including <span class="citation" data-cites="blitzstein2019introduction bishop2006pattern gut2009intermediate stoyanov2013counterexamples Feller1968 DasGupta2011 Durrett2019">(<a href="#ref-blitzstein2019introduction" role="doc-biblioref">Blitzstein and Hwang 2019</a>; <a href="#ref-bishop2006pattern" role="doc-biblioref">Bishop 2006</a>; <a href="#ref-gut2009intermediate" role="doc-biblioref">Gut 2009</a>; <a href="#ref-stoyanov2013counterexamples" role="doc-biblioref">Stoyanov 2013</a>; <a href="#ref-Feller1968" role="doc-biblioref">Feller 1968</a>; <a href="#ref-DasGupta2011" role="doc-biblioref">DasGupta 2011</a>; <a href="#ref-Durrett2019" role="doc-biblioref">Durrett 2019</a>)</span>.</p>
-<hr>
-<p>At a high-level, how do we distinguish Probability and Statistics?</p>
-<p>In general, these are answers to dual problems: Probability theory gives us the tools to carry out deductive reasoning, where based on <em>perfect, complete knowledge</em> of random processes, we can derive true statements about the result (e.g., statements about expectation, variance, etc.). On the other hand, statistical inference allows us to go from <em>observed data</em> and combine it with assumptions to draw conclusions inductively, which may or may not be correct. For example, a statistical statement might be that a particular way of constructing a confidence interval (under assumptions) has a 95% probability of containing the true population parameter when repeatedly performing the same experiment (e.g., in the Frequentist paradigm).</p>
-<hr>
-<p>Outline of Probability:</p>
+<p>Course outline:</p>
 <ul>
-<li>Introduction/Background</li>
-<li>Probability Basics</li>
-<li>Random Variables</li>
-<li>Expected Values</li>
-<li>Families of Distributions</li>
-<li>Multiple Random Variables</li>
-<li>Independence and Conditional Expectation</li>
-<li>Bivariate Dependence</li>
-<li>Inequalities</li>
-<li>Multivariate Normal</li>
-<li>Statistics of Random Samples</li>
-<li>Laws of Large Numbers and Central Limit Theorem</li>
-<li>Stochastic Processes</li>
+<li>Random Numbers</li>
+<li>Concepts of Algorithms</li>
+<li>Data Structures</li>
+<li>Heaps</li>
+<li>Greedy Algorithms and Dynamic Programming</li>
+<li>Parallel Computing</li>
+<li>P and NP</li>
+<li>Numerical Aspects of Algorithms</li>
+<li>Systems of Linear Equations</li>
+<li>Least Squares</li>
+<li>Eigenvalues and Sparse Matrices</li>
+<li>Systems of Nonlinear Equations</li>
+<li>Numerical Integration and MCMC</li>
+<li>Numerical Optimization</li>
 </ul>
-<section id="references" class="level2">
+<p>Some online resources I’ve found helpful:</p>
+<ul>
+<li>Steven Skiena <small><a href="https://m.youtube.com/watch?v=A2bFN3MyNDA&amp;list=PLOtl7M3yp-DX32N0fVIyvn7ipWKNGmwpp" class="uri">https://m.youtube.com/watch?v=A2bFN3MyNDA&amp;list=PLOtl7M3yp-DX32N0fVIyvn7ipWKNGmwpp</a></small></li>
+<li>MIT 6.006 <small><a href="https://m.youtube.com/playlist?list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb" class="uri">https://m.youtube.com/playlist?list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb</a></small></li>
+<li>An Open Guide to Data Structures and Algorithms <small><a href="https://pressbooks.palni.org/anopenguidetodatastructuresandalgorithms/" class="uri">https://pressbooks.palni.org/anopenguidetodatastructuresandalgorithms/</a></small></li>
+<li>Algorithms by Jeff Erickson <small><a href="http://jeffe.cs.illinois.edu/teaching/algorithms/#book" class="uri">http://jeffe.cs.illinois.edu/teaching/algorithms/#book</a></small></li>
+<li>Awesome Algorithms on GitHub <small><a href="https://github.com/tayllan/awesome-algorithms" class="uri">https://github.com/tayllan/awesome-algorithms</a></small></li>
+</ul>
+<section id="references" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><span class="citation" data-cites="Skiena2020">(<a href="#ref-Skiena2020" role="doc-biblioref">Skiena 2020</a>)</span></li>
+</ul>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-bishop2006pattern" class="csl-entry" role="listitem">
-Bishop, Christopher M. 2006. <em>Pattern Recognition and Machine Learning</em>. Springer.
-</div>
-<div id="ref-blitzstein2019introduction" class="csl-entry" role="listitem">
-Blitzstein, Joseph K., and Jessica Hwang. 2019. <em>Introduction to Probability</em>. 2nd ed. Chapman; Hall/CRC.
-</div>
-<div id="ref-casella2002statistical" class="csl-entry" role="listitem">
-Casella, George, and Roger L Berger. 2002. <em>Statistical Inference</em>. Vol. 2. Duxbury Pacific Grove, CA.
-</div>
-<div id="ref-DasGupta2011" class="csl-entry" role="listitem">
-DasGupta, Anirban. 2011. <em>Probability for Statistics and Machine Learning: Fundamentals and Advanced Topics</em>. New York: Springer. <a href="https://doi.org/10.1007/978-1-4419-9634-3">https://doi.org/10.1007/978-1-4419-9634-3</a>.
-</div>
-<div id="ref-Durrett2019" class="csl-entry" role="listitem">
-Durrett, Rick. 2019. <em>Probability: Theory and Examples</em>. 5th ed. Cambridge Series in Statistical and Probabilistic Mathematics 49. Cambridge University Press. <a href="https://www.cambridge.org/core/books/probability-theory-and-examples/82A04569DDBEE06644D01E73E00E10EE">https://www.cambridge.org/core/books/probability-theory-and-examples/82A04569DDBEE06644D01E73E00E10EE</a>.
-</div>
-<div id="ref-Feller1968" class="csl-entry" role="listitem">
-Feller, William. 1968. <em>An Introduction to Probability Theory and Its Applications, Volume 1</em>. 3rd ed. John Wiley &amp; Sons.
-</div>
-<div id="ref-gut2009intermediate" class="csl-entry" role="listitem">
-Gut, Alan. 2009. <em>An Intermediate Course in Probability</em>. 2nd ed. Springer.
-</div>
-<div id="ref-stoyanov2013counterexamples" class="csl-entry" role="listitem">
-Stoyanov, Jordan M. 2013. <em>Counterexamples in Probability</em>. 3rd ed. Dover Publications.
-</div>
-</div>
+<div class="no-row-height column-margin column-container"><div id="ref-Skiena2020" class="csl-entry" role="listitem">
+Skiena, Steven S. 2020. <em>The Algorithm Design Manual</em>. 3rd ed. Texts in Computer Science. Springer. <a href="https://doi.org/10.1007/978-3-030-54256-6">https://doi.org/10.1007/978-3-030-54256-6</a>.
+</div></div>
 </section>
 
 </main> <!-- /main -->
@@ -693,13 +677,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <input type="hidden" id="giscus-alt-theme" value="dark">
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Welcome!">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Welcome!</span></span>
+      <a href="./3_methods/01_linear_regression.html" class="pagination-link" aria-label="Linear Regression">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Linear Regression</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./1_probability/01_background_puzzles.html" class="pagination-link" aria-label="History: Puzzles, Paradoxes, and Motivation">
-        <span class="nav-page-text"><span class="chapter-title">History: Puzzles, Paradoxes, and Motivation</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./4_datastructures/01_random_numbers.html" class="pagination-link" aria-label="Random Numbers">
+        <span class="nav-page-text"><span class="chapter-title">Random Numbers</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

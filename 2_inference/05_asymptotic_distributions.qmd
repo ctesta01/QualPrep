@@ -1,0 +1,76 @@
+---
+title: "Asymptotic Distributions"
+---
+
+Let's do a CLT Version 2 (for non-identical data) example problem. 
+
+Consider the sequence of random variables $X_{jn}$ defined by 
+$$ 
+  X_{jn} = \begin{cases}
+  1 & \text{ with probability } \frac{1}{2j} \\   
+  -1 & \text{ with probability } \frac{1}{2j} \\   
+  0 & \text{ with probability } 1- \frac{1}{j}.
+  \end{cases}
+$$
+
+Verify whether Lyapunov's condition is satisfied and find the 
+asymptotic distribution of $S_n$. 
+
+:::{.callout-tip}
+### Solution to the problem
+
+<details>
+
+Recall how the CLT V2 works: 
+
+$X_{jn}$ is a triangular array of random variables, 
+$E(X_{jn}) = 0$, $\sigma_{jn}^2 = \text{Var}{X_{jn}} < \infty$. Let $S_n = \sum_{j=1}^n X_{jn}$ and $\sigma_n^2 = \sum_{j=1}^n \sigma_{jn}^2 = \text{Var}(S_n)$. Then if for some $\delta > 0$, 
+$$
+\frac{\sum_{j=1}^n E(|X_{jn}|^{2+\delta})}{\sigma_n^2} \to 0, \text{ as } n \to \infty, \quad \quad (*)
+$$
+then $\frac{S_n}{\sigma_n} \xrightarrow d \mathcal N(0, 1)$. 
+
+$(*)$ is known as the Lyapunov condition.
+
+Let's start with simpler questions. What is $E(|X_{jn}|^{2+\delta})$? What is $E(|X_{jn}|)$? 
+$$E(|X_{jn}|) = \frac{1}{2j} |-1| + \frac{1}{2j} |1| + \cancel{(1-\frac{1}{j})|0|} = 1/j.$$
+So, 
+$$E(|X_{jn}|^{2+\delta}) = \frac{1}{2j}1^{2+\delta} + \frac{1}{2j}1^{2+\delta} = 1/j.$$
+
+What is $\sum_{j=1}^n E(|X_{jn}|^{2+\delta})$? 
+$$\sum_{j=1}^n E(|X_{jn}|^{2+\delta}) = \sum_{j=1}^n \frac{1}{j} \approx \ln(n) + \gamma \approx \ln(n),$$
+where $\gamma$ is the Euler-Mascheroni constant and approximation is for large $n$. 
+
+<details open>
+<summary>
+Where does this approximation come from?  
+</summary>
+
+Well, one could think that $\sum_{j=1}^n \frac{1}{j}$ looks a lot like $\int_1^n \frac{1}{x} dx$, which would be $\ln(n) - \ln(1) = \ln(n)$, so we can easily imagine that $\sum_{j=1}^n \frac{1}{j}$ will be basically $\ln(n)$ with some kind of correction.
+
+<center>
+![Figure based on <https://commons.wikimedia.org/wiki/File:Integral_Test.svg>](figures/harmonic_series/harmonic_series.svg){width='80%'}
+</center>
+</details>
+
+What is $\sigma_n^{2+\delta}$? What is $\sigma_n^2$? 
+$$
+\sigma_n^2 = \sum_{j=1}^n \sigma_{jn}^2.
+$$
+What is $\sigma_{jn}^2$? 
+$$\sigma_{jn}^2 = \text{Var}(X_{jn}) = E([X_{jn} - E(X_{jn})]^2) = 2 \cdot \frac{1}{2j} = \frac{1}{j}.$$
+
+$$\sigma_n^{2+\delta} = \left[ \sum_{j=1}^n \text{Var}(X_{jn})\right]^{\frac{2+\delta}{2}} = \left( \sum_{j=1}^n \frac{1}{j} \right)^{\frac{2+\delta}{2}}.$$
+
+And hence 
+$$
+\frac{\sum_{j=1}^n E(|X_{jn}|^{2+\delta})}{\sigma_n^{2+\delta}} \approx \frac{\ln(n)}{(\ln(n))^{\frac{2+\delta}{2}}} \to 0 \text{ as } n \to \infty,
+$$
+establishing Lyapunov's condition. 
+
+Hence 
+$$
+\frac{S_n}{\sigma_n} \xrightarrow d \mathcal N(0, 1). 
+$$
+</details>
+:::

@@ -1,0 +1,78 @@
+---
+title: Greedy & Dynamic Algorithms
+---
+
+  - <https://www.geeksforgeeks.org/activity-selection-problem-greedy-algo-1/>
+
+> Greedy choice property: <br>
+  This property says that the globally optimal solution can be obtained by making a locally optimal solution (Greedy). The choice made by a Greedy algorithm may depend on earlier choices but not on the future. It iteratively makes one Greedy choice after another and reduces the given problem to a smaller one.<br><br>
+  Optimal substructure:<br>
+  A problem exhibits optimal substructure if an optimal solution to the problem contains optimal solutions to the subproblems. That means we can solve subproblems and build up the solutions to solve larger problems.<br>
+  --<https://www.geeksforgeeks.org/greedy-algorithms-general-structure-and-applications/>
+
+Example code for activity scheduling: 
+<small>
+```python
+{{< include scripts/activity_scheduling.py >}}
+```
+
+```
+Selected movies: [(1, 3), (4, 7), (8, 10), (11, 14)]
+```
+</small>
+
+---
+
+Proof of Correctness for the Greedy Solution to the Activity Scheduling Problem. 
+
+Really, it all comes down to the fact that the solution 
+can be proven via induction to have this property that the 
+finish times of its $i$-th element is equal to or before 
+the finish times of the $i$-th element of any other candidate
+solution. 
+
+
+Notation: 
+
+* Let $S$ be the set of activities selected via the greedy algorithm. 
+* Let $O$ be any optimal set of activities. 
+* Activities in $S$ and $O$ are both sorted by their finishing times. 
+* Let $S = \{ s_1, s_2, ..., s_k \}$ where $f(s_i) \leq f(s_{i+1})$, where 
+$f(\cdot)$ represents the finishing
+time of that element.
+* Let $O = \{ o_1, o_2, ..., o_m \}$
+where $f(o_i) \leq f(o_{i+1})$.
+
+We proceed by induction to show that for any 
+$i \leq \min (k, m)$, the 
+$i$-th activity selected by the greedy algorithm has finish time less than or
+equal to the finish time of the $i$-th
+finish time in any optimal solution, i.e., $f(s_i) \leq f(o_i)$. 
+
+<u>Base case</u>: For $i = 1$, the greedy algorithm picks the activity
+with shortest finishing time, so 
+$f(s_i) \leq f(o_i)$ by the definition
+of the greedy choice. 
+
+<u>Inductive step</u>: Assume the
+statement is true for all $j < i$, and
+we want to show it for $i$. 
+
+By our inductive hypothesis, $f(s_{i-1}) \leq f(o_{i-1})$. 
+
+The greedy algorithm picks $s_i$ as the first activity that starts after $s_{i-1}$ finishes. 
+
+Since $f(s_{i-1}) \leq f(o_{i-1})$, any activity $o_i$ that is compatible with $o_{i-1}$ is also compatible with $s_{i-1}$. 
+
+And hence $f(s_i) \leq f(o_i)$. 
+
+Thus by induction, for $i$ when both $s_i$ and $o_i$ exist, $f(s_i) \leq f(o_i)$. 
+
+Therefore the number of activities selected by the greedy algorithm $k$
+is at least as great $m$, the number 
+found by the optimal solution. 
+
+On the other hand, $m$ is the 
+optimal solution, so it must also be that $k \leq m$. 
+
+Hence $k = m$. 

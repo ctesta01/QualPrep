@@ -10,17 +10,20 @@ book:
     - index.qmd
     - part: 1_theory.qmd
       chapters:
-      - 1_theory/01_background_puzzles.qmd
-    - part: 2_methods.qmd
+      - 1_probability/01_background_puzzles.qmd
+    - part: 2_inference.qmd
       chapters:
-      - 2_methods/01_linear_regression.qmd
-    - part: 3_datastructures.qmd
+      - 2_inference/05_asymptotic_distributions.qmd
+    - part: 3_methods.qmd
       chapters:
-      - 3_datastructures/01_random_numbers.qmd
-      - 3_datastructures/02_concepts.qmd
-      # - 3_datastructures/03_data_structures.qmd
-      # - 3_datastructures/04_heaps.qmd
-      # - 3_datastructures/05_greedy_and_dynamic_algorithms.qmd
+      - 3_methods/01_linear_regression.qmd
+    - part: 4_datastructures.qmd
+      chapters:
+      - 4_datastructures/01_random_numbers.qmd
+      - 4_datastructures/02_concepts.qmd
+      - 4_datastructures/03_data_structures.qmd
+      - 4_datastructures/04_heaps.qmd
+      - 4_datastructures/05_greedy_and_dynamic_algorithms.qmd
       # - 3_datastructures/06_parallel_computing.qmd
       # - 3_datastructures/07_p_and_np.qmd
       # - 3_datastructures/08_numerical_aspects_of_algorithms.qmd
@@ -29,9 +32,9 @@ book:
       # - 3_datastructures/11_eigenvalues_and_sparse_matrices.qmd
       # - 3_datastructures/12_nonlinear_equations.qmd
       # - 3_datastructures/14_optimization.qmd
-    - part: 4_appendix.qmd
+    - part: 5_appendix.qmd
       chapters:
-      - 4_appendix/01_calculus.qmd
+      - 5_appendix/01_calculus.qmd
   sidebar: 
     collapse-level: 1
 

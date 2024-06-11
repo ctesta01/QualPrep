@@ -1,0 +1,17 @@
+---
+title: Heaps
+---
+
+Read the documentation and 
+guide on `heapq`:
+
+  - <https://docs.python.org/3/library/heapq.html> 
+  - <https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/>
+
+The min or max heap property:
+
+> "Max-heaps must maintain the heap property that the parent values must be greater than their children." --<https://www.codecademy.com/article/max-heaps-conceptual> 
+
+> "In a Max-Heap the key present at the root node must be greater than or equal among the keys present at all of its children." --<https://www.geeksforgeeks.org/difference-between-min-heap-and-max-heap/>
+
+> "Heaps are binary trees for which every parent node has a value less than or equal to any of its children. We refer to this condition as the heap invariant." --<https://docs.python.org/3/library/heapq.html>
